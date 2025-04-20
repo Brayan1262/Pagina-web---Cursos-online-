@@ -1,0 +1,276 @@
+/* Estilo general */
+body {
+    background-color: rgba(22, 34, 57, 0.95);
+    color: #ffffff;
+}
+
+/* Estilos del encabezado */
+.main-header .logo a {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+}
+
+.main-header .logo a em {
+    font-style: normal;
+    color: #f5a425;
+}
+
+/* Estilos del menú lateral */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    background-color: #000000;
+    padding-top: 20px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.sidebar h2 em {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #f5a425;
+    
+}
+.sidebar h2 .academy {
+    font-size: 36px; /* Tamaño de "ACADEMY" */
+    font-weight: 700;
+    color: #ffffff; /* Cambia el color según prefieras */
+    text-transform: uppercase;
+    
+}
+
+.sidebar a {
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+    color: white;
+}
+
+/* Contenedor del botón Salir en la parte inferior */
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 400px 0;
+    display: flex;
+    justify-content: left;
+}
+
+/* Estilo del botón de Salir */
+.logout {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+}
+
+.logout i {
+    font-size: 1.5em; /* Tamaño del icono */
+
+}
+
+/* Estilos del contenido principal */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    font-size: 18px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Ocultar el sidebar en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    /* Menú de iconos en el footer para pantallas pequeñas */
+    .footer-menu {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #000000;
+        justify-content: space-around;
+        padding: 10px 0;
+        z-index: 101;
+    }
+
+    .footer-icon {
+        color: #ffffff;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .footer-icon:hover {
+        color: #f5a425;
+    }
+}
+
+/* Estilos de la página de suscripción */
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: rgba(22, 34, 57, 0.95);
+    border-radius: 10px;
+}
+
+.container h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.plan {
+    margin-bottom: 30px;
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.benefits li i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Opciones de suscripción */
+.subscription-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    color: white;
+    background-color: rgba(22, 34, 57, 0.95);
+    border: 1px solid #ad8618;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(184, 139, 15, 0.6); /* Sombra */
+    transition: box-shadow 0.3s ease; /* Suaviza la sombra al pasar el mouse */
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.card ul li i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.button-container {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    background-color: #75651c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d6aa31;
+}
+
+/* Ajustes responsive para tarjetas de suscripción */
+@media (max-width: 768px) {
+    .subscription-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* Estilo general para el robot de suscripción */
+.robot-suscripcion-container {
+    position: fixed;
+    right: 20px; /* Separación del lado derecho */
+    bottom: 500px; /* Ajusta según lo necesites */
+    z-index: 100; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.robot-suscripcion {
+    max-width: 450px; /* Tamaño del robot */
+    max-height: 450px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.robot-suscripcion:hover {
+    transform: scale(1.1); /* Animación al pasar el mouse */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .robot-suscripcion-container {
+        right: 10px; /* Ajuste del margen derecho en pantallas pequeñas */
+        bottom: 100px; /* Aumenta el espacio para evitar colisión con el footer */
+    }
+
+    .robot-suscripcion {
+        max-width: 150px; /* Reduce el tamaño en pantallas pequeñas */
+        max-height: 150px;
+    }
+}

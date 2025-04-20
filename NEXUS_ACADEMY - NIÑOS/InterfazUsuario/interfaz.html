@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="icon" href="../assets/images/GUIMARBOT.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="css/interfaz.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="brand" onclick="irInicio()">
+                <h1>GUIMAR<span>BOT</span></h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="notificaciones" >
+                <a href="#" id="notification-link">
+                    <img src="images/alarm-bell-svgrepo-com.svg" alt="notificaciones">
+                    <span>5</span>
+                </a>
+            </div>
+            <div class="perfile" id="perfile">
+                <img src="images/image.png" alt="Foto de perfil">
+                <span id="Angelo Del Aguila">Angelo</span>
+                <img src="images/down-2-svgrepo-com.svg" alt="" class="down-user">
+            </div>
+        </div>
+        <div class="profile-menu" id="profile-menu">
+            <p>¡Hola Jose!</p>
+            <a href="../Perfil/Perfil.html" class="profile-option">Ver perfil</a>
+            <a href="../contactanos/contactanos.html" class="profile-option">Contáctanos</a>
+            <a href="../selecionInteres.html" class="profile-option">Obtener una beca</a>
+            <a href="../index.html" class="profile-cerrar">Cerrar sesión</a>
+        </div>
+    </header>
+    
+    <!-- Ventana de notificaciones (oculta inicialmente) -->
+    <div id="notification-popup" class="notification-popup">
+        <div class="notification-header">
+            <h2>Notificaciones</h2>
+            <button id="mark-read" class="mark-read-btn">Marcar como leído</button>
+        </div>
+        <ul>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconreact.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de React Avanzado</p>
+                        <small>hace 1 día</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconcalendario.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Se acercan nuevos Eventos</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologial.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Tecnologia</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologia.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de C#</p>
+                        <small>hace 3 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconperfill.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Completa tu perfil</p>
+                        <small>hace 4 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/python.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: curso de python</p>
+                        <small>hace 5 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/arte.jfif" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Teatro</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/cursoAi.webp" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Vincula tu correo electrónico</p>
+                        <small>hace 6 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/Icono-GuimarBot2.ico" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Te damos la bienvenida a Guimarbot</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-arriba">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="interfaz.html" class="sidebar-home">
+                            <img src="images/home-filled-svgrepo-com.svg" alt="Home">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="suscripcion.html">
+                            <img src="images/rocket-filled-svgrepo-com.svg" alt="Suscripcion">
+                            <span>Suscripción</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cursando.html">
+                            <img src="images/work-case-filled-svgrepo-com.svg" alt="Cursando">
+                            <span>Cursando</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../InterfazUsuario/metodopagocursos.html" id="cart-btn" class="">
+                            <img src="images/shopping-cart-filled-svgrepo-com.svg" alt="Carrito">
+                            <span>Carrito</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Misrutas/misrutas.html">
+                            <img src="images/folder-open-filled-svgrepo-com.svg" alt="Rutas">
+                            <span>Mis rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../BuscarRutas/buscarRutas.html" >
+                            <img src="images/monitor-filled-svgrepo-com.svg" alt="Search Rutas">
+                            <span>Conocer rutas</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="medio">
+            <img src="images/ROBOTNIÑO.png" alt="">
+        </div>
+        <div class="feedback-section">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfTPzWhRr0i0xw9Ul6bJEQqcnkjVxeDR-6dnAo4dkI0Bt1EXg/viewform?embedded=true"
+              id="feedback-link"
+              target="_blank"
+            >
+              <i class="fas fa-comment-dots"></i>
+              <span>Déjanos tu opinión</span>
+            </a>
+          </div>
+    </div> 
+
+    <main class="main-container">
+        <section class="buscar">
+            <h1>Busca el curso de tu interés</h1>
+            <div class="buscar-bar">
+                <input type="text" placeholder="Buscar ...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            
+        </section>
+        <div class="robot">
+            <img src="images/robottablet.svg" alt="Robot">
+        </div>
+        
+        <section class="categorias">
+            <h1>Cursos recomendados para ti</h1>
+            <div class="carousel">
+                <div class="carrusel-list" id="carrusel-list">
+                    <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                            <path fill="currentColor" d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"></path>
+                        </svg>
+                    </button>
+                    <div class="carrusel-track" id="track" style="position: relative; left: 0">
+                        <!-- Estructura de tarjeta de curso -->
+
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/scratchinicio.jpg" alt="Curso de Python" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/scratch.webp" alt="" class="professor-icon" />
+                                <h4>Curso de Scratch</h4>
+                            </div>
+                            <p>Explora y crea con Scratch: aprende a programar mientras te diviertes diseñando juegos y animaciones.</p>
+                            <p id="autor">Docente: Carlos López Pérez</p>
+                            <div class="buttons">
+                                <a href="../Interfaz/Cursos y video/Cursos.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de Python', 50.00, '../INTERFAZ-CURSOS/images/python.png')">Añadir<i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+        
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/htmlniños.jpg" alt="Curso de html" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/html-5.png" alt="" class="professor-icon" />
+                                <h4>Curso de Html</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Html y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Miguel Sánchez Gómez</p>
+                            <div class="buttons">
+                                <a href="../ClaseHTML/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de Html', 50.00, '../INTERFAZ-CURSOS/images/thumb-1.png')">Añadir<i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/JKCSS.jpg" alt="Curso de Css" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/css-3.png" alt="" class="professor-icon" />
+                                <h4>Curso de Css</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Css y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Alejandro Fernández Ortiz</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de Css', 40.00, '../INTERFAZ-CURSOS/images/thumb-2.png')">Añadir<i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+        
+
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/pythonniños.jpg" alt="Curso de Scratch" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/Logo-Python.png" alt="" class="professor-icon" />
+                                <h4>Curso de Python </Html></h4>
+                            </div>
+                            <p>
+                                Aprende Python: un lenguaje sencillo y poderoso para crear juegos, aplicaciones y mucho más.</p>
+                            <p id="autor">Docente: Luis García Torres</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de JavaScript', 50.00, '../INTERFAZ-CURSOS/images/thumb-3.png')">Añadir<i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+        
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/JKBOOSTRAP.jpg" alt="Curso de Boostrap" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/logo-boostrap.png" alt="" class="professor-icon" />
+                                <h4>Curso de Boostrap</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Boostrap y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Fernando Díaz Morales</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de Boostrap', 60.00, '../INTERFAZ-CURSOS/images/thumb-4.png')">Añadir<i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+        
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/jkquery.jpg" alt="Curso de JQuery" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/LOGO-QUERY.png" alt="" class="professor-icon" />
+                                <h4>Curso de JQuery</h4>
+                            </div>
+                            <p>Descubre los fundamentos de JQuery y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Javier Castillo Vargas</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de JQuery', 50.00, '../INTERFAZ-CURSOS/images/thumb-5.png')">Añadir<i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        
+                        <!-- Agrega más tarjetas si es necesario -->
+                    </div>
+                    <button class="carrusel-arrow carrusel-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                            <path fill="currentColor" d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="categorias">
+            <h1>Nuestros mejores cursos</h1>
+            <div class="carousel">
+                <div class="carrusel-list" id="carrusel-list">
+                    <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                            <path fill="currentColor" d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"></path>
+                        </svg>
+                    </button>
+                    <div class="carrusel-track" id="track" style="position: relative; left: 0;">
+                        <!-- Tarjeta de curso 1 -->
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/jkAdministracion.jpg" alt="Curso de Administración" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/gestion.png" alt="Icono de Administración" class="professor-icon" />
+                                <h4>Administración</h4>
+                            </div>
+                            <p>Aprende los conceptos básicos de Administración, uno de los lenguajes más populares.</p>
+                            <p id="autor">Docente: Diego Navarro Campos</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso Administración', 80.00, 'images/cursoAdministracion.jpg')">
+                                    Añadir <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+        
+                        <!-- Tarjeta de curso 2 -->
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/softwareinicioniño.jpg" alt="Curso de Java" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/java.png" alt="Icono de Java" class="professor-icon" />
+                                <h4>Curso de Java</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Java y comienza tu camino en la programación orientada a objetos.</p>
+                            <p id="autor">Docente: Ricardo Ramírez Solís</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de Java', 30.00, 'images/cursoJava.jpg')">
+                                    Añadir <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+        
+                        <!-- Tarjeta de curso 3 -->
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/jkBasedatos.jpeg" alt="Curso de Bases de Datos" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/archivo-de-base-de-datos.png" alt="Icono de Bases de Datos" class="professor-icon" />
+                                <h4>Curso de BBDD</h4>
+                            </div>
+                            <p>Descubre los fundamentos de bases de datos y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Andrés Muñoz Herrera</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de BBDD', 50.00, 'images/cursoBasedatos.png')">
+                                    Añadir <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+        
+                        <!-- Tarjeta de curso 4 -->
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/jkCibersguridad.jpg" alt="Curso de Ciberseguridad" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/amenazas-de-ciberseguridad.png" alt="Icono de Ciberseguridad" class="professor-icon" />
+                                <h4>Ciberseguridad</h4>
+                            </div>
+                            <p>Descubre los fundamentos de ciberseguridad y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Manuel Ortega Reyes</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de Ciberseguridad', 50.00, 'images/cursoCiber.jpg')">
+                                    Añadir <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+        
+                        <!-- Tarjeta de curso 5 -->
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/jkChatgpt.jpg" alt="Curso de ChatGPT" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/chatgpt.png" alt="Icono de ChatGPT" class="professor-icon" />
+                                <h4>Curso de ChatGPT</h4>
+                            </div>
+                            <p>Descubre los fundamentos de ChatGPT y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Héctor Gutiérrez Peña</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de ChatGPT', 50.00, 'images/cursoChatgpt.jpg')">
+                                    Añadir <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+        
+                        <!-- Tarjeta de curso 6 -->
+                        <div class="course-card">
+                            <picture>
+                                <img src="images/jk Aiweb.jpg" alt="Curso de AI Web" />
+                            </picture>
+                            <div class="title-with-icon">
+                                <img src="images/conocimiento-de-la-ia.png" alt="Icono de AI Web" class="professor-icon" />
+                                <h4>Curso de AI</h4>
+                            </div>
+                            <p>Descubre los fundamentos de AI Web y comienza tu camino en la programación web.</p>
+                            <p id="autor">Docente: Alberto Morales Silva</p>
+                            <div class="buttons">
+                                <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                                <a href="#" class="btn-add" onclick="addToCart('Curso de AI Web', 90.00, 'images/cursoAi.webp')">
+                                    Añadir <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carrusel-arrow carrusel-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                            <path fill="currentColor" d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="categorias">
+                <h1>Últimos cursos lanzados</h1>
+                <div class="carousel">
+                <div class="carrusel-list" id="carrusel-list">
+                    <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                        <path fill="currentColor" d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"></path>
+                    </svg>
+                    </button>
+                    <div class="carrusel-track" id="track" style="position: relative; left: 0">
+                        <!-- Estructura de tarjeta de curso -->
+                        <div class="course-card">
+                            <picture>
+                            <img src="images/jkBaile.jpg" alt="Curso de Baile" />
+                            </picture>
+                            <div class="title-with-icon">
+                            <img src="images/bailando.png" alt="" class="professor-icon" />
+                            <h4>Curso de Baile</h4>
+                            </div>
+                            <p>Aprende los conceptos básicos de Baile, uno de los lenguajes más populares.</p>
+                            <p id="autor">Docente: Rafael Vega Estrada</p>
+                            <div class="buttons">
+                            <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="btn-add" onclick="addToCart('Curso de Baile', 80.00, '../INTERFAZ-CURSOS/images/cursoDanza.jpg')">
+                                Añadir <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            </div>
+                        </div>
+                
+                        <div class="course-card">
+                            <picture>
+                            <img src="images/cursoGit.png" alt="Curso de Git" />
+                            </picture>
+                            <div class="title-with-icon">
+                            <img src="images/github.png" alt="" class="professor-icon" />
+                            <h4>Curso de Git</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Git y comienza tu camino en la programación orientada a objetos.</p>
+                            <p id="autor">Docente: Eduardo Ríos Paredes</p>
+                            <div class="buttons">
+                            <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="btn-add" onclick="addToCart('Curso de Git', 50.00, '../INTERFAZ-CURSOS/images/cursoGit.png')">
+                                Añadir <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            </div>
+                        </div>
+                
+                        <div class="course-card">
+                            <picture>
+                            <img src="images/jkDjango.png" alt="Curso de Django" />
+                            </picture>
+                            <div class="title-with-icon">
+                            <img src="images/django.png" alt="" class="professor-icon" />
+                            <h4>Curso de Django</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Django y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Tomás Herrera Lozano</p>
+                            <div class="buttons">
+                            <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="btn-add" onclick="addToCart('Curso de Django', 50.00, '../INTERFAZ-CURSOS/images/cursoDjango.jpg')">
+                                Añadir <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            </div>
+                        </div>
+                
+                        <div class="course-card">
+                            <picture>
+                            <img src="images/jkIngles.png" alt="Curso de Ingles basico" />
+                            </picture>
+                            <div class="title-with-icon">
+                            <img src="images/reino-unido.png" alt="" class="professor-icon" />
+                            <h4>Curso de Ingles</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Ingles basico y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Jorge Cruz Aguilar</p>
+                            <div class="buttons">
+                            <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="btn-add" onclick="addToCart('Curso de Ingles 1', 50.00, '../INTERFAZ-CURSOS/images/cursoingels.jpg')">
+                                Añadir <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            </div>
+                        </div>
+                
+                        <div class="course-card">
+                            <picture>
+                            <img src="images/jkMicrosoft.jpg" alt="Curso de Microsof" />
+                            </picture>
+                            <div class="title-with-icon">
+                            <img src="images/archivo-de-word.png" alt="" class="professor-icon" />
+                            <h4>Curso de Microsof</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Microsof y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Pablo Salazar Mendoza</p>
+                            <div class="buttons">
+                            <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="btn-add" onclick="addToCart('Curso de Microsof', 50.00, '../INTERFAZ-CURSOS/images/cursoMicrosof.jfif')">
+                                Añadir <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            </div>
+                        </div>
+                
+                        <div class="course-card">
+                            <picture>
+                            <img src="images/jkNegocios.jpg" alt="Curso de Negocios" />
+                            </picture>
+                            <div class="title-with-icon">
+                            <img src="images/negocio.png" alt="" class="professor-icon" />
+                            <h4>Curso de Negocios</h4>
+                            </div>
+                            <p>Descubre los fundamentos de Negocios y comienza tu camino en la programación.</p>
+                            <p id="autor">Docente: Antonio Vargas Delgado</p>
+                            <div class="buttons">
+                            <a href="../Prueba/index.html" class="btn-view">Ir a curso <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="btn-add" onclick="addToCart('Curso de Python', 50.00, '../INTERFAZ-CURSOS/images/python.png')">
+                                Añadir <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            </div>
+                        </div>
+                    <!-- Agrega más tarjetas si es necesario -->
+                    </div>
+                    <button class="carrusel-arrow carrusel-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                            <path fill="currentColor" d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/interfaz.js"></script>
+    <script src="js/Gestion-Tarjetas.js"></script>
+</body>
+</html>

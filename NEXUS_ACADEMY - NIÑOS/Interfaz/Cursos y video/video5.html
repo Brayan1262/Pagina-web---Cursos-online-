@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temario: Imagenes - GuimarBot</title>
+    <link rel="stylesheet" href="css/video.css">
+    <script src="https://kit.fontawesome.com/52a4982f62.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="icon" href="img/GUIMARBOT.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="left">
+            <div class="brand" onclick="location.href='Cursos.html'">
+                <h1>GUIMAR<span>BOT</span></h1>
+            </div>
+        </div>
+        <div class="right">
+
+            <div class="notificaciones" onclick="toggleNotifi()">
+                <a href="#" class="icons-header">
+                    <img src="img/alarm-bell-svgrepo-com.svg" alt="notificaciones"><span>5</span>
+                </a>
+            </div>
+            <div class="perfil" id="perfil">
+                <img src="img/image.png" alt="Foto de perfil">
+                <span id="Angelo Del Aguila">Angelo</span>
+                <img src="img/down-2-svgrepo-com.svg" alt="" class="down-user">
+            </div>
+        </div>
+        <div class="profile-menu" id="profile-menu">
+            <p>¡Hola Jose!</p>
+            <a href="perfil.html" class="profile-option">Ver perfil</a>
+            <a href="contactanos.html" class="profile-option">Contáctanos</a>
+            <a href="index.html" class="profile-cerrar">Cerrar sesión</a>
+        </div>
+        
+        <div class="notifi-box" id="box">
+            <h2>Notifications <span>5</span></h2>
+        
+            <div class="notifi-item">
+                <img src="img/Usuario1.png" alt="img">
+                <div class="text">
+                    <h4>Elias Abdurrahman</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-13 10:30 AM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        
+            <div class="notifi-item">
+                <img src="/img/avatar2.png" alt="img">
+                <div class="text">
+                    <h4>John Doe</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-13 09:45 AM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        
+            <div class="notifi-item">
+                <img src="img/avatar3.png" alt="img">
+                <div class="text">
+                    <h4>Emad Ali</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-12 11:20 AM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        
+            <div class="notifi-item">
+                <img src="img/avatar4.png" alt="img">
+                <div class="text">
+                    <h4>Ekram Abu</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-12 10:05 AM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        
+            <div class="notifi-item">
+                <img src="img/avatar5.png" alt="img">
+                <div class="text">
+                    <h4>Jane Doe</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-11 04:15 PM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        </div>
+
+        <div id="ventana-flotante" class="ventana-flotante">
+            <div class="contenido-ventana">
+                <button class="cerrar-ventana" onclick="toggleVentana()">X</button>
+                <div class="container-membresia">
+                    <h2 class="titulo-membresia">Elige el plan ideal para ti</h2>
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="showPlans('mensual')">Plan Mensual</button>
+                        <button class="tab-button" onclick="showPlans('anual')">Plan Anual</button>
+                    </div>
+                    <div id="plan-mensual" class="plans active">
+                        <div class="plan basic">
+                            <h2>Básico</h2>
+                            <p>Para 1 estudiante</p>
+                            <p class="price">S/80/mes</p>
+                            <p>Cobro mensual recurrente</p>
+                            <ul id="Opciones">
+                                <li>✔ Contenido profesional y actualizado</li>
+                                <li>✔ Certificados digitales</li>
+                                <li>✖ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                <li>✖ Eventos exclusivos como Platzi Conf</li>
+                                <li>✖ Descarga contenido en la app móvil</li>
+                                <li>✖ Certificados físicos para rutas de perfil profesional</li>
+                            </ul>
+                            <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Básico</button>
+                        </div>
+            
+                        <div class="plan advanced">
+                            <h2>Avanzado</h2>
+                            <p>Para 2 estudiantes</p>
+                            <p class="price">S/120/mes</p>
+                            <p>Cobro mensual recurrente</p>
+                            <ul id="Opciones">
+                                <li>✔ Contenido profesional y actualizado</li>
+                                <li>✔ Certificados digitales</li>
+                                <li>✔ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                <li>✔ Eventos exclusivos como Platzi Conf</li>
+                                <li>✔ Descarga contenido en la app móvil</li>
+                                <li>✔ Certificados físicos para rutas de perfil profesional</li>
+                            </ul>
+                            <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Avanzado</button>
+                        </div>
+            
+                        <div class="plan expert">
+                            <h2>Experto</h2>
+                            <p>Para 4 estudiantes</p>
+                            <p class="price">S/240/mes</p>
+                            <p>Cobro mensual recurrente</p>
+                            <ul id="Opciones">
+                                <li>✔ Contenido profesional y actualizado</li>
+                                <li>✔ Certificados digitales</li>
+                                <li>✔ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                <li>✔ Eventos exclusivos como Platzi Conf</li>
+                                <li>✔ Descarga contenido en la app móvil</li>
+                                <li>✔ Certificados físicos para rutas de perfil profesional</li>
+                            </ul>
+                            <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Experto</button>
+                        </div>
+                    </div>
+                    </div>
+                        <div id="plan-anual" class="plans">
+                            <div class="plan basic">
+                                <h2>Básico</h2>
+                                <p>Para 5 estudiantes</p>
+                                <p class="price">S/200/anual</p>
+                                <p>Cobro anual recurrente</p>
+                                <ul id="Opciones">
+                                    <li>✔ Contenido profesional y actualizado</li>
+                                    <li>✔ Certificados digitales</li>
+                                    <li>✖ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                    <li>✖ Eventos exclusivos como Platzi Conf</li>
+                                    <li>✖ Descarga contenido en la app móvil</li>
+                                    <li>✖ Certificados físicos para rutas de perfil profesional</li>
+                                </ul>
+                                <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Básico</button>
+                            </div>
+                
+                            <div class="plan advanced">
+                                <h2>Avanzado</h2>
+                                <p>Para 10 estudiantes</p>
+                                <p class="price">S/350/anual</p>
+                                <p>Cobro anual recurrente</p>
+                                <ul id="Opciones">
+                                    <li>✔ Contenido profesional y actualizado</li>
+                                    <li>✔ Certificados digitales</li>
+                                    <li>✔ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                    <li>✔ Eventos exclusivos como Platzi Conf</li>
+                                    <li>✔ Descarga contenido en la app móvil</li>
+                                    <li>✔ Certificados físicos para rutas de perfil profesional</li>
+                                </ul>
+                                <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Avanzado</button>
+                            </div>
+                
+                            <div class="plan expert">
+                                <h2>Experto</h2>
+                                <p>Para 15 estudiantes</p>
+                                <p class="price">S/500/anual</p>
+                                <p>Cobro anual recurrente</p>
+                                <ul id="Opciones">
+                                    <li>✔ Contenido profesional y actualizado</li>
+                                    <li>✔ Certificados digitales</li>
+                                    <li>✔ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                    <li>✔ Eventos exclusivos como Platzi Conf</li>
+                                    <li>✔ Descarga contenido en la app móvil</li>
+                                    <li>✔ Certificados físicos para rutas de perfil profesional</li>
+                                </ul>
+                                <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Experto</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenido-general">
+        <section class="videocurso">
+            <div class="cuadro pequeño">
+                <h1>Curso completo de HTML</h1>
+                <img src="img/scratch.webp" alt="logo">
+                <hr>
+                <p>Clase: <span>6/10</span></p>
+                <p>Profesor: <span>Juan Rodriguez Sanchez</span></p>
+                <p>Nivel <span>Principiante</span></p>
+                <hr>
+                <h3>Presentación:</h3>
+                <p>Este curso de Scratch te enseña a programar de manera divertida usando bloques para crear juegos, animaciones e historias interactivas. Aprenderás a controlar personajes, agregar sonidos, usar eventos y condicionales, y trabajar con variables y clones. Ideal para principiantes que quieren desarrollar habilidades de programación mientras crean proyectos originales.</p>
+            </div>
+            <div class="cuadro grande">
+                <div class="titulo">
+                    <a href="video4.html">←</a>
+                    <h1>Variables y datos en Scratch</h1>
+                </div>
+                <iframe src="https://www.youtube.com/embed/PPv6CvxyaXk?si=8hgCkvGlYxxvIJ6s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="datosvideo">
+                    <div class="user">
+                        <img src="img/Profesor-HTML.webp" alt="perfil">
+                    </div>
+                    <div class="infoprofe">
+                        <h1>Juan Rodriguez Sanchez</h1>
+                        <p>Nivel: Principiante</p>
+                        <div class="infovideo">
+                            <p>Fecha: <span>24/04/2024</span></p>
+                            <p><i class="fa-solid fa-heart"></i><span>610 me gustas</span></p>
+                        </div>
+                    </div>
+                    <div class="btnseguir">
+                        <button aria-label="Dar me gusta al video"><i class="fa-solid fa-heart"></i> Me gusta</button>
+                    </div>
+                </div>
+                <div class="botones">
+                <div class="btnsiguiente">
+                    <button onclick="location.href='video4.html'"><i class="fa-solid fa-play"></i>Anterior</button>
+                </div>
+                <div class="btnanterior">
+                    <button onclick="location.href='video6.html'"><i class="fa-solid fa-play"></i>Siguiente</button>
+                </div>
+                </div>
+                <div class="descripcion">
+                    <h3>Descripción</h3>
+                    <p> El video "Como usar VARIABLES en Scratch 3.0 | Sumar 2 números" enseña a crear y utilizar variables en Scratch para sumar dos números. Se explica cómo definir una variable, asignarle un valor y usar bloques para realizar la suma. A través de ejemplos prácticos, se muestra cómo mostrar el resultado en el escenario, facilitando la comprensión de las variables en proyectos interactivos.</p>
+                </div>
+
+                <div class="comentarios">
+                    <h1>Comentarios<span>5</span></h1>
+                    <hr>
+                    <div class="escribircon">
+                        <h1>Escribe algún comentario</h1>
+                        <textarea name="comentario" placeholder="Escribe un comentario..."></textarea>
+                        <button>Enviar Comentario</button>
+                    </div> 
+                    <div class="usercoment">
+                        <img src="img/Usuario1.png" alt="perfil">
+                        <div class="infocomentario">
+                            <h1>@Angelo</h1>
+                            <p>Excelente curso, me ha ayudado mucho a entender mejor el lenguaje</p>
+                            <div class="btn">
+                                <button>Editar</button>
+                                <button>Eliminar</button>
+                            </div>
+                        </div>
+                        <span>hace 1 mes</span>
+                    </div>
+                    <div class="usercoment">
+                        <img src="img/Usuario2.webp" alt="perfil">
+                        <div class="infocomentario">
+                            <h1>@Jose</h1>
+                            <p>Excelente curso, me ha ayudado mucho a entender mejor el lenguaje</p>
+                        </div>
+                        <span>hace 1 dia</span>
+                    </div>
+                    <div class="usercoment">
+                        <img src="img/Usuario3.webp" alt="perfil">
+                        <div class="infocomentario">
+                            <h1>@Paulo</h1>
+                            <p>Excelente curso, me ha ayudado mucho a entender mejor el lenguaje</p>
+                        </div>
+                        <span>hace 1 semana</span>
+                    </div>
+                    <div class="usercoment">
+                        <img src="img/Usuario4.webp" alt="perfil">
+                        <div class="infocomentario">
+                            <h1>@Paulo</h1>
+                            <p>Excelente curso, me ha ayudado mucho a entender mejor el lenguaje</p>
+                        </div>
+                        <span>hace 2 mes</span>
+                    </div>
+                    <div class="usercoment">
+                        <img src="img/Usuario5.webp" alt="perfil">
+                        <div class="infocomentario">
+                            <h1>@Paulo</h1>
+                            <p>Excelente curso, me ha ayudado mucho a entender mejor el lenguaje</p>
+                        </div>
+                        <span>hace 1 hora</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/video.js"></script>
+</body>
+</html>

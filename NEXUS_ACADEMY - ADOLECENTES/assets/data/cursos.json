@@ -1,0 +1,52 @@
+{
+  "cursos": {
+      "html": {
+          "titulo": "Curso COMPLETO de HTML",
+          "icono": "assets/images/htmlicono1.webp",
+          "descripcion": "Sumérgete en el mundo de la creación web.",
+          "instructor": "John Doe",
+          "instructorImagen": "assets/images/docente1.webp",
+          "opiniones": 22005,
+          "nivel": "BÁSICO",
+          "fecha": "Publicado el 20 de mayo de 2019",
+          "temario": [
+              "Introducción a HTML",
+              "Estructura de un Documento HTML",
+              "Etiquetas Básicas",
+              "Formularios y Multimedia"
+          ]
+      },
+      "css": {
+          "titulo": "Curso COMPLETO de CSS",
+          "icono": "assets/images/cssicono1.webp",
+          "descripcion": "Aprende CSS desde cero.",
+          "instructor": "Jane Smith",
+          "instructorImagen": "assets/images/docente21.webp",
+          "opiniones": 30000,
+          "nivel": "INTERMEDIO",
+          "fecha": "Publicado el 15 de junio de 2020",
+          "temario": [
+              "Introducción a CSS",
+              "Selectores y Especificidad",
+              "Modelos de Caja y Layouts",
+              "Animaciones y Transiciones"
+          ]
+      },
+      "js": {
+          "titulo": "Curso COMPLETO de JavaScript",
+          "icono": "assets/images/jsicono.webp",
+          "descripcion": "¡Descubre el poder de JavaScript!",
+          "instructor": "Alice Johnson",
+          "instructorImagen": "assets/images/docente3.webp",
+          "opiniones": 50000,
+          "nivel": "AVANZADO",
+          "fecha": "Publicado el 10 de marzo de 2021",
+          "temario": [
+              "Variables y Tipos de Datos",
+              "Funciones y Scope",
+              "DOM y Eventos",
+              "APIs y Fetch"
+          ]
+      }
+  }
+}

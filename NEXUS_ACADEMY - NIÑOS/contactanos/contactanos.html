@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="icon" href="images/GUIMARBOT.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="contactanos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="brand" onclick="irInicio()">
+                <h1>GUIMAR<span>BOT</span></h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="notificaciones" >
+                <a href="#" id="notification-link">
+                    <img src="images/alarm-bell-svgrepo-com.svg" alt="notificaciones">
+                    <span>5</span>
+                </a>
+            </div>
+            <div class="perfile" id="perfile">
+                <img src="images/image.png" alt="Foto de perfil">
+                <span id="Angelo Del Aguila">Angelo</span>
+                <img src="images/down-2-svgrepo-com.svg" alt="" class="down-user">
+            </div>
+        </div>
+        <div class="profile-menu" id="profile-menu">
+            <p>¡Hola Jose!</p>
+            <a href="../Perfil/Perfil.html" class="profile-option">Ver perfil</a>
+            <a href="../contactanos/contactanos.html" class="profile-option">Contáctanos</a>
+            <a href="../selecionInteres.html" class="profile-option">Obtener una beca</a>
+            <a href="../index.html" class="profile-cerrar">Cerrar sesión</a>
+        </div>
+    </header>
+    
+    <!-- Ventana de notificaciones (oculta inicialmente) -->
+    <div id="notification-popup" class="notification-popup">
+        <div class="notification-header">
+            <h2>Notificaciones</h2>
+            <button id="mark-read" class="mark-read-btn">Marcar como leído</button>
+        </div>
+        <ul>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconreact.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de React Avanzado</p>
+                        <small>hace 1 día</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconcalendario.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Se acercan nuevos Eventos</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologial.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Tecnologia</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologia.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de C#</p>
+                        <small>hace 3 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconperfill.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Completa tu perfil</p>
+                        <small>hace 4 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/python.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: curso de python</p>
+                        <small>hace 5 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/arte.jfif" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Teatro</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/cursoAi.webp" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Vincula tu correo electrónico</p>
+                        <small>hace 6 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/Icono-GuimarBot2.ico" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Te damos la bienvenida a Guimarbot</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-arriba">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../InterfazUsuario/interfaz.html" class="sidebar-home">
+                            <img src="images/home-filled-svgrepo-com.svg" alt="">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Suscripcion/suscripcion.html">
+                            <img src="images/rocket-filled-svgrepo-com.svg" alt="">
+                            <span>Suscripción</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../InterfazUsuario/cursando.html">
+                            <img src="images/work-case-filled-svgrepo-com.svg" alt="">
+                            <span>Cursando</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../InterfazUsuario/metodopagocursos.html">
+                            <img src="images/shopping-cart-filled-svgrepo-com.svg" alt="">
+                            <span>Carrito</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Misrutas/misrutas.html" class="misrutas">
+                            <img src="images/folder-open-filled-svgrepo-com.svg" alt="">
+                            <span>Mis rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../BuscarRutas/buscarRutas.html">
+                            <img src="images/monitor-filled-svgrepo-com.svg" alt="">
+                            <span>Conocer rutas</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="medio">
+            <img src="images/robotmoney.svg" alt="">
+        </div>
+        <div class="sidebar-abajo">
+            <a href="contactanos.html">
+                <img src="images/notification-filled-svgrepo-com.svg" alt="">
+                <p>Déjanos tu opinión</p>
+            </a>
+        </div>
+    </div> 
+
+    <main class="main-container">
+        <section class="contactanos-header">
+            <h1>Contáctanos</h1>
+            <p>
+                ¿Tienes problemas o necesitas ayuda? Nuestro equipo de soporte está aquí para asistirte.
+                Contáctanos y resolveremos tus inquietudes lo antes posible.
+            </p>
+        </section>
+        <section class="cuerpo-contactanos">
+            <div class="cuadrado grande">
+                <form action="#" method="POST">
+                    <label for="name">Nombre *</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="company">Compañía/Organización</label>
+                    <input type="text" id="company" name="company">
+            
+                    <label for="message">Mensaje *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+            
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <!-- Información adicional -->
+            <div class="cuadrado pequeño">
+                <div class="link">
+                    <h3>Información de Contacto</h3>
+                    <ul>
+                        <li>
+                            <img src="images/location-svgrepo-com.svg" alt="Ubicación">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Universidad+César+Vallejo" target="_blank" rel="noopener">Universidad César Vallejo</a>
+                        </li>
+                        <li>
+                            <img src="images/call-svgrepo-com.svg" alt="Teléfono">
+                            <a href="tel:+51999999999">+51 999 999 999</a>
+                        </li>
+                        <li>
+                            <img src="images/email-svgrepo-com.svg" alt="Correo">
+                            <a href="mailto:guimarbot@gmail.com">guimarbot@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <h3>Redes Sociales</h3>
+                    <ul>
+                        <li>
+                            <img src="images/brand-fb-sq-svgrepo-com.svg" alt="Facebook">
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                        </li>
+                        <li>
+                            <img src="images/brand-instagram-sq-svgrepo-com.svg" alt="Instagram">
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                        </li>
+                        <li>
+                            <img src="images/brand-tiktok-sq-svgrepo-com.svg" alt="TikTok">
+                            <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                        </li>
+                        <li>
+                            <img src="images/brand-twitter-sq-svgrepo-com.svg" alt="Twitter">
+                            <a href="https://x.com/" target="_blank" rel="noopener">Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="contactanos.js"></script>
+</body>
+</html>

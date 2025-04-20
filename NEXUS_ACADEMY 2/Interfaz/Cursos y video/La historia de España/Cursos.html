@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun=1.0, minimun-scale=1.0">
+    <link rel="stylesheet" href="../css/Cursos.css">
+    <script src="https://kit.fontawesome.com/52a4982f62.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../IMG/Icono-GuimarBot2.ico" type="image/x-icon">
+    <title>Curso La historia de España - GuirmarBot</title>
+    <link rel="icon" href="../img/GUIMARBOT.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="left">
+            <div class="brand" onclick="irInicio()">
+                <h1>GUIMAR<span>BOT</span></h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="planes" onclick="toggleVentana()">
+                <button class="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+                        <path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path>
+                    </svg>
+                    Planes
+                </button>
+            </div>
+            <div class="shop">
+                <a href="carritocompras.html" class="icons-header">
+                    <img src="../IMG/shopping-cart-svgrepo-com.svg" alt="shop">
+                </a>
+            </div>
+            <div class="notificaciones" onclick="toggleNotifi()">
+                <a href="#" class="icons-header">
+                    <img src="../IMG/remind-svgrepo-com.svg" alt="notificaciones"><span>5</span>
+                </a>
+            </div>
+            <div class="perfil" id="perfil">
+                <img src="../Img/image.png" alt="Foto de perfil">
+                <span id="Angelo Del Aguila">Angelo</span>
+                <img src="../Img/down-2-svgrepo-com.svg" alt="" class="down-user">
+            </div>
+        </div>
+        <div class="profile-menu" id="profile-menu">
+            <p>¡Hola Jose!</p>
+            <a href="../../../perfil.html" class="profile-option">Ver perfil</a>
+            <a href="contactanos.html" class="profile-option">Contáctanos</a>
+            <a href="../../../index.html" class="profile-cerrar">Cerrar sesión</a>
+        </div>
+
+        
+        <div class="notifi-box" id="box">
+            <h2>Notifications <span>5</span></h2>
+        
+            <div class="notifi-item">
+                <img src="../img/avatar1.png" alt="img">
+                <div class="text">
+                    <h4>Elias Abdurrahman</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-13 10:30 AM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        
+            <div class="notifi-item">
+                <img src="../img/avatar2.png" alt="img">
+                <div class="text">
+                    <h4>John Doe</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-13 09:45 AM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        
+            <div class="notifi-item">
+                <img src="../img/avatar3.png" alt="img">
+                <div class="text">
+                    <h4>Emad Ali</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-12 11:20 AM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        
+            <div class="notifi-item">
+                <img src="../img/avatar4.png" alt="img">
+                <div class="text">
+                    <h4>Ekram Abu</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-12 10:05 AM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        
+            <div class="notifi-item">
+                <img src="../img/avatar5.png" alt="img">
+                <div class="text">
+                    <h4>Jane Doe</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                    <span class="fecha">2024-11-11 04:15 PM</span> <!-- Fecha añadida -->
+                </div> 
+            </div>
+        </div>
+        
+        <div id="ventana-flotante" class="ventana-flotante">
+            <div class="contenido-ventana">
+                <button class="cerrar-ventana" onclick="toggleVentana()">X</button>
+                <div class="container-membresia">
+                    <h2 class="titulo-membresia">Elige el plan ideal para ti</h2>
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="showPlans('mensual')">Plan Mensual</button>
+                        <button class="tab-button" onclick="showPlans('anual')">Plan Anual</button>
+                    </div>
+                    <div id="plan-mensual" class="plans active">
+                        <div class="plan basic">
+                            <h2>Básico</h2>
+                            <p>Para 1 estudiante</p>
+                            <p class="price">S/80/mes</p>
+                            <p>Cobro mensual recurrente</p>
+                            <ul id="Opciones">
+                                <li>✔ Contenido profesional y actualizado</li>
+                                <li>✔ Certificados digitales</li>
+                                <li>✖ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                <li>✖ Eventos exclusivos como Platzi Conf</li>
+                                <li>✖ Descarga contenido en la app móvil</li>
+                                <li>✖ Certificados físicos para rutas de perfil profesional</li>
+                            </ul>
+                            <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Básico</button>
+                        </div>
+            
+                        <div class="plan advanced">
+                            <h2>Avanzado</h2>
+                            <p>Para 2 estudiantes</p>
+                            <p class="price">S/120/mes</p>
+                            <p>Cobro mensual recurrente</p>
+                            <ul id="Opciones">
+                                <li>✔ Contenido profesional y actualizado</li>
+                                <li>✔ Certificados digitales</li>
+                                <li>✔ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                <li>✔ Eventos exclusivos como Platzi Conf</li>
+                                <li>✔ Descarga contenido en la app móvil</li>
+                                <li>✔ Certificados físicos para rutas de perfil profesional</li>
+                            </ul>
+                            <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Avanzado</button>
+                        </div>
+            
+                        <div class="plan expert">
+                            <h2>Experto</h2>
+                            <p>Para 4 estudiantes</p>
+                            <p class="price">S/240/mes</p>
+                            <p>Cobro mensual recurrente</p>
+                            <ul id="Opciones">
+                                <li>✔ Contenido profesional y actualizado</li>
+                                <li>✔ Certificados digitales</li>
+                                <li>✔ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                <li>✔ Eventos exclusivos como Platzi Conf</li>
+                                <li>✔ Descarga contenido en la app móvil</li>
+                                <li>✔ Certificados físicos para rutas de perfil profesional</li>
+                            </ul>
+                            <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Experto</button>
+                        </div>
+                    </div>
+                    </div>
+                        <div id="plan-anual" class="plans">
+                            <div class="plan basic">
+                                <h2>Básico</h2>
+                                <p>Para 5 estudiantes</p>
+                                <p class="price">S/200/anual</p>
+                                <p>Cobro anual recurrente</p>
+                                <ul id="Opciones">
+                                    <li>✔ Contenido profesional y actualizado</li>
+                                    <li>✔ Certificados digitales</li>
+                                    <li>✖ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                    <li>✖ Eventos exclusivos como Platzi Conf</li>
+                                    <li>✖ Descarga contenido en la app móvil</li>
+                                    <li>✖ Certificados físicos para rutas de perfil profesional</li>
+                                </ul>
+                                <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Básico</button>
+                            </div>
+                
+                            <div class="plan advanced">
+                                <h2>Avanzado</h2>
+                                <p>Para 10 estudiantes</p>
+                                <p class="price">S/350/anual</p>
+                                <p>Cobro anual recurrente</p>
+                                <ul id="Opciones">
+                                    <li>✔ Contenido profesional y actualizado</li>
+                                    <li>✔ Certificados digitales</li>
+                                    <li>✔ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                    <li>✔ Eventos exclusivos como Platzi Conf</li>
+                                    <li>✔ Descarga contenido en la app móvil</li>
+                                    <li>✔ Certificados físicos para rutas de perfil profesional</li>
+                                </ul>
+                                <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Avanzado</button>
+                            </div>
+                
+                            <div class="plan expert">
+                                <h2>Experto</h2>
+                                <p>Para 15 estudiantes</p>
+                                <p class="price">S/500/anual</p>
+                                <p>Cobro anual recurrente</p>
+                                <ul id="Opciones">
+                                    <li>✔ Contenido profesional y actualizado</li>
+                                    <li>✔ Certificados digitales</li>
+                                    <li>✔ English Academy, Escuela de Startups. Liderazgo y Management</li>
+                                    <li>✔ Eventos exclusivos como Platzi Conf</li>
+                                    <li>✔ Descarga contenido en la app móvil</li>
+                                    <li>✔ Certificados físicos para rutas de perfil profesional</li>
+                                </ul>
+                                <button class="subscribe" onclick="location.href='Metodo Pago.html'">Suscríbete a Experto</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenido-general">
+        <section class="encabezado">
+            <a href="../../../InterfazUsuario/interfaz.html">←</a>
+            <div class="course-title">
+                <div class="descripcion">
+                    <div class="titulo">
+                        <img src="../../../img/1733613371286-mapa.webp" alt="imagen del curso">
+                        <h1>Curso completo de La historia de España</h1>
+                        </div>
+                        <div class="descripcion-curso">
+                        <span class="rating" onclick="location.href='video-python.html'">⭐⭐⭐⭐⭐ <span id="num">300 Opiniones</span></span>
+                        <h1 class="amateur-box icon-skyblue"><p class="fa-solid fa-signal"></p>AMATEUR </h1>
+                        <h1 class="amateur-box icon-skyblue"><p class="fa-sharp-duotone fa-solid fa-video"></p>29 CURSOS </h1>
+                        <p class="last-update">Última actualización: 7/12/2024</p>
+                        <p class="description text-align-justify">
+                            España es uno de los países con mayor índice económico y uno de los países que tuvo mayor presencia en nuestra región. Sin embargo, la principal forma de enseñanza de su historia es uno muy controversial por la forma agresiva que se suele dar. Por tal motivo, aquí te invitamos a aprender su historia de otra forma.
+                        </p>
+                        <div class="btn-container">
+                            <button class="btn-primary" onclick="location.href='video.html'">
+                                <i class="fa-solid fa-play"></i> COMENCEMOS AHORA
+                            </button>
+                            <button class="btn-primary-2" onclick="location.href='VideosClase1Python.html'">
+                                <i class="fa-solid fa-certificate"></i> OBTENER CERTIFICADO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="infoprofe">
+                    <div class="teacher-image">
+                        <img src="../../../img/1733613371282-sebastian-chumbe.webp" alt="Profesor">
+                    </div>
+                    <div class="professor-info">
+                        <h3>Sebastian</h3>
+                        <p>Profesor de La historia de España</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="linea"></div>
+
+        <section class="cuerpo">
+            <div class="cur-video">
+                <div class="cuadro pequeño">
+                    <div class="horas">
+                        <h4>Para este curso vas a necesitar:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-stopwatch"></i>3 Horas de contenido</li>
+                            <li><i class="fa-solid fa-list-check"></i>3 Horas de práctica</li>
+                        </ul>
+                    </div>
+                    <div class="conocimiento">
+                        <h4>Conocimientos previos:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-cubes"></i>Ninguno</li>
+                            <li><i class="fa-solid fa-cubes"></i>Ninguno</li>
+                            <li><i class="fa-solid fa-cubes"></i>Ninguno</li>
+                        </ul>
+                        <h4>Software para este curso:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-briefcase"></i>Sublime Text</li>
+                            <li><i class="fa-solid fa-briefcase"></i>Visual Studio Code</li>
+                        </ul>
+                    </div>
+                    <div class="infoextra">
+                    <h4>Mas sobre el curso:</h4>
+                        <ul>
+                            <li class="text-align-content">España es el país más controvertido de nuestra región, principalmente por el método educativo de nuestros países que nos hacen ver a España como un país al cual debemos odiar. Sin embargo, aquí venimos a decirte que no te dejes llevar por eso. Ha llegado el momento de que aprendas su historia de una forma distinta a la tradicional. Ven y aventúrate.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cuadro grande">
+                    <div class="accordion-section"> 
+                        <h2 id="introduccion-python">Introducción a HTML y Conceptos Básicos</h2>
+                        <div class="accordion">
+                            <div class="flex-center">
+                                <button class="accordion-button" onclick="location.href='video.html'"> 
+                                    <img class="img-miniaturas" src="../img/Miniatura1HTML.png">
+                                        <div class="text-container">
+                                            <span class="title">Estructura básica de un documento HTML</span>
+                                            <span class="duration">
+                                                <i class="fa-solid fa-clock"></i> Duración: 00:52 min
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/Cursos.js"></script>
+    <script src="../js/Gestion-temas.js"></script>
+</body>
+</html>
+                            

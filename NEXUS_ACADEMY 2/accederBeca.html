@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Becas</title>
+    <link rel="icon" href="assets/images/GUIMARBOT.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/accederBeca.css" />
+  </head>
+  <body>
+    <!-- Sección del video de fondo -->
+    <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+        <source src="assets/images/course-video.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay header-text">
+        <div class="caption"></div>
+      </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="contenido-general">
+      <div class="titulo">
+        <h1>Solicitud de becas</h1>
+        <p>
+          Por favor, completa todos los campos requeridos para postular a la
+          beca. Asegúrate de que la información proporcionada sea precisa y
+          actualizada. Esto nos ayudará a evaluar tu solicitud de manera
+          efectiva.
+        </p>
+        <span>0/3</span>
+      </div>
+      <div class="card datos">
+        <div class="img">
+          <img src="img/personal (1).png" alt="" />
+        </div>
+        <div class="intro">
+          <h1>Ingresar Datos</h1>
+          <p>(Para completar su información personal y académica)</p>
+        </div>
+        <div class="btn">
+          <a href="IngresarDatos.html" tabindex="0" class="plusButton">
+            <svg
+              class="plusIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 30"
+            >
+              <g mask="url(#mask0_21_345)">
+                <path
+                  d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"
+                ></path>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card certificado">
+        <div class="img">
+          <img src="img/conversacion.png" alt="" />
+        </div>
+        <div class="intro">
+          <h1>Responder Preguntas</h1>
+          <p>
+            (Para responder preguntas relacionadas con la beca o tus
+            motivaciones)
+          </p>
+        </div>
+        <div class="btn">
+          <a href="responderPreguntas.html" tabindex="0" class="plusButton">
+            <svg
+              class="plusIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 30"
+            >
+              <g mask="url(#mask0_21_345)">
+                <path
+                  d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"
+                ></path>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card archivos">
+        <div class="img">
+          <img src="img/enviar.png" alt="" />
+        </div>
+        <div class="intro">
+          <h1>Subir Archivos</h1>
+          <p>(Para adjuntar documentos como certificados o identificación)</p>
+        </div>
+        <div class="btn">
+          <a href="subirArchivos.html" tabindex="0" class="plusButton">
+            <svg
+              class="plusIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 30"
+            >
+              <g mask="url(#mask0_21_345)">
+                <path
+                  d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"
+                ></path>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="fin">
+        <button id="finalizarBtn">Finalizar</button>
+      </div>
+
+      <!-- Modal de confirmación -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h2>Tus datos han sido enviados correctamente</h2>
+          <p>¡Gracias por completar tu solicitud de beca!</p>
+          <a href="#">
+            <button id="siguienteBtn">Siguiente</button>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Mostrar el modal al hacer clic en "Finalizar"
+      const finalizarBtn = document.getElementById("finalizarBtn");
+      const modal = document.getElementById("modal");
+      const siguienteBtn = document.getElementById("siguienteBtn");
+
+      finalizarBtn.addEventListener("click", function () {
+        modal.style.display = "block"; // Muestra el modal
+      });
+
+      // Redirigir al hacer clic en "Siguiente"
+      siguienteBtn.addEventListener("click", function () {
+        window.location.href = "loginbeca.html"; // Cambia esta URL por la ruta de la página destino
+      });
+
+      // Cerrar el modal si se hace clic fuera del contenido del modal
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none"; // Ocultar el modal
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen de Introducción al Arte</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styleExamen.css" />
+    <link rel="icon" href="IMG/GUIMARBOT.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="IMG/logo.svg" alt="Logo" id="logo" />
+      </a>
+    </div>
+
+    <!-- Icono de Instrucciones en la esquina derecha -->
+    <div class="instructions" onclick="toggleInstructions()">
+      <i class="fas fa-info-circle"></i> Instrucciones
+    </div>
+
+    <!-- Menú de instrucciones -->
+    <div id="instructions-menu" class="instructions-menu">
+      <div class="instructions-content">
+        <h2>Instrucciones para el Examen</h2>
+        <p>1. Este examen consta de 10 preguntas de opción múltiple.</p>
+        <p>2. Debes seleccionar la opción correcta para cada pregunta.</p>
+        <p>3. El puntaje máximo es 10 puntos y el mínimo aprobado es 7.</p>
+        <p>4. Si no apruebas, puedes volver a intentarlo.</p>
+        <p>5. Asegúrate de leer cada pregunta cuidadosamente antes de responder.</p>
+        <button onclick="toggleInstructions()">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Examen de Introducción al Arte</h1>
+      <form id="exam-form">
+        <!-- Preguntas -->
+        <div class="question">
+          <p>1. ¿Cuál es el propósito principal del arte?</p>
+          <label><input type="radio" name="q1" value="0" /> Producir objetos decorativos sin ningún significado.</label>
+          <label><input type="radio" name="q1" value="1" /> Expresar emociones, ideas y percepciones humanas.</label>
+          <label><input type="radio" name="q1" value="0" /> Crear imágenes exclusivamente para galerías.</label>
+        </div>
+
+        <div class="question">
+          <p>2. ¿Qué técnica es fundamental para aprender proporciones en dibujo?</p>
+          <label><input type="radio" name="q2" value="1" /> Dibujo de formas básicas.</label>
+          <label><input type="radio" name="q2" value="0" /> Uso exclusivo de colores primarios.</label>
+          <label><input type="radio" name="q2" value="0" /> Realización de bocetos sin estructura.</label>
+        </div>
+
+        <div class="question">
+          <p>3. ¿Qué implica el sombreado en el dibujo?</p>
+          <label><input type="radio" name="q3" value="0" /> Añadir líneas sin orden.</label>
+          <label><input type="radio" name="q3" value="1" /> Crear luces y sombras para dar volumen y profundidad.</label>
+          <label><input type="radio" name="q3" value="0" /> Colorear áreas aleatorias del dibujo.</label>
+        </div>
+
+        <div class="question">
+          <p>4. ¿Qué es el concepto de "composición visual" en arte?</p>
+          <label><input type="radio" name="q4" value="1" /> La organización de elementos en una obra para lograr armonía visual.</label>
+          <label><input type="radio" name="q4" value="0" /> Usar únicamente formas abstractas.</label>
+          <label><input type="radio" name="q4" value="0" /> Colocar objetos al azar en la obra.</label>
+        </div>
+
+        <div class="question">
+          <p>5. ¿Qué es una técnica de mezcla de colores en arte?</p>
+          <label><input type="radio" name="q5" value="0" /> Utilizar solo colores primarios sin combinarlos.</label>
+          <label><input type="radio" name="q5" value="1" /> Combinar colores para obtener tonos nuevos.</label>
+          <label><input type="radio" name="q5" value="0" /> Aplicar un único color sobre toda la obra.</label>
+        </div>
+
+        <div class="question">
+          <p>6. ¿Qué se evalúa al analizar una obra de arte?</p>
+          <label><input type="radio" name="q6" value="0" /> Solo los materiales utilizados.</label>
+          <label><input type="radio" name="q6" value="0" /> Solo el nivel técnico del artista.</label>
+          <label><input type="radio" name="q6" value="1" /> Su contenido, técnica y mensaje transmitido.</label>
+        </div>
+
+        <div class="question">
+          <p>7. ¿Qué representa el arte conceptual?</p>
+          <label><input type="radio" name="q7" value="1" /> La idea o el concepto es más importante que la ejecución.</label>
+          <label><input type="radio" name="q7" value="0" /> Se enfoca exclusivamente en técnicas clásicas.</label>
+          <label><input type="radio" name="q7" value="0" /> Es un estilo de arte abstracto sin ningún mensaje.</label>
+        </div>
+
+        <div class="question">
+          <p>8. ¿Cuál es el objetivo principal de un proyecto artístico?</p>
+          <label><input type="radio" name="q8" value="0" /> Crear obras únicamente para ganar premios.</label>
+          <label><input type="radio" name="q8" value="1" /> Desarrollar habilidades y expresar creatividad.</label>
+          <label><input type="radio" name="q8" value="0" /> Seguir instrucciones sin personalización.</label>
+        </div>
+
+        <div class="question">
+          <p>9. ¿Qué se necesita para mejorar técnicas artísticas?</p>
+          <label><input type="radio" name="q9" value="1" /> Práctica constante y análisis crítico.</label>
+          <label><input type="radio" name="q9" value="0" /> Cambiar de materiales constantemente.</label>
+          <label><input type="radio" name="q9" value="0" /> Evitar críticas para no desmotivarse.</label>
+        </div>
+
+        <div class="question">
+          <p>10. ¿Qué se logra con la optimización de técnicas de arte?</p>
+          <label><input type="radio" name="q10" value="0" /> Repetir siempre el mismo estilo sin variaciones.</label>
+          <label><input type="radio" name="q10" value="1" /> Mejorar la calidad y expresividad de las obras.</label>
+          <label><input type="radio" name="q10" value="0" /> Eliminar la creatividad del proceso artístico.</label>
+        </div>
+
+        <button type="button" onclick="calcularResultado()">Enviar</button>
+        <button id="boton-certificado" style="display:none;" onclick="imprimirCertificado()">Imprimir Certificado</button>
+      </form>
+    </div>
+
+    <!-- Función para calcular la puntuación -->
+    <script src="logicaExamen.js"></script>
+  </body>
+</html>

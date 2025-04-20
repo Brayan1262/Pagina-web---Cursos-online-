@@ -1,0 +1,162 @@
+/* Estilo para el fondo */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('../images/fondoBlanco.jpeg'); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Hace que el fondo no se desplace al hacer scroll */
+  background-blur: 10px; /* Efecto borroso en el fondo si lo deseas */
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    padding: 30px;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .header img {
+    width: 50px;
+    height: auto;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  /* Estilos para el formulario de subida de archivos */
+  .form-upload {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-upload .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-upload label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .form-upload input[type="file"] {
+    padding: 12px;
+    background-color: #f8f8f8;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .form-upload input[type="file"]:hover,
+  .form-upload input[type="file"]:focus {
+    border-color: #007bff;
+    background-color: #e7f1ff;
+    outline: none;
+  }
+  
+  /* Botón de envío */
+  .form-upload button {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-upload button:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-upload button:active {
+    background-color: #004085;
+  }
+  
+  /* Modal de éxito */
+  .modal-content {
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .modal-header {
+    border-bottom: none;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    color: #28a745;
+  }
+  
+  .modal-body {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .modal-footer button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .modal-footer button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .form-upload button {
+      font-size: 1rem;
+    }
+  }
+  

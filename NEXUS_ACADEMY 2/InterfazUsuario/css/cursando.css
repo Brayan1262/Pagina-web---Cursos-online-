@@ -1,0 +1,645 @@
+:root{
+    --main-color:#F28D35;
+    --red:#e74c3c;
+    --orange:#f39c12;
+    --light-color:#888;
+    --light-bg:#eee;
+    --black:#36363e; /*FONODO DE MAIN Y HEADER*/
+    --fondomedio: #47474e;
+    --white:#fff;
+    --ventanasflotantes:#3f3f42;
+    --textclaro:#82888f;
+    --textoscuro:#000000;
+    --border:.1rem solid rgba(0,0,0,.2);
+    --despliegue:(#242222);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
+}
+
+/* Body */
+body {
+    background: var(--fondomedio);
+    width: 100%;
+}
+body {
+    background-image: url('../images/fondo.jpg');
+}
+/* Encabezado */
+header {
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #494747;
+    background: var(--black); /* Color neutro para fondo del encabezado */
+    position: fixed;
+    border-bottom: 2px solid #000;
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+}
+
+/* Sección izquierda */
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+/* LOGO */
+.left .brand {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.brand h1{
+    color: #fff;
+}
+
+.brand span{
+    color: var(--orange);
+}
+
+/* Sección Derecha */
+.right {
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    justify-content: center;
+    font-weight: bold;
+}
+
+.right a{
+    display: flex;
+    gap: 10px; /* Espaciado más amplio entre imagen y nombre */
+    cursor: pointer;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.right img {
+    width: 30px;
+    margin: 0 10px; /* Espaciado uniforme entre iconos */
+}
+
+/* Perfil */
+.perfile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none; /* Elimina el contorno */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.perfile:hover{
+    background-color: #5c5b5b;
+}
+
+.perfile img {
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    width: 35px; /* Tamaño del avatar */
+    height: 30px; /* Asegura que la imagen sea cuadrada */
+}
+
+.perfile span{
+    color: var(--white);
+    text-shadow: none;  /* Elimina el sombreado del texto */
+    outline: none;  /* Elimina el contorno cuando se hace clic */
+    -webkit-tap-highlight-color: transparent;  /* Elimina el sombreado en dispositivos táctiles */
+}
+
+.down-user {
+    width: 15px; /* Tamaño del icono de flecha */
+    height: auto;
+}
+
+
+/* Estilos para la pestaña de despliegue */
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Ajusta esto según el tamaño de tu header */
+    right: 10px; /* Ajusta para posicionar correctamente */
+    background: #242222;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.profile-menu p{
+    color: orange;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-cerrar{
+    color: red;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    padding: 10px 10px 10px 10px;;
+}
+
+.profile-menu a:hover {
+    background-color: #ddd1d1a1;
+    border-radius: 5px;
+}
+
+/*Notificaciones*/
+.notification-popup {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 180px;
+    width: 400px;
+    height: 600px;
+    background-color: var(--despliegue);
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    background: var(--ventanasflotantes);
+    z-index: 9999;
+    overflow-y: scroll;
+    max-height: 80%;
+}
+
+/* Personalización de la barra deslizadora */
+.notification-popup::-webkit-scrollbar {
+    width: 8px;
+}
+
+.notification-popup::-webkit-scrollbar-track {
+    background: #2b2b2b; /* Color del fondo de la barra */
+    border-radius: 5px;
+}
+
+.notification-popup::-webkit-scrollbar-thumb {
+    background: var(--orange); /* Color del pulgar de la barra */
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.notification-popup::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);  /* Color del pulgar al pasar el mouse */
+}
+
+/* Título y botón de marcar como leído */
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.notification-header h2 {
+    font-size: 20px;
+}
+
+.mark-read-btn {
+    padding: 5px 15px;
+    background-color: var(--orange); 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mark-read-btn:hover {
+    background-color: var(--main-color); 
+}
+
+/* Estilo de las notificaciones */
+.notification-item {
+    display: flex;
+    align-items: center;
+   justify-content: space-between; /* Alinea los elementos */
+    margin-bottom: 15px;
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.notification-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-new {
+    background-color: var(--orange); 
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.notification-content p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.notification-content small {
+    font-size: 12px;
+    color: #bbb;
+}
+
+/* Ícono de eliminar notificación */
+.notification-delete {
+    color: #bbb;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.notification-delete:hover {
+   color: #ff4d4d; /* Rojo al pasar el mouse */
+}
+
+/* Cambio de color en la campana de notificaciones al estar activada */
+#notification-link.active {
+    color: #0066CC;
+}
+
+.notification-popup ul {
+    list-style-type: none;
+    padding: 0;            
+    margin: 0;             
+}
+
+/* Barra de notificaiones */
+.notificaciones {
+    position: relative;
+    cursor: pointer;
+    outline: none; /* Elimina el contorno */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.notificaciones span {
+    position: absolute; /* Posiciona el círculo en relación a su contenedor */
+    background: #f00; /* Color del círculo */
+    padding: 5px 8px; /* Ajusta el tamaño del círculo */
+    border-radius: 50%; /* Redondea el círculo */
+    color: #fff; /* Color del número dentro del círculo */
+    font-size: 12px; /* Tamaño del texto */
+    top: -4px; /* Ajuste para posicionarlo sobre el icono */
+    right: 0px; /* Ajuste para que esté alineado a la derecha */
+}
+
+
+/* Sidebar */
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 60px;
+    width: 230px;
+    height: 97vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    border-right: 1px solid #000000;
+    overflow-y: auto;
+    background: var(--black);
+    transition: width 0.5s ease;
+}
+
+/* Sidebar Arriba*/
+.sidebar a{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fff;
+}
+
+.sidebar a:hover{
+    background-color: #5c5b5b;
+}
+
+.sidebar a.sidebar-cursando{
+    background-color: #5e5e5e;
+}
+.sidebar img{
+    width: 1.6rem;
+}
+
+.medio img{
+    width: 230px;
+}
+
+/*MAIN*/
+.main-container{
+    margin-top: 71px;
+    margin-left: 230px;
+    padding: 20px;
+    height: 100%;
+}
+
+.main-container h1{
+    font-size: 30px;
+}
+
+/*section de cursando*/
+/* SECCIÓN "Cursando Actualmente" */
+
+
+
+.cursos-actuales {
+    margin: 20px 0;
+    padding: 20px;
+    background-image: url('../images/fondo.jpg'); /* Fondo oscuro consistente */
+    border-radius: 10px;
+    
+}
+
+.cursos-actuales h2 {
+    text-align: center;
+    padding: 0;
+    margin-top: -10px; /* Reduce el espacio desde el header */
+    margin-bottom: 20px; /* Espaciado con el contenido de abajo */
+}
+
+
+.categoria {
+    margin-bottom: 30px;
+}
+
+.categoria h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 20px; /* Ajusta el espaciado con el contenido de abajo */
+    text-transform: capitalize;
+}
+
+
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.curso {
+    background: var(--fondomedio);
+    padding: 15px;
+    border-radius: 8px;
+    width: calc(33.333% - 20px);
+    min-width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgb(104, 104, 104); /* Borde anaranjado */
+}
+
+
+.curso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.curso h4 {
+    color: var(--orange);
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.curso p {
+    color: var(--light-bg);
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.curso img {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.continuar-curso {
+    display: block;
+    width: 70%; /* Reduce el ancho al 70% */
+    max-width: 400px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 10px 15px; /* Espaciado interno ajustado */
+    background: var(--white); /* Fondo blanco para destacar */
+    color: #4d4b4b; /* Texto oscuro */
+    border-radius: 20px; /* Bordes más curvados */
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center; /* Centra el texto */
+    font-size: 17px; /* Tamaño del texto */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.continuar-curso:hover {
+    background: #cc7f0c; /* Fondo más claro al pasar el cursor */
+    color: #000; /* Texto ligeramente más oscuro */
+}
+
+
+.detalleprogre{
+    display: flex;
+    font-size: 10px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.progreso {
+    width: 80%;
+    height: 10px;
+    background: var(--light-bg);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+}
+
+.progreso .barra {
+    height: 100%;
+    background: var(--orange);
+    transition: width 0.3s ease;
+    width: 60%;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+    .cursos {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .curso {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px){
+    .sidebar{
+        width: 0;
+    }
+
+    .sidebar.menu-toggle{
+        width: 230px;
+    }
+
+    .menu-container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menu{
+        width: 1.5rem;
+        height: 37%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu div{
+        width: 100%;
+        height: 0.15rem;
+        background: white;
+        transition: all 0.25s ease;
+    }
+
+    .menu.menu-toggle div:first-child{
+        width: 40%;
+        transform: rotate(-35deg) translate(-30%,175%);
+    }
+
+    .menu.menu-toggle div:last-child{
+        width: 40%;
+        transform: rotate(35deg) translate(-30%,-160%);
+    }
+
+    .left{
+        font-size: 10px;
+    }
+
+    .main-container{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 480px){
+    .left{
+        font-size: 8px;
+    }
+
+    .right{
+        font-size: 10px;
+        gap: 10px;
+    }
+
+    .right a{
+        width: 30px;
+    }
+
+    .notificaciones span{
+        right: -17px;
+    }
+}
+
+@media (max-width: 545px){
+    .notification-popup{
+        right: 0px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        margin-left: 20px;
+    }
+
+    .buscar {
+        width: 100%;
+        height: 350px;
+        padding: 15px;
+    }
+
+    .buscar h1 {
+        font-size: 40px;
+    }
+
+    .buscar-bar input {
+        width: 100%;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .buscar-bar button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        margin-left: 0;
+    }
+
+    .buscar {
+        height: 180px;
+        padding: 10px;
+    }
+
+    .buscar h1 {
+        font-size: 30px;
+    }
+
+    .buscar-bar input {
+        width: 80%;
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .buscar-bar button {
+        padding: 6px;
+    }
+    
+    .buscar-bar{
+        margin-bottom: 30px;
+    }
+}

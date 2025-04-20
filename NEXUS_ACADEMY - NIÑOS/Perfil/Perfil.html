@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="icon" href="images/GUIMARBOT.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="brand" onclick="irInicio()">
+                <h1>GUIMAR<span>BOT</span></h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="notificaciones" >
+                <a href="#" id="notification-link">
+                    <img src="images/alarm-bell-svgrepo-com.svg" alt="notificaciones">
+                    <span>5</span>
+                </a>
+            </div>
+            <div class="perfile" id="perfile">
+                <img src="images/image.png" alt="Foto de perfil">
+                <span id="Angelo Del Aguila">Angelo</span>
+                <img src="images/down-2-svgrepo-com.svg" alt="" class="down-user">
+            </div>
+        </div>
+        <div class="profile-menu" id="profile-menu">
+            <p>¡Hola Jose!</p>
+            <a href="Perfil.html" class="profile-option">Ver perfil</a>
+            <a href="../contactanos/contactanos.html" class="profile-option">Contáctanos</a>
+            <a href="../selecionInteres.html" class="profile-option">Obtener una beca</a>
+            <a href="../index.html" class="profile-cerrar">Cerrar sesión</a>
+        </div>
+    </header>
+    
+    <!-- Ventana de notificaciones (oculta inicialmente) -->
+    <div id="notification-popup" class="notification-popup">
+        <div class="notification-header">
+            <h2>Notificaciones</h2>
+            <button id="mark-read" class="mark-read-btn">Marcar como leído</button>
+        </div>
+        <ul>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconreact.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de React Avanzado</p>
+                        <small>hace 1 día</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconcalendario.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Se acercan nuevos Eventos</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologial.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Tecnologia</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologia.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de C#</p>
+                        <small>hace 3 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconperfill.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Completa tu perfil</p>
+                        <small>hace 4 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/python.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: curso de python</p>
+                        <small>hace 5 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/arte.jfif" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Teatro</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/cursoAi.webp" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Vincula tu correo electrónico</p>
+                        <small>hace 6 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/Icono-GuimarBot2.ico" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Te damos la bienvenida a Guimarbot</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-arriba">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../InterfazUsuario/interfaz.html" class="sidebar-home">
+                            <img src="images/home-filled-svgrepo-com.svg" alt="">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Suscripcion/suscripcion.html" class="suscripcion">
+                            <img src="images/rocket-filled-svgrepo-com.svg" alt="">
+                            <span>Suscripción</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../InterfazUsuario/cursando.html">
+                            <img src="images/work-case-filled-svgrepo-com.svg" alt="">
+                            <span>Cursando</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../InterfazUsuario/metodopagocursos.html">
+                            <img src="images/shopping-cart-filled-svgrepo-com.svg" alt="">
+                            <span>Carrito</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Misrutas/misrutas.html" class="misrutas">
+                            <img src="images/folder-open-filled-svgrepo-com.svg" alt="">
+                            <span>Mis rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../BuscarRutas/buscarRutas.html">
+                            <img src="images/monitor-filled-svgrepo-com.svg" alt="">
+                            <span>Conocer rutas</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="medio">
+            <img src="images/robotmostrar.svg" alt="robot">
+        </div>
+        <div class="sidebar-abajo">
+            <a href="contactanos.html">
+                <img src="images/notification-filled-svgrepo-com.svg" alt="">
+                <p>Déjanos tu opinión</p>
+            </a>
+        </div>
+    </div> 
+    <main class="main-container">
+        <section class="perfil-header">
+            <div class="foto-perfil">
+                <img src="images/image.png" alt="Foto de perfil" />
+            </div>
+            <div class="informacion-perfil">
+                <h1>Jose Luis Gastelo Nuñez</h1>
+                <p>@Jochechito</p>
+                <button class="btn-agregar-perfil" onclick="rellenarperfil()">Completar perfil</button>
+            </div>
+            <div class="estadisticas">
+                <div class="estadistica">
+                    <p>0</p>
+                    <h3>Numero de Cursos</h3>
+                </div>
+                <div class="estadistica">
+                    <p>0</p>
+                    <h3>Cursos Aprobados</h3>
+                </div>
+                <div class="estadistica">
+                    <p>0</p>
+                    <h3>Horas Estudiadas</h3>
+                </div>
+            </div>
+        </section>
+    
+        <section class="cuerpo-perfil">
+            <!-- Cuadro grande: Publicaciones -->
+            <div class="cuadro grande">
+                <h2>Publicaciones</h2>
+                <!-- Área para crear nuevas publicaciones -->
+                <div class="nueva-publicacion">
+                    <textarea placeholder="¿Qué estás pensando?"></textarea>
+                    <button class="btn-publicar">Publicar</button>
+                </div>
+                <!-- Publicaciones existentes -->
+                <div class="publicacion">
+                    <div class="btn-eliminar">🗑️</div>
+                    <img src="images/image.png" alt="Usuario" class="avatar">
+                    <div class="contenido-publicacion">
+                        <h3>Jochechito</h3>
+                        <p>Me gusta como enseñan en esta academia</p>
+                    </div>
+                </div>
+                <div class="publicacion">
+                    <div class="btn-eliminar">🗑️</div>
+                    <img src="images/image.png" alt="Usuario" class="avatar">
+                    <div class="contenido-publicacion">
+                        <h3>Jochechito</h3>
+                        <p>Hola soy un nuevo alumno de esta academia</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Cuadro pequeño: Información personal -->
+            <div class="cuadro pequeño">
+                <h2>Información Personal</h2>
+                <div class="info-item">
+                    <img src="images/tuxedo-svgrepo-com.svg" alt="Nombre" class="info-icon">
+                    <p><strong>Nombre:</strong> Jose Luis Gastelo Nuñez</p>
+                </div>
+                <div class="info-item">
+                    <img src="images/email-svgrepo-com.svg" alt="Correo" class="info-icon">
+                    <p><strong>Correo:</strong> jose.gastelo@example.com</p>
+                </div>
+                <div class="info-item">
+                    <img src="images/pumpkin-svgrepo-com.svg" alt="Cumpleaños" class="info-icon">
+                    <p><strong>Cumpleaños:</strong> 01/01/1990</p>
+                </div>
+                <div class="info-item">
+                    <img src="images/company-svgrepo-com.svg" alt="LinkedIn" class="info-icon">
+                    <p><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/josegastelo</a></p>
+                </div>
+                <div class="info-item">
+                    <img src="images/flag-svgrepo-com.svg" alt="País" class="info-icon">
+                    <p><strong>País:</strong> Perú</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/perfil.js"></script>
+</body>
+</html>

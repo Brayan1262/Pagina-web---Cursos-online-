@@ -1,0 +1,893 @@
+:root{
+    --main-color:#F28D35;
+    --red:#e74c3c;
+    --orange:#fdac26;
+    --light-color:#888;
+    --light-bg:#eee;
+    --black:#394fb5;
+    --white:#000000;
+    --ventanasflotantes:rgba(204, 207, 209, 0.7);
+    --textclaro:#82888f;
+    --textoscuro:#000000;
+    --border:.1rem solid rgba(0,0,0,.2);
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
+}
+
+
+body {
+    background-image: url('../img/fondoniño.svg');
+    width: 100%;
+}
+
+/* Encabezado */
+header {
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #494747;
+    background: var(--black); /* Color neutro para fondo del encabezado */
+    position: fixed;
+    border-bottom: 2px solid #000;
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+}
+
+/* Sección izquierda */
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+/* MENU */
+.menu-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu{
+    width: 1.5rem;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu div{
+    width: 100%;
+    height: 0.15rem;
+    background: white;
+    transition: all 0.25s ease;
+}
+
+.menu.menu-toggle div:first-child{
+    width: 40%;
+    transform: rotate(-35deg) translate(-30%,175%);
+}
+
+.menu.menu-toggle div:last-child{
+    width: 40%;
+    transform: rotate(35deg) translate(-30%,-160%);
+}
+
+/* LOGO */
+.left .brand {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.brand h1{
+    color: #fff;
+}
+
+.brand span{
+    color: var(--orange);
+}
+
+/* Sección Derecha */
+.right {
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    justify-content: center;
+    font-weight: bold;
+}
+
+.right a{
+    display: flex;
+    gap: 10px; /* Espaciado más amplio entre imagen y nombre */
+    cursor: pointer;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.right a:hover{
+    background-color: #5c5b5b;
+}
+
+.right img {
+    width: 30px;
+    margin: 0 10px; /* Espaciado uniforme entre iconos */
+}
+
+/* From Uiverse.io by Yaya12085 */ 
+.button {
+    width: fit-content;
+    display: flex;
+    padding: 0.7em 0.9rem;
+    cursor: pointer;
+    gap: 0.4rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+    background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
+    background-size: 300%;
+    color: #fff;
+    border: none;
+    background-position: left center;
+    box-shadow: 0 30px 10px -20px rgba(0,0,0,.2);
+    transition: background .3s ease;
+    margin-right: 20px;
+}
+
+.button:hover {
+    background-size: 320%;
+    background-position: right center;
+}
+
+.button:hover svg {
+    fill: #fff;
+}
+
+.button svg {
+    width: 23px;
+    fill: #f09f33;
+    transition: .3s ease;
+}
+
+/* Perfil */
+.perfil {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none; /* Elimina el contorno */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.perfil:hover{
+    background-color: #5c5b5b;
+}
+
+.perfil img {
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    width: 35px; /* Tamaño del avatar */
+    height: 30px; /* Asegura que la imagen sea cuadrada */
+}
+
+.perfil span{
+    color: white;
+    text-shadow: none;  /* Elimina el sombreado del texto */
+    outline: none;  /* Elimina el contorno cuando se hace clic */
+    -webkit-tap-highlight-color: transparent;  /* Elimina el sombreado en dispositivos táctiles */
+}
+
+.down-user {
+    width: 15px; /* Tamaño del icono de flecha */
+    height: auto;
+}
+
+/* Barra de notificaiones */
+.notificaciones {
+    position: relative;
+    cursor: pointer;
+    outline: none; /* Elimina el contorno */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.notificaciones span {
+    position: absolute; /* Posiciona el círculo en relación a su contenedor */
+    background: #f00; /* Color del círculo */
+    padding: 5px 8px; /* Ajusta el tamaño del círculo */
+    border-radius: 50%; /* Redondea el círculo */
+    color: #fff; /* Color del número dentro del círculo */
+    font-size: 12px; /* Tamaño del texto */
+    top: -4px; /* Ajuste para posicionarlo sobre el icono */
+    right: 0px; /* Ajuste para que esté alineado a la derecha */
+}
+
+/* Estilo para la caja de notificaciones */
+.notifi-box {
+    width: 300px;
+    max-height: 400px; /* Establece una altura máxima para la caja de notificaciones */
+    opacity: 0;
+    display: none; /* Oculta la caja de notificaciones por defecto */
+    position: absolute;
+    top: 63px;
+    right: 35px;
+    background-color: #242222; /* Fondo negro para el cuadro */
+    color: #fff; /* Texto blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-y: auto; /* Agrega scroll si hay demasiadas notificaciones */
+    transition: opacity 0.3s ease-in-out; /* Transición suave para aparecer */
+}
+
+/* Mostrar la caja de notificaciones */
+.notifi-box.show {
+    display: block;
+    opacity: 1; /* Hacerla visible */
+}
+
+/* Estilo para el encabezado del cuadro de notificaciones */
+.notifi-box h2 {
+    font-size: 16px;
+    color: #fff; /* Color blanco para el texto */
+    border-bottom: 1px solid #444; /* Borde gris oscuro */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notifi-box h2 span {
+    font-size: 14px;
+    color: #f00; /* Color del número de notificaciones en rojo */
+}
+
+/* Estilo para los elementos de notificación */
+.notifi-item {
+    display: flex;
+    border-bottom: 1px solid #444; /* Borde gris oscuro */
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.notifi-item:hover {
+    background-color: #333; /* Fondo más oscuro al pasar el ratón */
+    border-radius: 20px;
+}
+
+.notifi-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.notifi-item .text h4 {
+    color: #fff; /* Texto blanco */
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.notifi-item .text p {
+    color: #bbb; /* Texto gris claro */
+    font-size: 12px;
+}
+
+.notifi-item .fecha {
+    font-size: 11px;
+    color: #888; /* Color de la fecha (gris claro) */
+    margin-top: 5px;
+}
+
+/* Estilo de la caja cuando se hace scroll */
+.notifi-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notifi-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.notifi-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Estilos para la pestaña de despliegue */
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Ajusta esto según el tamaño de tu header */
+    right: 20px; /* Ajusta para posicionar correctamente */
+    background: #242222;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.profile-menu p{
+    color: orange;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-cerrar{
+    color: red;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    padding: 10px 10px 10px 10px;;
+}
+
+.profile-menu a:hover {
+    background-color: #ddd1d1a1;
+    border-radius: 15px;
+}
+
+/* Estilos de la sección de Membresía */
+.container-membresia .titulo-membresia {
+    margin-bottom: 50px;
+}
+
+.container-membresia {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tabs {
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    padding: 15px 25px;
+    margin: 0 5px;
+    background-color: #494747;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+.tab-button.active {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+.plans {
+    display: none;
+}
+
+.plans.active {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.plan {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.plan h2 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.plan ul li {
+    margin: 10px 0;
+}
+
+.subscribe {
+    background-color: #ffd700;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.subscribe:hover {
+    background-color: #ffca00;
+}
+
+/* Estilo para la ventana flotante */
+.ventana-flotante {
+    display: none; /* Inicialmente oculta */
+    position: fixed; /* Fija en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden; /* Asegura que nada salga del área visible */
+}
+
+.ventana-flotante.active {
+    display: flex; /* Se muestra como flex cuando está activa */
+}
+
+.contenido-ventana {
+    background-color: #272727;
+    border-radius: 10px;
+    padding: 30px;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 100%; /* Evita que la ventana ocupe más del 90% de la altura */
+    overflow-y: auto; /* Habilita el scroll si el contenido es demasiado grande */
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cerrar-ventana {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.cerrar-ventana:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+/*MAIN*/
+.contenido-general{
+    margin-top: 55px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.videocurso {
+    display: flex;
+    gap: 40px;
+    margin: 0px auto;
+    width: 90%;
+}
+
+.cuadro {
+    padding: 20px;
+}
+
+/*PEQUEÑO*/
+.cuadro.pequeño {
+    width: 30%;
+    height: 70%;
+    text-align: center;
+    
+    background: var(--ventanasflotantes);
+    border-radius: 15px;
+    margin-top: 40px;
+}
+.pequeño h1{
+    color: #394fb5;
+}
+.pequeño img{
+    width: 140px;
+    margin-top: 20px;
+}
+
+.pequeño hr{
+    margin-top: 20px;
+}
+
+.pequeño p{
+    text-align: justify;
+    margin-top: 20px;
+}
+.pequeño h3{
+    text-align: justify;
+    margin-top: 20px;
+}
+
+/*GRANDE*/
+.cuadro.grande {
+    width: 100%;
+    background: var(--ventanasflotantes);
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+/*TITULO*/
+.titulo{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.titulo h1{
+    padding-left: 20px;
+    color: #394fb5;
+}
+
+.titulo a{
+    text-decoration: none;
+    color: var(--orange);
+    font-size: 30px;
+}
+
+.grande iframe {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    aspect-ratio: 16 / 8.5;
+}
+
+/*INFO*/
+.datosvideo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between; /* Distribución entre elementos */
+    margin-top: 10px;
+    background: var(--ventanasflotantes);
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--light-color);
+}
+
+.user {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.user img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.infoprofe {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.infoprofe h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.infoprofe p {
+    font-size: 16px;
+    margin: 5px 0 0;
+}
+
+.infovideo{
+    margin-top: 10px;
+    display: flex;
+    gap: 50px;
+}
+
+.fa-heart{
+    padding-right: 5px;
+}
+
+.btnseguir {
+    margin-left: auto; /* Mueve el botón completamente a la derecha */
+}
+
+.btnseguir button {
+    padding: 10px 15px;
+    background: #fdac26;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnseguir button:hover {
+    background: #394fb5; /* Efecto al pasar el cursor */
+}
+
+.btnsiguiente{
+    background: var(--ventanasflotantes);
+    padding: 20px;
+}
+
+.btnsiguiente button{
+    padding: 10px 15px;
+    background: var(--orange);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnanterior{
+    background: var(--ventanasflotantes);
+    padding: 20px;  
+}
+
+.btnanterior button{
+    padding: 10px 15px;
+    background: var(--orange);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones {
+    display: flex; /* Para alinear en una sola fila */
+    justify-content: left; /* Centrar horizontalmente los botones */
+    gap: 1px; /* Espaciado entre botones */
+}
+
+/*DESCRIPCION*/
+.descripcion {
+    background: var(--ventanasflotantes);
+    padding: 20px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.descripcion h3{
+    padding-bottom: 15px;
+}
+
+
+
+/* COMENTARIOS*/
+.comentarios{
+    margin-top: 20px;
+}
+
+.comentarios span{
+    padding-left: 10px;
+    font-size: 25px;
+}
+
+.comentarios hr{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+/* ESCRIBIR COMENTARIOS */
+.escribircon {
+    margin-bottom: 20px;
+    background: var(--ventanasflotantes);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.escribircon h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.escribircon textarea{
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: var(--textoscuro);
+}
+
+.escribircon button {
+    padding: 10px 20px;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.escribircon button:hover {
+    background: var(--main-color);
+}
+
+/* USUARIO Y COMENTARIO */
+.usercoment {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    background: var(--ventanasflotantes);
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.usercoment:last-child {
+    border-bottom: none;
+}
+
+.usercoment img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.infocomentario {
+    flex: 1;
+}
+
+.infocomentario h1 {
+    font-size: 16px;
+    margin: 0 0 5px;
+}
+
+.infocomentario p {
+    font-size: 15px;
+    margin: 0 0 10px;
+}
+
+.infocomentario .btn {
+    display: flex;
+    gap: 10px;
+}
+
+.infocomentario .btn button {
+    background: #f44336;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.infocomentario .btn button:hover {
+    background: #d32f2f;
+}
+
+/* TIEMPO DEL COMENTARIO */
+.usercoment span {
+    font-size: 13px;
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .cuadro.pequeño {
+        width: 100%;
+    }
+
+    .videocurso {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .titulo a{
+        position: absolute;
+        top: 120px;
+        left: 100px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 540px){
+    .titulo a{
+        left: 60px;
+    }
+}
+
+@media (max-width: 480px){
+    .planes{
+        display: none;
+    }
+    .perfil span{
+        display: none;
+    }
+    .brand{
+        font-size:10px;
+    }
+
+    .pequeño h1{
+        font-size: 20px;
+    }
+
+    .titulo a{
+        font-size: 28px;
+        left: 38px;
+    }
+}
+
+@media (max-width: 410px){
+    .titulo a{
+        font-size: 18px;
+        top: 125px;
+        left: 30px;
+    }
+}
+
+@media (max-width: 430px) {
+    .datosvideo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .infoprofe {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .btnseguir {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .btnseguir button {
+        width: 100%;
+    }
+}

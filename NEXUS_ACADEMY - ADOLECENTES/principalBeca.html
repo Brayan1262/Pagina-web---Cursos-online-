@@ -1,0 +1,491 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Tu CSS personalizado -->
+    <link rel="stylesheet" href="assets/css/inicio.css">
+</head>
+
+
+
+<body>
+
+  <header>
+    <div class="left">
+        <div class="brand" onclick="irInicio()">
+            <img src="img/guimar login.png" alt="Icono de la academia" class="logo">
+            <span class="name">GUIMARBOT</span>
+        </div>
+    </div>
+    <div class="right">
+        <div class="planes" onclick="toggleVentana()">
+            <a href="#" class="icons-header">
+                <img src="Img/trophy-svgrepo-com.svg" alt="planes">
+            </a>
+        </div>
+        <div class="shop">
+            <a href="carritocompras.html" class="icons-header">
+                <img src="Img/shopping-cart-svgrepo-com.svg" alt="shop">
+            </a>
+        </div>
+        <div class="notificaciones" onclick="toggleNotifi()">
+            <a href="#" class="icons-header">
+                <img src="Img/remind-svgrepo-com.svg" alt="notificaciones"><span>5</span>
+            </a>
+        </div>
+        <div class="perfil" id="perfil">
+            <img src="Img/image.png" alt="Foto de perfil">
+            <span id="nom_user">Jose</span>
+            <img src="Img/down-2-svgrepo-com.svg" alt="" class="down-user">
+        </div>
+    </div>
+    <div class="profile-menu" id="profile-menu">
+        <p>¡Hola Jose!</p>
+        <a href="perfil.html" class="profile-option">Ver perfil</a>
+        <a href="contactanos.html" class="profile-option">Contáctanos</a>
+        <a href="index.html" class="profile-cerrar">Cerrar sesión</a>
+    </div>
+  
+    <div class="notifi-box" id="box">
+        <h2>Notifications <span>5</span></h2>
+    
+        <div class="notifi-item">
+            <img src="img/avatar1.png" alt="img">
+            <div class="text">
+                <h4>Elias Abdurrahman</h4>
+                <p>@lorem ipsum dolor sit amet</p>
+                <span class="fecha">2024-11-13 10:30 AM</span> <!-- Fecha añadida -->
+            </div> 
+        </div>
+    
+        <div class="notifi-item">
+            <img src="img/avatar2.png" alt="img">
+            <div class="text">
+                <h4>John Doe</h4>
+                <p>@lorem ipsum dolor sit amet</p>
+                <span class="fecha">2024-11-13 09:45 AM</span> <!-- Fecha añadida -->
+            </div> 
+        </div>
+    
+        <div class="notifi-item">
+            <img src="img/avar3.png" alt="img">
+            <div class="text">
+                <h4>Emad Ali</h4>
+                <p>@lorem ipsum dolor sit amet</p>
+                <span class="fecha">2024-11-12 11:20 AM</span> <!-- Fecha añadida -->
+            </div> 
+        </div>
+    
+        <div class="notifi-item">
+            <img src="img/avatar4.png" alt="img">
+            <div class="text">
+                <h4>Ekram Abu</h4>
+                <p>@lorem ipsum dolor sit amet</p>
+                <span class="fecha">2024-11-12 10:05 AM</span> <!-- Fecha añadida -->
+            </div> 
+        </div>
+    
+        <div class="notifi-item">
+            <img src="img/avatar5.png" alt="img">
+            <div class="text">
+                <h4>Jane Doe</h4>
+                <p>@lorem ipsum dolor sit amet</p>
+                <span class="fecha">2024-11-11 04:15 PM</span> <!-- Fecha añadida -->
+            </div> 
+        </div>
+    </div>        
+  </header>
+
+<!-- Menú lateral (sidebar) -->
+<div class="sidebar" id="sidebar">
+  <h2 class="text-center"><em>NEXUS</em> <br>
+  <span class="academy">ACADEMY</span></h2>
+  <a href="inicio.html"><i class="fa fa-home"></i> Inicio</a>
+  <a href="suscripcion.html"><i class="fa fa-rocket"></i> Suscripción</a>
+  <a href="becas.html"><i class="fa fa-graduation-cap"></i> Becas</a>
+  <a href="juego.html"><i class="fa fa-gamepad"></i> Juego</a>
+  <a href="carrito.html"><i class="fa fa-shopping-cart"></i> Carrito</a>
+  <a href="perfil.html"><i class="fa fa-user"></i> Perfil</a>
+  <a href="rutas.html"><i class="fa fa-list-alt"></i> Mis Rutas</a>
+  
+  <div class="robot-container">
+    <img src="assets/images/robotmostrar.png" alt="Robotcito" class="robot-image">
+</div>
+
+  <div class="sidebar-bottom">
+    <a href="index.html" class="logout"><i class="fa fa-sign-out-alt"></i></a>
+  </div>
+</div>
+
+
+
+    <!-- Contenido principal -->
+    <div class="content">
+    <p class="fw-bolder">Cursos Recomendados Para Ti</p>
+
+
+   
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col">
+    <div class="card h-100" id="curso">
+        <img src="assets/images/curso_1.webp" class="card-img-top" alt="...">
+        <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+        <div class="card-body">
+            <h5 class="card-title">Curso COMPLETO de HTML</h5>
+            <p class="card-text">¡Sumérgete en el emocionante mundo de la creación web! Aprende HTML desde cero</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-body-secondary">1h-55min - 1 video</small>
+            <!-- Enlace con parámetro de curso -->
+            <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html?curso=html'">
+                Ver Curso
+            </button>
+            <button
+            class="btn btn-dark btn-sm add-button"
+            data-title="Curso COMPLETO de HTML"
+            onclick="showAddToRouteModal({ title: 'Curso COMPLETO de HTML' })">
+            Agregar
+           </button>  
+            <button class="btn btn-dark btn-sm add-to-cart" data-id="1" data-title="Curso COMPLETO de HTML" data-price="5" data-image="assets/images/curso_1.webp">
+                <i class="fa fa-shopping-cart"></i>
+            </button>
+        </div>
+    </div>
+</div>
+    
+<div class="col">
+  <div class="card h-100" id="curso">
+      <img src="assets/images/curso_2.webp" class="card-img-top" alt="...">
+      <span class="favorite-icon" onclick="toggleFavorite(this)">
+          <i class="fa fa-heart"></i>
+      </span>
+      <div class="card-body">
+          <h5 class="card-title">Curso COMPLETO de CSS</h5>
+          <p class="card-text">Aprende CSS desde cero! ¡Inicia tu viaje en diseño web!</p>
+      </div>
+      <div class="card-footer">
+          <small class="text-body-secondary">6h 30min - 4 videos</small>
+          <!-- Enlace con parámetro de curso -->
+          <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html?curso=css'">
+              Ver Curso
+          </button>
+          <button
+            class="btn btn-dark btn-sm add-button"
+            data-title="Curso COMPLETO de CSS"
+            onclick="showAddToRouteModal({ title: 'Curso COMPLETO de CSS' })">
+            Agregar
+          </button>
+          <button class="btn btn-dark btn-sm add-to-cart" data-id="2" data-title="Curso COMPLETO de CSS" data-price="5" data-image="assets/images/curso_2.webp">
+              <i class="fa fa-shopping-cart"></i>
+          </button>
+      </div>
+  </div>
+</div>
+    
+<div class="col">
+  <div class="card h-100" id="curso">
+      <img src="assets/images/curso_3.webp" class="card-img-top" alt="...">
+      <span class="favorite-icon" onclick="toggleFavorite(this)">
+          <i class="fa fa-heart"></i>
+      </span>
+      <div class="card-body">
+          <h5 class="card-title">Curso COMPLETO de JavaScript</h5>
+          <p class="card-text">¡Descubre el poder de JavaScript! Aprende desde cero y crea proyectos dinámicos.</p>
+      </div>
+      <div class="card-footer">
+          <small class="text-body-secondary">27H - 160 videos</small>
+          <!-- Enlace con parámetro de curso -->
+          <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html?curso=js'">
+              Ver Curso
+          </button>
+          <button
+            class="btn btn-dark btn-sm add-button"
+            data-title="Curso COMPLETO de JavaScript"
+            onclick="showAddToRouteModal({ title: 'Curso COMPLETO de JavaScript' })">
+            Agregar
+           </button>  
+          <button class="btn btn-dark btn-sm add-to-cart" data-id="3" data-title="Curso COMPLETO de JS" data-price="5" data-image="assets/images/curso_3.webp">
+              <i class="fa fa-shopping-cart"></i>
+          </button>
+      </div>
+  </div>
+</div>
+  
+      <div class="col">
+          <div class="card h-100" id="curso">
+            <img src="assets/images/curso_4.webp" class="card-img-top" alt="...">
+            <span class="favorite-icon" onclick="toggleFavorite(this)">
+              <i class="fa fa-heart"></i>
+          </span>
+            <div class="card-body">
+              <h5 class="card-title">Curso COMPLETO de PYTHON</h5>
+              <p class="card-text">¡Explora el mundo de Python! Aprende desde cero y construye aplicaciones poderosas.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">17h - 101 videos</small>
+              <button class="btn btn-custom btn-sm"onclick="window.location.href='curso.html' ">
+                  Ver Curso
+                </button>
+                <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+                  Agregar
+                </button>
+                <button class="btn btn-dark btn-sm add-to-cart" data-id="4" data-title="Curso COMPLETO de PHYTON" data-price="5" data-image="assets/images/curso_4.webp"> <i class="fa fa-shopping-cart"></i> 
+                </button>
+            </div>
+          </div>
+    </div>
+</div>  
+<br>
+<br>
+<p class="fw-bolder">Cursos populares</p>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+      <div class="card h-100" id="curso">
+        <img src="assets/images/video_1.webp" class="card-img-top" alt="...">
+        <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+        <div class="card-body">
+          <h5 class="card-title">Aprende de los conceptos BASICOS de HTML</h5>
+          <p class="card-text">Aprende los conceptos básicos de HTML y crea tu propio sitio web desde cero.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">1h-30min</small>
+          <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html' ">
+            Ver Curso
+          </button>
+          <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+            Agregar
+          </button>
+          <button class="btn btn-dark btn-sm add-to-cart" data-id="5" data-title="Aprende los conceptos BASICOS de HTML" data-price="5" data-image="assets/images/video_1.webp"> <i class="fa fa-shopping-cart"></i> 
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col">
+      <div class="card h-100" id="curso">
+        <img src="assets/images/video_2.webp" class="card-img-top" alt="...">
+        <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+        <div class="card-body">
+          <h5 class="card-title">Aprende los conceptos BASICOS de CSS</h5>
+          <p class="card-text">Aprende los conceptos básicos de CSS y crea tu propio sitio web desde cero.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">2h</small>
+          <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html' ">
+            Ver Curso
+          </button>
+          <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+            Agregar
+          </button>
+          <button class="btn btn-dark btn-sm add-to-cart" data-id="6" data-title="Aprende los conceptos BASICOS de CSS" data-price="5" data-image="assets/images/video_2.webp"> <i class="fa fa-shopping-cart"></i> 
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col">
+      <div class="card h-100" id="curso">
+        <img src="assets/images/video_3.webp" class="card-img-top" alt="...">
+        <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+        <div class="card-body">
+          <h5 class="card-title">Aprende los conceptos BASICOS de JS</h5>
+          <p class="card-text">Aprende los conceptos básicos de JS y crea tu propio sitio web desde cero.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">4h</small>
+          <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html' ">
+            Ver Curso
+          </button>
+          <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+            Agregar
+          </button>
+          <button class="btn btn-dark btn-sm add-to-cart" data-id="7" data-title="Aprende los conceptos BASICOS de JS" data-price="5" data-image="assets/images/video_3.webp"> <i class="fa fa-shopping-cart"></i> 
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100" id="curso">
+          <img src="assets/images/video_4.webp" class="card-img-top" alt="...">
+          <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+          <div class="card-body">
+            <h5 class="card-title">Aprende los conceptos BASICOS de PHYTON</h5>
+            <p class="card-text">Aprende los conceptos básicos de PHYTON y crea tu propio sitio web desde cero.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">10h</small>
+            <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html' ">
+                Ver Curso
+              </button>
+              <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+                Agregar
+              </button>
+              <button class="btn btn-dark btn-sm add-to-cart" data-id="8" data-title="Aprende los conceptos BASICOS de PHYTON" data-price="5" data-image="assets/images/video_4.webp"> <i class="fa fa-shopping-cart"></i> 
+              </button>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100" id="curso">
+          <img src="assets/images/video_5.webp" class="card-img-top" alt="...">
+          <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+          <div class="card-body">
+            <h5 class="card-title">Aprende los conceptos BASICOS de LOGICA DE PROGRAMACION</h5>
+            <p class="card-text">Curso de LOGICA DE PROGRAMACION para aprender cualquier lenguaje de programación.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">7h 29min</small>
+            <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html' ">
+                Ver Curso
+              </button>
+              <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+                Agregar
+              </button>
+              <button class="btn btn-dark btn-sm add-to-cart" data-id="9" data-title="Aprende los conceptos BASICOS de LOGICA DE PROGRAMACION" data-price="5" data-image="assets/images/video_5.webp"> <i class="fa fa-shopping-cart"></i> 
+              </button>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100" id="curso">
+          <img src="assets/images/video_6.webp" class="card-img-top" alt="...">
+          <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+          <div class="card-body">
+            <h5 class="card-title">Aprende los conceptos AVANZADOS de PHYTON </h5>
+            <p class="card-text">Aprende los conceptos AVANZADOS de PHYTON y crea tu propio sitio web desde cero.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">10h 30min</small>
+            <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html' ">
+                Ver Curso
+              </button>
+              <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+                Agregar
+              </button>
+              <button class="btn btn-dark btn-sm add-to-cart" data-id="10" data-title="Aprende los conceptos AVANZADOS de PHYTON" data-price="5" data-image="assets/images/video_6.webp"> <i class="fa fa-shopping-cart"></i> 
+              </button>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100" id="curso">
+          <img src="assets/images/video_7.webp" class="card-img-top" alt="...">
+          <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+          <div class="card-body">
+            <h5 class="card-title">QUIERES PROGRAMAR? Ingresa a este video</h5>
+            <p class="card-text">Quieres programar ingresta a este video AHORA y aprenderas como hacerlo correctamente.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">5min 14seg</small>
+            <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html' ">
+                Ver Curso
+              </button>
+              <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+                Agregar
+              </button>
+              <button class="btn btn-dark btn-sm add-to-cart" data-id="11" data-title="QUIERES PROGRAMAR? Ingresa a este video" data-price="5" data-image="assets/images/video_7.webp"> <i class="fa fa-shopping-cart"></i> 
+              </button>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100" id="curso">
+          <img src="assets/images/video_8.webp" class="card-img-top" alt="...">
+          <span class="favorite-icon" onclick="toggleFavorite(this)">
+            <i class="fa fa-heart"></i>
+        </span>
+          <div class="card-body">
+            <h5 class="card-title">Que son los PARADIGMAS DE PROGRAMACION?</h5>
+            <p class="card-text">Existen varias formas de programar, en este video veremos las diferencias entre ellas.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">14min 04 seg</small>
+            <button class="btn btn-custom btn-sm" onclick="window.location.href='curso.html' ">
+                Ver Curso
+              </button>
+              <button class="btn btn-dark btn-sm add-button" onclick="addCourse()">
+                Agregar
+              </button>
+              <button class="btn btn-dark btn-sm add-to-cart" data-id="12" data-title="Que son los PARADIGMAS DE PROGRAMACION?" data-price="5" data-image="assets/images/video_8.webp"> <i class="fa fa-shopping-cart"></i> 
+              </button>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal para agregar curso a una ruta -->
+<div id="add-to-route-modal" class="hidden">
+  <div class="modal-content">
+      <h2>Agregar a...</h2>
+      <div id="routes-list-modal">
+          <!-- Aquí se agregarán dinámicamente las rutas -->
+      </div>
+      <div class="buttons">
+        <button id="cancel-add-to-route" class="btn btn-secondary">Cancelar</button>
+        <button id="confirm-add-to-route" class="btn btn-primary" disabled>Guardar</button>
+    </div>    
+  </div>
+</div>
+
+
+
+
+ <!-- Menú de iconos para pantallas pequeñas (footer-menu) -->
+ <div class="footer-menu">
+  <a href="inicio.html" class="footer-icon"><i class="fa fa-home"></i></a>
+  <a href="suscripcion.html" class="footer-icon"><i class="fa fa-rocket"></i></a>
+  <a href="becas.html" class="footer-icon"><i class="fa fa-graduation-cap"></i></a>
+  <a href="juego.html" class="footer-icon"><i class="fa fa-gamepad"></i></a>
+  <a href="carrito.html" class="footer-icon"><i class="fa fa-shopping-cart"></i></a>
+  <a href="perfil.html" class="footer-icon"><i class="fa fa-user"></i></a>
+  <a href="rutas.html" class="footer-icon"><i class="fa fa-list-alt"></i></a>
+  <a href="index.html" class="footer-icon logout"><i class="fa fa-sign-out-alt"></i></a>
+  </div>
+
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/418c833b15.js" crossorigin="anonymous"></script>
+
+    <!-- Tu JavaScript personalizado -->
+    <script src="assets/js/inicio.js"></script>
+    <script src="assets/js/curso.js"></script>
+    <script src="assets/data/curso.json"></script>
+    <script src="assets/js/resultado.js"></script>
+    <script src="assets/js/modal.js"></script>
+    
+    
+
+
+
+
+</body>
+</html>

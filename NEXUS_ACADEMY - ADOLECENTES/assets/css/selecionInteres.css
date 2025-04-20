@@ -1,0 +1,449 @@
+:root {
+    --main-color: #13dc86;
+    --red: #e74c3c;
+    --orange: #0fa766;
+    --light-color: #888;
+    --light-bg: #eee;
+    --black: #13161d; /* FONDO DE MAIN Y HEADER */
+    --fondomedio: #13161d;
+    --white: #fff;
+    --ventanasflotantes: #3f3f42;
+    --textclaro: #82888f;
+    --textoscuro: #000000;
+    --border: .1rem solid rgba(0,0,0,.2);
+    --despliegue: #242222; /* Sin paréntesis */
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
+}
+
+
+/* Body */
+body {
+    background: var(--fondomedio);
+    width: 100%;
+}
+body {
+    background-image: url('../images/fondo.svg');
+}
+/* Encabezado */
+header {
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #494747;
+    background: var(--black); /* Color neutro para fondo del encabezado */
+    position: fixed;
+    border-bottom: 2px solid #000;
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+}
+
+/* Sección izquierda */
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+/* MENU */
+.menu-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu{
+    width: 1.5rem;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu div{
+    width: 100%;
+    height: 0.15rem;
+    background: white;
+    transition: all 0.25s ease;
+}
+
+.menu.menu-toggle div:first-child{
+    width: 40%;
+    transform: rotate(-35deg) translate(-30%,175%);
+}
+
+.menu.menu-toggle div:last-child{
+    width: 40%;
+    transform: rotate(35deg) translate(-30%,-160%);
+}
+
+/* LOGO */
+.left .brand {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.brand .logo {
+    width: 50px; /* Logo más grande */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 15px;
+}
+
+.brand .name {
+    font-weight: bold;
+    font-size: 22px;
+    color: #fff; /* Color de texto blanco para el nombre */
+}
+
+/* Sección Derecha */
+.right {
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    justify-content: center;
+    font-weight: bold;
+}
+
+.right a{
+    display: flex;
+    gap: 10px; /* Espaciado más amplio entre imagen y nombre */
+    cursor: pointer;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.right a:hover{
+    background-color: #5c5b5b;
+}
+
+.right img {
+    width: 25px;
+    margin: 0 15px; /* Espaciado uniforme entre iconos */
+}
+
+/* Perfil */
+.perfil {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none; /* Elimina el contorno */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.perfil:hover{
+    background-color: #5c5b5b;
+}
+
+.perfil img {
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    width: 35px; /* Tamaño del avatar */
+    height: 30px; /* Asegura que la imagen sea cuadrada */
+}
+
+.perfil span{
+    color: #ddd4d4;
+    text-shadow: none;  /* Elimina el sombreado del texto */
+    outline: none;  /* Elimina el contorno cuando se hace clic */
+    -webkit-tap-highlight-color: transparent;  /* Elimina el sombreado en dispositivos táctiles */
+}
+
+.down-user {
+    width: 15px; /* Tamaño del icono de flecha */
+    height: auto;
+}
+
+/* Barra de notificaiones */
+.notificaciones {
+    position: relative;
+    cursor: pointer;
+    outline: none; /* Elimina el contorno */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.notificaciones span {
+    position: absolute; /* Posiciona el círculo en relación a su contenedor */
+    background: #f00; /* Color del círculo */
+    padding: 5px 8px; /* Ajusta el tamaño del círculo */
+    border-radius: 50%; /* Redondea el círculo */
+    color: #fff; /* Color del número dentro del círculo */
+    font-size: 12px; /* Tamaño del texto */
+    top: -4px; /* Ajuste para posicionarlo sobre el icono */
+    right: 0px; /* Ajuste para que esté alineado a la derecha */
+}
+
+/* Estilo para la caja de notificaciones */
+.notifi-box {
+    width: 300px;
+    max-height: 400px; /* Establece una altura máxima para la caja de notificaciones */
+    opacity: 0;
+    display: none; /* Oculta la caja de notificaciones por defecto */
+    position: absolute;
+    top: 63px;
+    right: 35px;
+    background-color: #242222; /* Fondo negro para el cuadro */
+    color: #fff; /* Texto blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-y: auto; /* Agrega scroll si hay demasiadas notificaciones */
+    transition: opacity 0.3s ease-in-out; /* Transición suave para aparecer */
+}
+
+/* Mostrar la caja de notificaciones */
+.notifi-box.show {
+    display: block;
+    opacity: 1; /* Hacerla visible */
+}
+
+/* Estilo para el encabezado del cuadro de notificaciones */
+.notifi-box h2 {
+    font-size: 16px;
+    color: #fff; /* Color blanco para el texto */
+    border-bottom: 1px solid #444; /* Borde gris oscuro */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notifi-box h2 span {
+    font-size: 14px;
+    color: #f00; /* Color del número de notificaciones en rojo */
+}
+
+/* Estilo para los elementos de notificación */
+.notifi-item {
+    display: flex;
+    border-bottom: 1px solid #444; /* Borde gris oscuro */
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.notifi-item:hover {
+    background-color: #333; /* Fondo más oscuro al pasar el ratón */
+    border-radius: 20px;
+}
+
+.notifi-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.notifi-item .text h4 {
+    color: #fff; /* Texto blanco */
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.notifi-item .text p {
+    color: #bbb; /* Texto gris claro */
+    font-size: 12px;
+}
+
+.notifi-item .fecha {
+    font-size: 11px;
+    color: #888; /* Color de la fecha (gris claro) */
+    margin-top: 5px;
+}
+
+/* Estilo de la caja cuando se hace scroll */
+.notifi-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notifi-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.notifi-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Estilos para la pestaña de despliegue */
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Ajusta esto según el tamaño de tu header */
+    right: 20px; /* Ajusta para posicionar correctamente */
+    background: #242222;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.profile-menu p{
+    color: #f5e400;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-cerrar{
+    color: red;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    padding: 10px 10px 10px 10px;
+}
+
+.profile-menu a:hover {
+    background-color: #ddd1d1a1;
+    border-radius: 15px;
+}
+/*h1 titulo de selecion de interes*/
+    /* Estilo para el título */
+h1.display-4 {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna y elegante */
+    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    font-weight: 700; /* Hace el texto más grueso */
+    color: #ffffff; /* Color azul moderno */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para realzar el texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Ajuste de tamaño para pantallas pequeñas */
+@media (max-width: 576px) {
+    h1.display-4 {
+        font-size: 1.8rem; /* Reduce el tamaño en pantallas pequeñas */
+    }
+}
+
+
+.content {
+    margin-top: 100px; /* Ajusta este valor para crear más espacio entre el header y el contenido */
+}
+/* Separación entre el header y el contenido */
+.content {
+    margin-top: 120px; /* Ajusta este valor según el tamaño de tu header */
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsivo */
+  }
+  
+  /* Estilos para las tarjetas */
+  .card {
+    background-color: var(--fondomedio); /* Usando el color que has definido */
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Efecto al pasar el ratón */
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+  }
+  
+  .card-body {
+    padding: 15px;
+    color: var(--white);
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .brand span {
+    color: var(--orange);
+}
+  .card-text {
+    font-size: 1rem;
+    color: var(--textclaro);
+  }
+  
+  .btn-primary {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0fa766; /* Un tono más claro del color principal */
+  }
+  
+/* Mostrar el menú inferior solo en dispositivos móviles */
+@media (max-width: 768px) {
+
+    .sidebar {
+        display: none; /* Ocultar el sidebar en móvil */
+    }
+
+    .content {
+        margin-left: 0; /* Ajustar el contenido al ocultar el sidebar */
+    }
+
+    /* Menú de iconos en el footer para pantallas pequeñas */
+    .footer-menu {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #000000;
+        justify-content: space-around;
+        padding: 10px 0;
+        z-index: 101;
+    }
+
+    .footer-icon {
+        color: #ffffff;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .footer-icon:hover {
+        color: #f5a425;
+    }
+
+    /* Ajustes en los botones para dispositivos móviles */
+    .btn-custom, .btn-dark {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .btn-dark i, .btn-custom i {
+        font-size: 14px;
+    }
+
+    .card-footer button {
+        margin-right: 5px;
+    }
+}
+
+
+
+

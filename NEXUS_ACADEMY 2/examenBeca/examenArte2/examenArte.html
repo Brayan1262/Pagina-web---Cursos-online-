@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen de Introducción al Arte</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styleExamen.css" />
+    <link rel="icon" href="IMG/GUIMARBOT.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="IMG/logo.svg" alt="Logo" id="logo" />
+      </a>
+    </div>
+
+    <!-- Icono de Instrucciones en la esquina derecha -->
+    <div class="instructions" onclick="toggleInstructions()">
+      <i class="fas fa-info-circle"></i> Instrucciones
+    </div>
+
+    <!-- Menú de instrucciones -->
+    <div id="instructions-menu" class="instructions-menu">
+      <div class="instructions-content">
+        <h2>Instrucciones para el Examen</h2>
+        <p>1. Este examen consta de 10 preguntas de opción múltiple.</p>
+        <p>2. Debes seleccionar la opción correcta para cada pregunta.</p>
+        <p>3. El puntaje máximo es 10 puntos y el mínimo aprobado es 7.</p>
+        <p>4. Si no apruebas, puedes volver a intentarlo.</p>
+        <p>5. Asegúrate de leer cada pregunta cuidadosamente antes de responder.</p>
+        <button onclick="toggleInstructions()">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Examen de Introducción al Arte</h1>
+      <form id="exam-form">
+        <!-- Preguntas -->
+        <div class="question">
+          <p>1. ¿Por qué es importante estudiar arte?</p>
+          <label><input type="radio" name="q1" value="1" /> Fomenta la creatividad y el pensamiento crítico.</label>
+          <label><input type="radio" name="q1" value="0" /> Solo se estudia para obtener una calificación.</label>
+          <label><input type="radio" name="q1" value="0" /> No tiene relevancia en la sociedad moderna.</label>
+        </div>
+
+        <div class="question">
+          <p>2. ¿Qué es un concepto básico en el dibujo?</p>
+          <label><input type="radio" name="q2" value="1" /> El uso correcto de formas y proporciones.</label>
+          <label><input type="radio" name="q2" value="0" /> Solo usar colores brillantes.</label>
+          <label><input type="radio" name="q2" value="0" /> Evitar las sombras y texturas.</label>
+        </div>
+
+        <div class="question">
+          <p>3. ¿Cuál es el propósito del sombreado en el dibujo?</p>
+          <label><input type="radio" name="q3" value="1" /> Crear volumen y profundidad en la obra.</label>
+          <label><input type="radio" name="q3" value="0" /> Añadir detalles innecesarios.</label>
+          <label><input type="radio" name="q3" value="0" /> Hacer que el dibujo sea más colorido.</label>
+        </div>
+
+        <div class="question">
+          <p>4. ¿Qué técnica es esencial para mezclar colores correctamente?</p>
+          <label><input type="radio" name="q4" value="1" /> Saber cómo combinar colores primarios para obtener nuevos tonos.</label>
+          <label><input type="radio" name="q4" value="0" /> Utilizar solo colores puros sin mezclar.</label>
+          <label><input type="radio" name="q4" value="0" /> Aplicar el color directamente sobre el lienzo sin preparación.</label>
+        </div>
+
+        <div class="question">
+          <p>5. ¿Qué significa la "composición visual" en una obra de arte?</p>
+          <label><input type="radio" name="q5" value="1" /> La organización de los elementos visuales para lograr un efecto armonioso.</label>
+          <label><input type="radio" name="q5" value="0" /> Colocar elementos de forma aleatoria en la obra.</label>
+          <label><input type="radio" name="q5" value="0" /> Usar colores brillantes sin importar la disposición.</label>
+        </div>
+
+        <div class="question">
+          <p>6. ¿Cómo puede mejorarse la presentación artística de una obra?</p>
+          <label><input type="radio" name="q6" value="1" /> Considerando el encuadre, los detalles y el contexto.</label>
+          <label><input type="radio" name="q6" value="0" /> Usando el mismo estilo siempre sin cambios.</label>
+          <label><input type="radio" name="q6" value="0" /> Rechazando las críticas de los demás.</label>
+        </div>
+
+        <div class="question">
+          <p>7. ¿Cuál es la clave para un dibujo preciso en proporciones?</p>
+          <label><input type="radio" name="q7" value="1" /> Utilizar una base de formas simples para construir detalles.</label>
+          <label><input type="radio" name="q7" value="0" /> Dibujar sin preocuparse por la proporción.</label>
+          <label><input type="radio" name="q7" value="0" /> Aplicar colores sin estructura previa.</label>
+        </div>
+
+        <div class="question">
+          <p>8. ¿Qué aspecto es importante al analizar una obra de arte?</p>
+          <label><input type="radio" name="q8" value="1" /> El contenido, la técnica utilizada y el mensaje transmitido.</label>
+          <label><input type="radio" name="q8" value="0" /> Solo la técnica utilizada en la creación de la obra.</label>
+          <label><input type="radio" name="q8" value="0" /> La cantidad de colores utilizados.</label>
+        </div>
+
+        <div class="question">
+          <p>9. ¿Qué se logra al perfeccionar las técnicas de arte?</p>
+          <label><input type="radio" name="q9" value="1" /> Mejorar la expresividad y la calidad visual de las obras.</label>
+          <label><input type="radio" name="q9" value="0" /> Repetir el mismo estilo sin cambios.</label>
+          <label><input type="radio" name="q9" value="0" /> Evitar la experimentación en las obras.</label>
+        </div>
+
+        <div class="question">
+          <p>10. ¿Qué es una técnica de mezcla de colores en arte?</p>
+          <label><input type="radio" name="q10" value="1" /> Combinar colores para obtener nuevos tonos y efectos visuales.</label>
+          <label><input type="radio" name="q10" value="0" /> Aplicar un solo color en toda la obra.</label>
+          <label><input type="radio" name="q10" value="0" /> Mezclar colores de forma aleatoria sin planificación.</label>
+        </div>
+
+        <button type="button" onclick="calcularResultado()">Enviar</button>
+        <button id="boton-certificado" style="display:none;" onclick="imprimirCertificado()">Imprimir Certificado</button>
+      </form>
+    </div>
+
+    <!-- Función para calcular la puntuación -->
+    <script src="logicaExamen.js"></script>
+  </body>
+</html>

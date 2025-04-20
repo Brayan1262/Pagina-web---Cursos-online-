@@ -1,0 +1,408 @@
+/* Estilo general */
+body {
+    background-color: rgba(22,34,57,0.99);
+    color: #ffffff;
+}
+
+.main-header .logo a {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+}
+
+.main-header .logo a em {
+    font-style: normal;
+    color: #f5a425;
+}
+
+/* Estilos del menú lateral */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    background-color: #000000;
+    padding-top: 20px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+    
+}
+
+.sidebar h2 em {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #f5a425;
+}
+.sidebar h2 .academy {
+    font-size: 36px; /* Tamaño de "ACADEMY" */
+    font-weight: 700;
+    color: #ffffff; /* Cambia el color según prefieras */
+    text-transform: uppercase;
+}
+
+
+.sidebar a {
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+    color: white;
+}
+
+/* Contenedor del botón Salir en la parte inferior */
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 350px 0;
+    display: flex;
+    justify-content: left;
+}
+
+/* Estilo del botón de Salir */
+.logout {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+}
+
+.logout i {
+    font-size: 1.5em; /* Tamaño del icono */
+
+}
+
+/* Mostrar el menú inferior solo en dispositivos móviles */
+@media (max-width: 768px) {
+
+  .sidebar {
+      display: none; /* Ocultar el sidebar en móvil */
+  }
+
+  .content {
+      margin-left: 0; /* Ajustar el contenido al ocultar el sidebar */
+  }
+
+  /* Menú de iconos en el footer para pantallas pequeñas */
+  .footer-menu {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #000000;
+      justify-content: space-around;
+      padding: 10px 0;
+      z-index: 101;
+  }
+
+  .footer-icon {
+      color: #ffffff;
+      font-size: 24px;
+      text-align: center;
+  }
+
+  .footer-icon:hover {
+      color: #f5a425;
+  }
+
+  /* Ajustes en los botones para dispositivos móviles */
+  .btn-custom, .btn-dark {
+      font-size: 12px;
+      padding: 5px 8px;
+  }
+
+  .btn-dark i, .btn-custom i {
+      font-size: 14px;
+  }
+
+  .card-footer button {
+      margin-right: 5px;
+  }
+}
+
+/* Contenedor principal de resultados */
+#resultados-container {
+  margin-left: 250px; /* Espacio para el sidebar */
+  margin-top: 60px; /* Espaciado desde el header */
+  padding: 20px;
+  font-size: 18px;
+  transition: margin-left 0.3s ease;
+  color: white; /* Texto blanco */
+  background-color: rgba(22, 34, 57, 0.99); /* Fondo oscuro */
+  max-width: 1200px; /* Ancho máximo */
+  margin-right: auto;
+  margin-left: auto; /* Centrar el contenedor */
+}
+
+/* Estilo para las pestañas */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  overflow-x: auto; /* Permitir desplazamiento horizontal si hay muchas pestañas */
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #1c1f2b;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  border-bottom: 2px solid #00aaff;
+  font-weight: bold;
+}
+
+.tab:hover {
+  background-color: #2d3241;
+}
+
+/* Contenido de cada sección de resultados */
+.results-section {
+  display: none; /* Ocultar todas las secciones por defecto */
+  margin-bottom: 30px;
+}
+
+.results-section.active {
+  display: block; /* Mostrar la sección activa */
+}
+
+/* Estilo para los resultados individuales */
+.result-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #2a2f3c;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.result-item img {
+  flex: 0 0 150px;
+  max-width: 300px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+.result-item div {
+  flex: 1;
+  margin-left: 10px;
+}
+
+/* Ajustes para los encabezados de las secciones */
+.results-section h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #00aaff;
+  border-bottom: 2px solid #444;
+  padding-bottom: 5px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  /* Reducir márgenes en pantallas pequeñas */
+  #resultados-container {
+    margin-left: 0; /* Elimina el espacio del sidebar */
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    border-bottom: 1px solid #444;
+  }
+
+  .tab {
+    flex: none;
+    min-width: 100px;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .result-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .result-item img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .result-item div {
+    margin-left: 0;
+  }
+}
+
+/* Ajustes adicionales para móviles más pequeños */
+@media (max-width: 480px) {
+  .tab {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .result-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+.header-main {
+  background-color: rgba(0, 0, 0, 0.99); /* Color de fondo */
+  color: #fff; /* Color del texto */
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid #444; /* Línea para separar el header del contenido */
+  position: fixed;
+  top: 0;
+  width: 100%; /* Ajusta el ancho para que cubra toda la pantalla */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */   
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header-content p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  
+}       
+
+/* From Uiverse.io by satyamchaudharydev */ 
+/* this is a recreation of twitter search in css */
+.form {
+  --input-text-color: #fff;
+  --input-bg-color: #283542;
+  --focus-input-bg-color: transparent;
+  --text-color: #949faa;
+  --active-color: #1b9bee;
+  --width-of-input: 400px;
+  --inline-padding-of-input: 1.2em;
+  --gap: 0.9rem;
+}
+/* form style */
+.form {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: var(--width-of-input);
+  position: relative;
+  isolation: isolate;
+}
+/* a fancy bg for showing background and border when focus. */
+.fancy-bg {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  background: var(--input-bg-color);
+  border-radius: 30px;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+/* label styling */
+label {
+  width: 100%;
+  padding: 0.8em;
+  height: 40px;
+  padding-inline: var(--inline-padding-of-input);
+  display: flex;
+  align-items: center;
+}
+
+.search,.close-btn {
+  position: absolute;
+}
+/* styling search-icon */
+.search {
+  fill: var(--text-color);
+  left: var(--inline-padding-of-input);
+}
+/* svg -- size */
+svg {
+  width: 17px;
+  display: block;
+}
+/* styling of close button */
+.close-btn {
+  border: none;
+  right: var(--inline-padding-of-input);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0.1em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--active-color);
+  opacity: 0;
+  visibility: hidden;
+}
+/* styling of input */
+.input {
+  color: var(--input-text-color);
+  width: 100%;
+  margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+  background: none;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-color)
+}
+/* input background change in focus */
+.input:focus ~ .fancy-bg {
+  border: 1px solid var(--active-color);
+  background: var(--focus-input-bg-color);
+}
+/* search icon color change in focus */
+.input:focus ~ .search {
+  fill: var(--active-color);
+}
+/* showing close button when typing */
+.input:valid ~ .close-btn {
+  opacity: 1;
+  visibility: visible;
+}
+/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+}

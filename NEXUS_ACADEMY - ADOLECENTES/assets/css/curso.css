@@ -1,0 +1,206 @@
+/* Configuración de fuente */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #0D1B2A;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.curso-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Encabezado del curso */
+.curso-header {
+    position: relative; /* Permite que los elementos internos se posicionen de manera absoluta */
+    display: flex;
+    align-items: flex-start; /* Alinea el contenido en la parte superior */
+    background-color: #1B263B;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Icono del curso */
+.curso-icono {
+    position: absolute; /* Posiciona el icono en relación a .curso-header */
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde la izquierda */
+}
+
+.curso-icono img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+/* Información del curso */
+.curso-info {
+    margin-left: 100px; /* Desplaza el contenido del curso hacia la derecha para que no se sobreponga con el icono */
+    flex-grow: 1;
+}
+
+.curso-titulo {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.curso-detalles {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.curso-calificacion {
+    color: #FFD700;
+}
+
+.curso-opiniones,
+.curso-nivel {
+    margin-left: 15px;
+    background-color: #394867;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.curso-descripcion {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Botones de acción */
+.curso-acciones {
+    margin-top: 15px;
+}
+
+.curso-boton {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.ver-clase {
+    background-color: #1B263B;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.comenzar-ahora {
+    background-color: #A5D6A7;
+    color: #1B263B;
+}
+
+.curso-boton:hover {
+    opacity: 0.8;
+}
+
+/* Información del instructor */
+.curso-instructor {
+    text-align: center;
+    color: #A0AEC0;
+}
+
+.curso-instructor img {
+    width: 400px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+/* Título del temario */
+.curso-temario-titulo {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Lista del temario */
+.curso-temario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.video-tema {
+    padding: 10px;
+    background-color: #1B263B;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.video-tema:hover {
+    background-color: #2C3E50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    /* Encabezado del curso en móvil */
+    .curso-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Estructura principal: apilado vertical */
+    .curso-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajuste del título y descripción */
+    .curso-title {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    /* Información del curso */
+    .curso-info {
+        order: 1;
+        text-align: center;
+    }
+
+    .curso-description {
+        text-align: center;
+        font-size: 1em;
+    }
+
+    /* Ajuste de botones */
+    .curso-buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .curso-buttons button {
+        width: 90%; /* Ajustar el ancho de los botones en pantallas pequeñas */
+    }
+
+    /* Ocultar completamente la información del instructor en móviles */
+    .curso-instructor {
+        display: none;
+    }
+
+    .curso-descripcion {
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .curso-acciones {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Temario centrado */
+    .curso-temario {
+        text-align: center;
+        font-size: 1.2em;
+    }
+}
+

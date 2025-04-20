@@ -1,0 +1,367 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #494747;
+    position: relative;
+}
+
+/* Logo en la esquina izquierda */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+#logo {
+    width: 180px;
+    height: auto;
+}
+
+#boton-certificado{
+
+    margin-top: 15px;
+}
+
+/* Estilo mejorado para el icono de instrucciones */
+.instructions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #0c6ba1;
+    color: #494747;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions:hover {
+    background-color: #004d40;
+    transform: scale(1.1);
+}
+
+.instructions i {
+    margin: 0;
+}
+
+/* Menú de instrucciones */
+.instructions-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.instructions-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%; /* Asegura que se ajuste al contenedor pero sin deformar */
+}
+
+.instructions-content h2 {
+    margin-top: 0;
+    color: #0c6ba1;
+}
+
+.instructions-content p {
+    color: #555;
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+.instructions-content button {
+    padding: 10px 20px;
+    background-color: #0c6ba1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.instructions-content button:hover {
+    background-color: #004d40;
+}
+
+.container {
+    max-width: 900px;
+    width: 60%; /* Se mantiene al 100% del ancho disponible */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    text-align: center;
+    color: #0a0a0a;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fbf7fc;
+    border-left: 5px solid #0c72a1;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+p {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+label:hover {
+    background-color: #e0f2f1;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0c6ba1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 121, 107, 0.3);
+}
+
+button:hover {
+    background-color: #0c6ba1;
+    box-shadow: 0 6px 15px rgba(0, 121, 107, 0.4);
+}
+
+/* Estilos para la ventana emergente */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    animation: popup-show 0.3s ease;
+}
+
+@keyframes popup-show {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    color: #00796b;
+    font-size: 1.5rem;
+}
+
+.popup-content p {
+    color: #555;
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    background-color: #0c6ba1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.popup-content button:hover {
+    background-color: #004d40;
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .question {
+        padding: 12px;
+    }
+
+    .instructions {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .logo {
+        top: 10px;
+        left: 10px;
+    }
+
+    .instructions-menu .instructions-content {
+        width: 85%;
+    }
+
+    .popup-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .question {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .instructions {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+/*comentario subir archivo*/
+/* Estilo para el contenedor de la pregunta */
+.question {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para el título de la pregunta */
+  .question p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Etiquetas para los campos */
+  label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  /* Estilo para el input de archivo */
+  input[type="file"] {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Estilo para el textarea (comentarios) */
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;  /* Permite redimensionar el área de texto verticalmente */
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para el botón de enviar */
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  

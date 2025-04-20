@@ -1,0 +1,491 @@
+/* Estilo general */
+body {
+    background-color: rgba(22, 34, 57, 0.95);
+    color: #ffffff;
+}
+
+/* Estilos del encabezado */
+.main-header .logo a {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+}
+
+.main-header .logo a em {
+    font-style: normal;
+    color: #f5a425;
+}
+
+/* Estilos del menú lateral */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    background-color: #000000;
+    padding-top: 20px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.sidebar h2 em {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #f5a425;
+  
+}
+.sidebar h2 .academy {
+  font-size: 36px; /* Tamaño de "ACADEMY" */
+  font-weight: 700;
+  color: #ffffff; /* Cambia el color según prefieras */
+  text-transform: uppercase;
+  
+}
+
+
+.sidebar a {
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+    color: white;
+}
+
+/* Estilos del contenido principal */
+.content {
+  margin-left: 250px;
+  margin-top: 60px; /* Ajusta según la altura del header */
+  padding: 20px;
+  font-size: 18px;
+  transition: margin-left 0.3s ease;
+}
+/* Contenedor del botón Salir en la parte inferior */
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 500px 0;
+  display: flex;
+  justify-content: left;
+}
+
+/* Estilo del botón de Salir */
+.logout {
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.logout i {
+  font-size: 1.5em; /* Tamaño del icono */
+
+}
+/* Ocultar el sidebar en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    /* Menú de iconos en el footer para pantallas pequeñas */
+    .footer-menu {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #000000;
+        justify-content: space-around;
+        padding: 10px 0;
+        z-index: 101;
+    }
+
+    .footer-icon {
+        color: #ffffff;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .footer-icon:hover {
+        color: #f5a425;
+    }
+}
+
+/* Contenedor principal para el diseño de dos columnas */
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 270px; /* Respeta el espacio del sidebar */
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+/* Estilos para el carrito de compras */
+.container-list {
+    width: 40%; /* Controla el ancho específico para el carrito */
+    padding: 20px;
+    background-color: rgba(22, 34, 57, 0.95);
+    border: 1px solid #1c1a35;
+    border-radius: 10px;
+}
+
+.container-list h2 {
+    font-size: 24px;
+    color: #f5a425;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Contenedor para lista de cursos con scroll */
+.course-list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Estilo de cada ítem en el carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #161629;
+    border: 1px solid #af751d;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.cart-item .item-details {
+    flex-grow: 1;
+}
+
+.cart-item .item-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.cart-item .item-price {
+    font-size: 14px;
+    color: #f5a425;
+}
+
+.cart-item .remove-item {
+    background: none;
+    border: none;
+    color: #ff4c4c;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cart-item .remove-item:hover {
+    color: #ff0000;
+}
+
+/* Estilo del total del carrito */
+.cart-total {
+    font-size: 18px;
+    color: #f5a425;
+    font-weight: bold;
+    text-align: right;
+    padding: 10px;
+    border-top: 1px solid #c76c05;
+    margin-top: 20px;
+}
+
+/* Contenedor para el método de pago */
+.payment-method {
+    width: 60%; /* Controla el ancho específico para el método de pago */
+    padding: 20px;
+    background-color: rgba(22, 34, 57, 0.95);
+    border: 1px solid #1c1a35;
+    border-radius: 10px;
+}
+
+.payment-method h2 {
+    font-size: 24px;
+    color: #f5a425;
+    text-align: center;
+}
+
+/* Estilo responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 10px;
+        margin-left: 0; /* Elimina el margen izquierdo en móvil */
+    }
+
+    .container-list,
+    .payment-method {
+        width: 100%; /* Para que ocupen el 100% en dispositivos móviles */
+        margin-bottom: 50px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-total {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+/* Estilos personalizados del formulario de método de pago */
+.form {
+    background: #0c0f14;
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01),
+      0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09),
+      0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Se ajusta al contenedor del acordeón */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    box-sizing: border-box;
+  }
+  .form .label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .form .label:has(input:focus) .title {
+    top: 0;
+    left: 0;
+    color: #d17842;
+  }
+  .form .label .title {
+    padding: 0 10px;
+    transition: all 300ms;
+    font-size: 12px;
+    color: #8b8e98;
+    font-weight: 600;
+    width: fit-content;
+    top: 14px;
+    position: relative;
+    left: 15px;
+    background: #0c0f14;
+  }
+  .form .input-field {
+    width: 100%; /* Ajuste para que ocupe todo el ancho disponible */
+    height: 50px;
+    text-indent: 15px;
+    border-radius: 15px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #21262e;
+    transition: all 0.3s;
+    caret-color: #d17842;
+    color: #aeaeae;
+  }
+  
+  .form .input-field:hover {
+    border-color: rgba(209, 121, 66, 0.5);
+  }
+  
+  .form .input-field:focus {
+    border-color: #d17842;
+  }
+  .form .split {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+  }
+  .form .split label {
+    flex: 1; /* Hace que ambos campos dentro de split tengan el mismo tamaño */
+  }
+  .form .checkout-btn {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: center;
+    color: #fff;
+    background: #d17842;
+    transition: all 200ms;
+  }
+  .form .checkout-btn:active {
+    transform: scale(0.95); /* Ajuste de escala al hacer clic */
+  }
+  
+  .form .checkout-btn:hover {
+    color: #d17842;
+    border: 2px solid #d17842;
+    background: transparent;
+  }
+  
+  /* Estilo responsivo */
+  @media (max-width: 768px) {
+    .form {
+      padding: 15px;
+    }
+  
+    .form .split {
+      flex-direction: column;
+    }
+  
+    .form .checkout-btn {
+      font-size: 18px;
+      padding: 12px;
+    }
+  }
+
+  /* Estilos generales de PayPal */
+.paypal-payment {
+    background: #0c0f14;
+    border-radius: 15px;
+    padding: 20px;
+    color: #ffffff;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .paypal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .paypal-header h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .paypal-logo {
+    width: 40px;
+    height: auto;
+  }
+  
+  .amount-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin: 20px 0;
+    color: #ffffff;
+  }
+  
+  .amount-section .amount {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .paypal-button {
+    display: block;
+    text-align: center;
+    background-color: #00b14f;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .paypal-button:hover {
+    background-color: #00a347;
+    color: #ffffff;
+  }
+  
+  .paypal-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    margin-top: 15px;
+  }
+  
+  .paypal-footer i {
+    margin-right: 5px;
+  }
+  
+  .paypal-footer strong {
+    color: #ffffff;
+  }
+  
+  /* Estilos Responsive */
+  @media (max-width: 768px) {
+    .paypal-payment {
+      padding: 15px;
+      max-width: 100%;
+    }
+  
+    .paypal-header h3 {
+      font-size: 16px;
+    }
+  
+    .paypal-logo {
+      width: 35px;
+    }
+  
+    .amount-section {
+      font-size: 14px;
+    }
+  
+    .amount-section .amount {
+      font-size: 16px;
+    }
+  
+    .paypal-button {
+      font-size: 14px;
+      padding: 10px 15px;
+    }
+  
+    .paypal-footer {
+      font-size: 10px;
+    }
+  }
+
+
+
+.payment-icon {
+    width: 24px; /* Tamaño del icono */
+    height: auto;
+}
+
+.qr-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
+@media (max-width: 768px) {
+    .qr-image {
+      max-width: 80%; /* Ajusta el tamaño en pantallas más pequeñas */
+    }
+}

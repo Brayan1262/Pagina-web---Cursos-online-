@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscripcion</title>
+    <link rel="icon" href="images/GUIMARBOT.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+    <link rel="stylesheet" href="css/suscripcion.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="brand" onclick="irInicio()">
+                <h1>GUIMAR<span>BOT</span></h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="notificaciones" >
+                <a href="#" id="notification-link">
+                    <img src="images/alarm-bell-svgrepo-com.svg" alt="notificaciones">
+                    <span>5</span>
+                </a>
+            </div>
+            <div class="perfile" id="perfile">
+                <img src="images/image.png" alt="Foto de perfil">
+                <span id="Angelo Del Aguila">Angelo</span>
+                <img src="images/down-2-svgrepo-com.svg" alt="" class="down-user">
+            </div>
+        </div>
+        <div class="profile-menu" id="profile-menu">
+            <p>¡Hola Jose!</p>
+            <a href="../Perfil/Perfil.html" class="profile-option">Ver perfil</a>
+            <a href="../contactanos/contactanos.html" class="profile-option">Contáctanos</a>
+            <a href="../selecionInteres.html" class="profile-option">Obtener una beca</a>
+            <a href="../index.html" class="profile-cerrar">Cerrar sesión</a>
+        </div>
+    </header>
+    
+    <!-- Ventana de notificaciones (oculta inicialmente) -->
+    <div id="notification-popup" class="notification-popup">
+        <div class="notification-header">
+            <h2>Notificaciones</h2>
+            <button id="mark-read" class="mark-read-btn">Marcar como leído</button>
+        </div>
+        <ul>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconreact.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de React Avanzado</p>
+                        <small>hace 1 día</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconcalendario.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Se acercan nuevos Eventos</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologial.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Tecnologia</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologia.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de C#</p>
+                        <small>hace 3 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconperfill.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Completa tu perfil</p>
+                        <small>hace 4 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/python.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: curso de python</p>
+                        <small>hace 5 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/arte.jfif" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Teatro</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/cursoAi.webp" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Vincula tu correo electrónico</p>
+                        <small>hace 6 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/Icono-GuimarBot2.ico" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Te damos la bienvenida a Guimarbot</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-arriba">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="interfaz.html" class="sidebar-home">
+                            <img src="images/home-filled-svgrepo-com.svg" alt="">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="suscripcion.html" class="suscripcion">
+                            <img src="images/rocket-filled-svgrepo-com.svg" alt="">
+                            <span>Suscripción</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cursando.html">
+                            <img src="images/work-case-filled-svgrepo-com.svg" alt="">
+                            <span>Cursando</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="metodopagocursos.html">
+                            <img src="images/shopping-cart-filled-svgrepo-com.svg" alt="">
+                            <span>Carrito</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Misrutas/misrutas.html" class="misrutas">
+                            <img src="images/folder-open-filled-svgrepo-com.svg" alt="">
+                            <span>Mis rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../BuscarRutas/buscarRutas.html">
+                            <img src="images/monitor-filled-svgrepo-com.svg" alt="">
+                            <span>Conocer rutas</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="medio">
+            <img src="images/6.svg" alt="robot">
+        </div>
+        <div class="feedback-section">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTPzWhRr0i0xw9Ul6bJEQqcnkjVxeDR-6dnAo4dkI0Bt1EXg/viewform?embedded=true"
+                id="feedback-link" target="_blank">
+                <i class="fas fa-comment-dots"></i>
+                <span>Déjanos tu opinión</span>
+            </a>
+        </div>
+    </div> 
+
+    <main class="main-container">
+        <section class="titulo">
+            <h1>Plan de Suscripción </h1>
+            <p>Con nuestro Plan de Suscripción, tendrás acceso ilimitado a todo nuestro catálogo de cursos en línea. Aprende a tu ritmo, explora diversas áreas de conocimiento y desbloquea tu potencial sin restricciones. Desde cursos básicos hasta programas avanzados, podrás disfrutar de contenido exclusivo, recursos actualizados y el respaldo de expertos en cada materia.</p>
+            <img src="images/tituloimg.svg" alt="robot">
+        </section>
+
+        <section class="planuser">
+            <div class="box">
+                <div class="text">
+                    <h1>Plan Actual - <span>Free</span></h1>
+                    <ul>
+                        <li>✔️ Acceso a las primeras clases de cada curso</li>
+                        <li>✔️ Aportes a la comunidad en clases gratuitas</li>
+                        <li>❌ Contenido profesional y actualizado con certificados digitales</li>
+                        <li>❌ Certificados físicos para las rutas de aprendizaje profesional</li>
+                        <li>❌ Acceso a las escuelas de Startups, Inglés y liderazgo</li>
+                        <li>❌ Eventos exclusivos como GuimarBot Conf</li>
+                        <li>❌ Descarga contenido en la app móvil</li>
+                    </ul>
+                </div>
+                    <img src="images/textoimg.svg" alt="robot">
+            </div>
+        </section>
+
+        <section class="planes">
+            <div class="tituloplanes">
+                <h1>Planes</h1>
+                <div class="btn-container">
+                    <label class="switch btn-color-mode-switch">
+                        <input value="1" id="color_mode" name="color_mode" type="checkbox">
+                        <label class="btn-color-mode-switch-inner" data-off="Anual" data-on="Anual" for="color_mode"></label>
+                    </label>
+                </div>
+            </div>
+            <div class="interfaz mensual active">
+                <div class="plann basico">
+                    <img src="images/Bronce.svg" alt="Plan Blonce">
+                    <h1>BASICA</h1>
+                    <p>1 persona</p>
+                    <p>S/ 200 / 1 Año</p>
+                    <hr class="line-divider">
+                    <div>
+                        <ul>
+                            <li class="incluye">✔️ Contenido profesional y actualizado</li>
+                            <li class="noincluye">❌ Certificados digitales</li>
+                            <li class="noincluye">❌ English Academy, Startups, Liderazgos</li>
+                            <li class="noincluye">❌ Eventos exclusivos</li>
+                            <li class="noincluye">❌ Descarga en la app móvil</li>
+                            <li class="noincluye">❌ Eventos exclusivos como GuimarBot Conf</li>
+                            <li class="noincluye">❌ Certificados físicos</li>
+                        </ul>
+                    </div>
+                    <button id="suscribirBtn">Suscríbete a Basic</button>
+
+                </div>
+                <div class="plann avanzado">
+                    <img src="images/Plata.svg" alt="Plan Plata">
+                    <h1>EXPERT</h1>
+                    <p>2 persona</p>
+                    <p>S/ 360 / 1 Año</p>
+                    <hr class="line-divider">
+                    <div>
+                        <ul>
+                            <li class="incluye">✔️ Contenido profesional y actualizado</li>
+                            <li class="incluye">✔️ Certificados digitales</li>
+                            <li class="incluye">✔️ English Academy, Startups, Liderazgos</li>
+                            <li class="incluye">✔️ Eventos exclusivos</li>
+                            <li class="incluye">✔️ Descarga en la app móvil</li>
+                            <li class="incluye">✔️ Eventos exclusivos como GuimarBot</li>
+                            <li class="noincluye">❌ Certificados físicos</li>
+                        </ul>
+                    </div>
+                    <button  id="suscribirBtn2">Suscríbete a Expert Duo</button>
+                </div>
+                <div class="plann avanzadofamilair">
+                    <img src="images/Oro.svg" alt="Plan Oro">
+                    <h1>EXPERT FAMILIAR</h1>
+                    <p>4 persona</p>
+                    <p>S/ 500 / 1 Año</p>
+                    <hr class="line-divider">
+                    <div>
+                        <ul>
+                            <li class="incluye">✔️ Contenido profesional y actualizado</li>
+                            <li class="incluye">✔️ Certificados digitales</li>
+                            <li class="incluye">✔️ English Academy, Startups, Liderazgos</li>
+                            <li class="incluye">✔️ Eventos exclusivos</li>
+                            <li class="incluye">✔️ Descarga en la app móvil</li>
+                            <li class="incluye">✔️ Eventos exclusivos como GuimarBot Conf</li>
+                            <li class="incluye">✔️ Certificados físicos</li>
+                        </ul>
+                    </div>
+                    <button id="suscribirBtn3">Suscríbete a Expert Familia</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="js/suscripcion.js"></script>
+    <script src="../Interfaces/InterfazUsuario/metodopagoplanes.html"></script>
+    <script src="../Interfaces/InterfazUsuario/js/metodopago.planes.js"></script>
+</body>
+</html>

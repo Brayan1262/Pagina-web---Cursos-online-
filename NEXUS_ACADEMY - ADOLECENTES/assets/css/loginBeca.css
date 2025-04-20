@@ -1,0 +1,215 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../images/fondo.png'); /* Coloca la ruta de tu imagen aquí */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que el fondo no se mueva al hacer scroll */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Form Container */
+.form-container {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Evitar scroll innecesario */
+}
+
+/* Fondo de video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra completamente */
+    z-index: -1; /* Coloca el video detrás de otros elementos */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay para dar contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Asegura que el contenido esté encima del video */
+}
+
+.video-overlay h1 {
+    color: white;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Form Container */
+.form-container {
+    position: relative;
+    z-index: 2; /* Formulario sobre el video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Form Structure */
+.form {
+    background-color: white;
+    padding: 25px 35px;
+    border-radius: 10px;
+    border: 3px solid #f39c12; /* Borde naranja */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Aumentado para más espacio entre los elementos */
+    position: relative;
+}
+
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Form Inputs */
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px; /* Aumentado para más separación entre campos */
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: #f39c12;
+    box-shadow: 0px 0px 4px rgba(243, 156, 18, 0.5);
+}
+
+/* Submit Button */
+.button-submit {
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.button-submit:hover {
+    background-color: #d68910;
+}
+
+/* Links and Texts */
+.p {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px; /* Aumentado para separación entre el texto y el botón */
+}
+
+.p .span {
+    color: #f39c12;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.p .span:hover {
+    color: #d68910;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .input {
+        font-size: 13px;
+    }
+
+    .button-submit {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Beca</title>
+    <link rel="stylesheet" href="Style/becaspostular.css">
+    <link rel="icon" href="Img/guimar login.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra de progreso -->
+        <div class="progress">
+            <div class="step active" data-step="1">1</div>
+            <div class="step" data-step="2">2</div>
+            <div class="step" data-step="3">3</div>
+        </div>
+
+        <!-- Paso 1 -->
+        <div class="form-step active" data-step="1">
+            <form class="form">
+                <div class="row">
+                    <div class="column">
+                        <label>Nombre Completo</label>
+                        <input type="text" placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="column">
+                        <label>Apellidos Completos</label>
+                        <input type="text" placeholder="Ingresa tus apellidos" required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label>Correo</label>
+                        <input type="email" placeholder="Ingresa tu correo" required>
+                    </div>
+                    <div class="column">
+                        <label>Número</label>
+                        <div class="phone-input">
+                            <span>+51</span>
+                            <input type="tel" placeholder="Tu número de contacto" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label>Fecha de nacimiento</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="column">
+                        <label>Documento de identidad</label>
+                        <input type="text" placeholder="Número de documento" required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label>Institución educativa</label>
+                        <input type="text" placeholder="Ej: Universidad ABC" required>
+                    </div>
+                    <div class="column">
+                        <label>Carrera o área de estudio</label>
+                        <input type="text" placeholder="Ej: Ingeniería de Sistemas" required>
+                    </div>
+                </div>
+                
+                <div class="cuestion">
+                    <label>¿Por qué quieres esta beca?</label>
+                    <textarea placeholder="Escribe tu respuesta aquí..." required></textarea>
+                </div>
+                
+                <div class="cuestion">
+                    <label>¿Qué objetivos tienes al estudiar en esta academia?</label>
+                    <textarea placeholder="Escribe tu respuesta aquí..." required></textarea>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="cancel">Cancelar</button>
+                    <button type="button" class="next">Siguiente</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="form-step" data-step="2">
+            <label>Certificado de estudios</label>
+            <input type="file" accept=".jpg,.png,.pdf" required>
+            <label>Documento de Identidad</label>
+            <input type="file" accept=".jpg,.png,.pdf" required>
+            <div class="buttons">
+                <button type="button" class="back" data-back>Atrás</button>
+                <button type="button" class="next" data-next>Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="form-step" data-step="3">
+            <div class="thanks-message">
+                <h1>¡Gracias por tu solicitud!</h1>
+                <p>Hemos recibido tu formulario y comenzaremos a evaluarlo. Nos estaremos comunicando contigo a través del correo electrónico proporcionado para informarte sobre el estado de tu solicitud o cualquier información adicional que necesitemos.</p>
+                <p>Si tienes alguna pregunta o inquietud, no dudes en contactarnos.
+            </div>
+            <button class="finalize" id="finalizeButton">Finalizar</button>
+        </div>
+    </div>
+
+    <script src="js/becasportular.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estiloadministradorsupremo.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 d-md-block sidebar">
+                <div class="position-sticky">
+                    <img src="../imagenes/guimarbot.webp" alt="Guimarbot" class="imagen-guimarbot">
+                    <h5 class="text-center">Panel de Administración</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('perfil')">Perfil del Administrador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('administrador')">Gestión de Administradores</a>
+                        </li>
+                        <li class="nav-item">   
+                            <a class="nav-link" onclick="showSection('usuarios')">Gestión de Usuarios</a>
+                        </li>
+                        <!--<li class="nav-item">   
+                            <a class="nav-link" onclick="showSection('profesores')">Gestión de Profesores</a>
+                        </li>-->
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('rutas')">Gestión de Rutas</a>
+                        </li>
+                        <li class="nav-item">   
+                            <a class="nav-link" onclick="showSection('cursos')">Gestión de Cursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('pagos')">Gestión de Pagos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('control_pagos')">Control de Pagos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('becas')">Bandeja de solicitudes de becas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('certificados')">Certificados Emitidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('modelo_certificado')">Modelo de Certificado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('estadisticas')">Estadísticas del Administrador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('mensajeria')">Mensajería</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showSection('historial_mensajeria')">Historial de Mensajería</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Gestiones -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
+
+                <!-- Sección de perfil del administrador -->
+                <div id="perfil" class="section">
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4">
+                            <div class="card profile-card text-center">
+                                <img src="../imagenes/jorge.webp" class="profile-image" alt="Foto de perfil del Administrador">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="role">Administrador</h5>
+                                    <p class="card-text" id="nombrecompleto">Nombre: </p>
+                                    <p class="card-text" id="correo">Correo: </p>
+                                    <p class="card-text" id="tipo_administrador">Rol: </p>
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gestión de Administradores -->
+                <div id="administrador" class="section inactive">
+                    <h2>Gestión de administrador</h2>
+                    <!-- Barra de búsqueda -->
+                    <div class="row mb-3">
+                        <form class="d-flex mb-3">
+                            <input class="form-control me-2" type="search" placeholder="Buscar administrador" aria-label="Buscar">
+                        </form>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#agregaradministradorModal">Agregar</button>
+                    </div>
+                    <!-- Tabla para mostrar los administradores -->
+                    <table id="tablaAdministradores" class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre de Usuario</th>
+                                <th scope="col">Nombres Completos</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí se insertarán los datos desde JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- Gestión de Usuarios -->
+                <div id="usuarios" class="section inactive">
+                    <h2>Gestión de Usuarios</h2>
+                    <!-- Barra de búsqueda -->
+                    <div class="row mb-3">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" id="buscarUsuarios" placeholder="Buscar usuario" aria-label="Buscar">
+                        </form>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#agregarUsuarioModal">Agregar</button>
+                    </div>
+                    <table id="tablaUsuarios" class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Email</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Más filas de ejemplo -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Gestión de Profesores -->
+                <div id="profesores" class="section inactive">
+                    <h2>Gestión de Usuarios</h2>
+                    <!-- Barra de búsqueda -->
+                    <div class="row mb-3">
+                        <!-- Barra de búsqueda -->
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Buscar usuario" aria-label="Buscar">
+                            <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </div>
+                    <table id="tablaUsuarios" class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Email</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Más filas de ejemplo -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Gestión de Rutas -->
+                <div class="section inactive" id="rutas">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="fw-bold">Gestion de Rutas</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarRutaModal">  
+                            Agregar ruta <span>+</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Categoría con colapsable -->
+                    <table id="tablaRutas" class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Rutas</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Más filas de ejemplo -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Gestión de Cursos -->
+                <div class="section inactive" id="cursos">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="fw-bold">Gestion de Cursos</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarCursoModal">
+                            Agregar Curso
+                        </button>
+                    </div>
+
+                    <!-- Categoría con colapsable -->
+                    <div class="accordion" id="accordionExample">
+                        
+                    </div>
+                </div>
+
+                <!-- Gestión de Pagos -->
+                <div id="pagos" class="section">
+                    <h2>Gestión de Pagos</h2>
+                    <!-- Barra de búsqueda -->
+                    <form class="d-flex mb-3">
+                        <input class="form-control me-2" type="search" id="buscarPagos" placeholder="Buscar transacción" aria-label="Buscar">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <table id='tablaPagos' class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID Usuario</th>
+                                <th>ID Transacción</th>
+                                <th>Monto</th>
+                                <th>Tipo de Pago</th>
+                                <th>Plan</th>
+                                <th>Fecha de Pago</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Más filas de ejemplo -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Control de Pagos -->
+                <div id="control_pagos" class="section">
+                    <h2>Control de Pagos</h2>
+                    <!-- Barra de búsqueda -->
+                    <form class="d-flex mb-3">
+                        <input class="form-control me-2" type="search" id="buscarControlPago" placeholder="Buscar transacción" aria-label="Buscar">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <table id='tablaControlPagos' class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID Usuario</th>
+                                <th>Plan</th>
+                                <th>Monto a pagar</th>
+                                <th>Fecha de Vencimiento</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Más filas de ejemplo -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Bandeja de solicitudes de becas -->
+                <div id="becas" class="section">
+                    <h2>Solicitudes de Becas</h2>
+                    <!-- Barra de búsqueda -->
+                    <form class="d-flex mb-3">
+                        <input class="form-control me-2" type="search" id="buscarBecas" placeholder="Buscar solicitud por usuario" aria-label="Buscar">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Bandeja de Solicitudes</h5>
+                            <table id="tablaBecas" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID Usuario</th>
+                                        <th>Nombres</th>
+                                        <th>Apellidos</th>
+                                        <th>Fecha</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificados Emitidos -->
+                <div id="certificados" class="section">
+                    <h2>Certificados Emitidos</h2>
+                    <!-- Barra de búsqueda -->
+                    <form class="d-flex mb-3">
+                        <input class="form-control me-2" type="search" id="buscarCertificados" placeholder="Buscar certificado emitido" aria-label="Buscar">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <table id="tablaCertificados" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID Usuario</th>
+                                <th>Certificado</th>
+                                <th>Fecha de Emisión</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Modelo del Certificado -->
+                <div id="modelo_certificado" class="section text-center p-5 border rounded shadow" style="max-width: 800px; margin: auto; background: linear-gradient(to bottom, white, skyblue);">
+                    <!-- Contenido del certificado -->
+                    <!-- Logo de la empresa -->
+                    <img src="../imagenes/guimarbot-.webp" alt="Logo SkillBoost" class="logo mt-5" style="width: 150px;">
+                    
+                    <!-- Título del Certificado -->
+                    <h1 class="mt-4" style="font-size: 2.5rem; font-weight: bold;">Certificado de Finalización</h1>
+                    
+                    <!-- Subtítulo -->
+                    <p class="lead" style="font-size: 1.25rem;"><b>Este certificado es otorgado a</b></p>
+                    
+                    <!-- Nombre del Usuario -->
+                    <h2 style="font-size: 2rem; margin: 20px 0; font-weight: bold;">Gray Jean Padilla Cury Paco</h2>
+                    
+                    <!-- Descripción del logro -->
+                    <p class="lead"><b>Por haber completado satisfactoriamente el curso de </b><strong>JavaScript</strong></p>
+                    <p class="lead"><b>Otorgado el </b><strong><b>9 de OCTUBRE de 2019</b></strong></p>
+                    
+                    <!-- Sección de firmas -->
+                    <div id="cargoempresa" class="row mt-5 text-center">
+                        <div class="col-md-4">
+                            <h4 ><strong>Brayan Jair Chavez O.</strong></h4>
+                            <h5 class="title">COO de SkillBoost</h5>
+                            <img src="firma1.png" alt="Firma 1" class="firma" style="width: 100px;">
+                        </div>
+                        <div class="col-md-4">
+                            <h4><strong>Angelo </strong></h4>
+                            <h5 class="title">CEO de SkillBoost</h5>
+                            <img src="firma2.png" alt="Firma 2" class="firma" style="width: 100px;">
+                        </div>
+                        <div class="col-md-4">
+                            <h4><strong>Anderson </strong></h4>
+                            <h5 class="title">Instructor</h5>
+                            <img src="firma_docente.png" alt="Firma Docente" class="firma" style="width: 100px;">
+                        </div>
+                    </div>
+
+                    <!-- Sección del código y enlace -->
+                    <p class="mt-5" style="font-size: 0.9rem; color: #6c757d;">https://skillboost.com/[usuario]</p>
+                    <p style="font-size: 0.9rem; color: #6c757d;">Código: 24f6e403-24db-4bd1-bbfe-ebd4f7d66ff8</p>
+                </div>
+
+                <!-- Estadísticas del administrador -->
+                <div id="estadisticas" class="section inactive">
+                    <h2>Estadísticas del Administrador</h2>
+                    <!-- Cajas de opciones para seleccionar -->
+                    <div class="row stats-container">
+                        <div class="col-md-3">
+                            <div class="stats-box" onclick="updateChart('Cuentas creadas')">Cuentas creadas</div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-box" onclick="updateChart('Docentes registrados')">Docentes registrados</div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-box" onclick="updateChart('Estudiantes con suscripción anual')">Estudiantes con suscripción anual</div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-box" onclick="updateChart('Cuentas becadas')">Cuentas becadas</div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-box" onclick="updateChart('Ganancias')">Ganancias</div>
+                        </div>
+                    </div>
+
+                    <!-- Filtro de periodo (Semanal, Mensual, Semestral, Anual) -->
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <select class="form-select" id="filterSelect" onchange="updateChart(currentData)">
+                                <option value="diario">Diario</option>
+                                <option value="semanal">Semanal</option>
+                                <option value="mensual">Mensual</option>
+                                <option value="anual">Anual</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Información adicional: Tipo de gráfico y total, ahora arriba del gráfico -->
+                    <div id="chartInfo" class="text-center mt-4">
+                        <h3 id="chartType"></h3> <!-- Título dinámico (e.g., Cuentas creadas, Ganancias, etc.) -->
+                        <p id="chartTotal">Total: 0</p>   <!-- Mostrará el total correspondiente -->
+                    </div>
+
+                    <!-- Gráfico -->
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <div class="chart-container">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mensajería -->
+                <div id="mensajeria" class="section">
+                    <h2>Mensajería</h2>
+                    <!-- Barra de búsqueda -->
+                    <form class="d-flex mb-3">
+                        <input class="form-control me-2" type="search" id="buscarMensajes" placeholder="Buscar mensaje por usuario" aria-label="Buscar">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Bandeja de Entrada</h5>
+                            <table id="tablaMensajes" class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th>De</th>
+                                    <th>Correo Electronico</th>
+                                    <th>Fecha</th>
+                                    <th>Acciones</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <!-- Repite lo mismo para cada fila -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historial de Mensajería -->
+                <div id="historial_mensajeria" class="section">
+                    <h2>Historial de Mensajería</h2>
+                    <!-- Barra de búsqueda -->
+                    <form class="d-flex mb-3">
+                        <input class="form-control me-2" type="search" id="buscarMensajesLeidos" placeholder="Buscar mensaje por usuario" aria-label="Buscar">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Bandeja de Entrada</h5>
+                            <table id="tablaMensajesLeidos" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>De</th>
+                                        <th>Correo Electronico</th>
+                                        <th>Fecha</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Repite lo mismo para cada fila -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal para editar el perfil del administrador -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="mb-3">
+                            <label for="adminImage" class="form-label">Foto de Perfil</label>
+                            <input type="file" class="form-control" id="adminImage" accept="image/*">
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="adminName" value="Gray Jean" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="adminEmail" value="graypadilla8@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminRole" class="form-label">Rol</label>
+                            <input type="text" class="form-control" id="adminRole" value="Administrador" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="saveProfileButton">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver los Detalles del Administrador -->
+    <div class="modal fade" id="sendadministradorDetallesModal" tabindex="-1" aria-labelledby="sendadministradorDetallesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendadministradorDetallesModalLabel">Detalles del Administrador</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <strong>ID:</strong> <span id="detalle-id"></span><br>
+                        <strong>Nombres Completos:</strong> <span id="detalle-nombrecompleto"></span><br>
+                        <strong>Fecha Nacimiento:</strong> <span id="detalle-fecha-nacimiento"></span><br>
+                        <strong>Género:</strong> <span id="detalle-genero"></span><br>
+                        <strong>Email:</strong> <span id="detalle-correo"></span><br>
+                        <strong>Teléfono:</strong> <span id="detalle-telefono"></span><br>
+                        <strong>Ciudad:</strong> <span id="detalle-ciudad"></span><br>
+                        <strong>País:</strong> <span id="detalle-pais"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar un nuevo administrador -->
+    <div class="modal fade" id="agregaradministradorModal" tabindex="-1" aria-labelledby="agregaradministradorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregaradministradorModalLabel">Agregar Administrador</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para agregar nuevos administradores -->
+                    <form id="agregarAdministradorForm" onsubmit="agregarAdministrador(event)">
+                        <div class="mb-3">
+                            <label for="nombre-administrador" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombre-administrador" placeholder="Nombre del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fecha-nacimiento-administrador" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="fecha-nacimiento-administrador" placeholder="Fecha de Nacimiento del Administrador" required>
+                        </div>                        
+                        <div class="mb-3">
+                            <label for="genero-administrador" class="form-label">Genero</label>
+                            <select class="form-select" id="genero-administrador">
+                                <option value="" disabled selected>Seleccione el genero</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo-administrador" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="correo-administrador" placeholder="Correo del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono-administrador" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="telefono-administrador" placeholder="Telefono del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ciudad-administrador" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="ciudad-administrador" placeholder="Ciudad de origen del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pais-administrador" class="form-label">Pais</label>
+                            <input type="text" class="form-control" id="pais-administrador" placeholder="Pais de origen del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="id-administrador" class="form-label">Nombre de Usuario</label>
+                            <input type="text" class="form-control" id="id-administrador" placeholder="ID del Administrador" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Administrador</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar administrador -->
+    <div class="modal fade" id="editarAdministradorModal" tabindex="-1" aria-labelledby="editarAdministradorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarAdministradorModalLabel">Editar Administrador</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para agregar nuevos administradores -->
+                    <form id="editarAdministradorForm" onsubmit="actualizarAdministrador(event)">
+                        <div class="mb-3">
+                            <label for="editar-nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="editar-nombre" placeholder="Nombre del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-correo" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="editar-correo" placeholder="Correo del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-telefono" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="editar-telefono" placeholder="Telefono del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-ciudad" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="editar-ciudad" placeholder="Ciudad de origen del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-pais" class="form-label">Pais</label>
+                            <input type="text" class="form-control" id="editar-pais" placeholder="Pais de origen del Administrador" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Editar Administrador</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver los Detalles del Estudiante -->
+    <div class="modal fade" id="sendEstudianteDetallesModal" tabindex="-1" aria-labelledby="sendUsuarioDetallesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendUsuarioDetallesModalLabel">Detalles del Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <strong>Nombres:</strong> <span id="detalle-usuario-nombres"></span><br>
+                        <strong>Apellidos:</strong> <span id="detalle-usuario-apellidos"></span><br>
+                        <strong>Género:</strong> <span id="detalle-usuario-genero"></span><br>
+                        <strong>Correo:</strong> <span id="detalle-usuario-correo"></span><br>
+                        <strong>Teléfono:</strong> <span id="detalle-usuario-telefono"></span><br>
+                        <strong>Fecha Nacimiento:</strong> <span id="detalle-usuario-fecha-nacimiento"></span><br>
+                        <strong>Plan:</strong> <span id="detalle-usuario-plan"></span><br>
+                        <strong>Beca:</strong> <span id="detalle-usuario-beca"></span><br>
+                        <strong>Ciudad:</strong> <span id="detalle-usuario-ciudad"></span><br>
+                        <strong>País:</strong> <span id="detalle-usuario-pais"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver los Detalles del Docente -->
+    <div class="modal fade" id="sendDocenteDetallesModal" tabindex="-1" aria-labelledby="sendUsuarioDetallesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendUsuarioDetallesModalLabel">Detalles del Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <strong>Nombres Completos:</strong> Brayan Chavez Oscor<br>
+                        <strong>Edad:</strong> 21<br>
+                        <strong>Género:</strong> Masculino<br>
+                        <strong>Teléfono:</strong> 987654321<br>
+                        <strong>Rol:</strong> Docente<br>
+                        <strong>Plan:</strong> Premiun<br>
+                        <strong>Ciudad:</strong> Lima<br>
+                        <strong>País:</strong> Perú<br>
+                        <strong>Materias:</strong>Programación - Diseño - Redes<br>
+                        <strong>Cursos:</strong>Python - JavaScript - Base de datos<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar un nuevo estudiante -->
+    <div class="modal fade" id="agregarUsuarioModal" tabindex="-1" aria-labelledby="agregarUsuarioModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarUsuarioModalLabel">Agregar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para agregar nuevos administradores -->
+                    <form id="agregarUsuarioForm" onsubmit="agregarUsuario(event)">
+                        <div class="mb-3">
+                            <label for="nombres-usuarios" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="nombres-usuarios" placeholder="Nombres del Usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellidos-usuarios" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos-usuarios" placeholder="Apellidos del Usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genero-usuarios" class="form-label">Genero</label>
+                            <select class="form-select" id="genero-usuarios">
+                                <option value="" disabled selected>Seleccione el genero</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo-usuarios" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="correo-usuarios" placeholder="Correo del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono-usuarios" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="telefono-usuarios" placeholder="Telefono del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fecha-nacimiento-usuarios" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="fecha-nacimiento-usuarios" placeholder="Fecha de Nacimiento del Usuario" required>
+                        </div>   
+                        <div class="mb-3">
+                            <label for="plan-usuarios" class="form-label">Plan</label>
+                            <select class="form-select" id="plan-usuarios">
+                                <option value="" disabled selected>Seleccione el plan</option>
+                                <option value="basico">Básico</option>
+                                <option value="medio">Medio</option>
+                                <option value="experto">Experto</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="beca-usuarios" class="form-label">Beca</label>
+                            <select class="form-select" id="beca-usuarios">
+                                <option value="" disabled selected>Seleccione el genero</option>
+                                <option value="sin beca">Sin beca</option>
+                                <option value="beca guimarbot">Beca Guimarbot</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ciudad-usuarios" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="ciudad-usuarios" placeholder="Ciudad de origen del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pais-usuarios" class="form-label">Pais</label>
+                            <input type="text" class="form-control" id="pais-usuarios" placeholder="Pais de origen del Administrador" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="usser-usuarios" class="form-label">Nombre de Usuario</label>
+                            <input type="text" class="form-control" id="usser-usuarios" placeholder="ID del Administrador" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Usuario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Estudiante -->
+    <div class="modal fade" id="sendEditarEstudianteModal" tabindex="-1" aria-labelledby="sendEditarUsuarioModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendEditarUsuarioModalLabel">Edite al Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editarUsuarioForm" onsubmit="actualizarUsuarios(event)">
+                        <div class="mb-3">
+                            <label for="editar-usuario-nombres" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="editar-usuario-nombres" placeholder="Escribe el nombre del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-usuario-apellidos" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="editar-usuario-apellidos" placeholder="Escribe el nombre del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-usuario-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editar-usuario-email" placeholder="Escribe el correo del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-usuario-telefono" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="editar-usuario-telefono" placeholder="Escribe el teléfono del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-usuario-plan" class="form-label">Plan</label>
+                            <select class="form-select" id="editar-usuario-plan">
+                                <option value="" disabled selected>Seleccione el plan</option>
+                                <option value="basico">Básico</option>
+                                <option value="medio">Medio</option>
+                                <option value="experto">Experto</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-usuario-beca" class="form-label">Beca</label>
+                            <select class="form-select" id="editar-usuario-beca">
+                                <option value="" disabled selected>Seleccione la beca</option>
+                                <option value="sin beca">Sin beca</option>
+                                <option value="beca guimarbot">Beca Guimarbot</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-usuario-ciudad" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="editar-usuario-ciudad" placeholder="Escribe la ciudad del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar-usuario-pais" class="form-label">País</label>
+                            <input type="text" class="form-control" id="editar-usuario-pais" placeholder="Escribe el país del usuario">
+                        </div>
+                        <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Docente -->
+    <div class="modal fade" id="sendEditarDocenteModal" tabindex="-1" aria-labelledby="sendEditarUsuarioModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendEditarUsuarioModalLabel">Edite al Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombres" class="form-label">Nombres Completos</label>
+                            <input type="text" class="form-control" id="nombres" placeholder="Escribe el nombre del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edad" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="edad" placeholder="Escribe la edad del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Escribe el correo del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" placeholder="Escribe el teléfono del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="plan" class="form-label">Plan</label>
+                            <select class="form-select" id="plan">
+                                <option value="" disabled selected>Seleccione el plan</option>
+                                <option value="basico">Básico</option>
+                                <option value="medio">Medio</option>
+                                <option value="experto">Experto</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ciudad" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="ciudad" placeholder="Escribe la ciudad del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pais" class="form-label">País</label>
+                            <input type="text" class="form-control" id="pais" placeholder="Escribe el país del usuario">
+                        </div>
+                        <div class="mb-3">
+                            <div class="mb-3">
+                                <label for="materia" class="form-label">Materias</label>
+                                <input type="text" class="form-control" id="materia" placeholder="Escribe una materia">
+                            </div>
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Materia</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Programacion</td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <!-- buttom de agregar ruta -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mb-3">
+                            <div class="mb-3">
+                                <label for="materia" class="form-label">Cursos</label>
+                                <input type="text" class="form-control" id="materia" placeholder="Escribe un curso">
+                            </div>
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Curso</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <!-- buttom de agregar ruta -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar ruta -->
+    <div class="modal fade" id="agregarRutaModal" tabindex="-1" aria-labelledby="agregarRutaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarRutaModalLabel">Agregar Ruta de Especialidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="agregarRutaForm" onsubmit="agregarRuta(event)">
+                        <div class="mb-3">
+                            <label for="nombreRuta" class="form-label">Nombre de ruta</label>
+                            <input type="text" class="form-control" id="nombreRuta" placeholder="Escribe el nombre de la ruta"><br>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombreAreaRuta" class="form-label">Nombre del area de la ruta</label>
+                            <input type="text" class="form-control" id="nombreAreaRuta" placeholder="Escribe el nombre del area de la ruta"><br>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Crear Ruta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver la Ruta -->
+    <div class="modal fade" id="sendverrutaModal" tabindex="-1" aria-labelledby="sendverrutaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendverrutaModalLabel">Contenido de la ruta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Area</th>
+                                        <th>Curso</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Arte</td>
+                                        <td>Unity</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robotica</td>
+                                        <td>Python</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Programacion</td>
+                                        <td>Java</td>
+                                    </tr>
+                                    <!-- buttom de agregar ruta -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para editar la Ruta -->
+    <div class="modal fade" id="sendEditarRutaModal" tabindex="-1" aria-labelledby="sendEditarRutaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendEditarRutaModalLabel">Area y cursos de la ruta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="removedCourses" class="mb-3"></div> <!-- Contenedor para cursos eliminados -->
+                    <form>
+                        <table class="table table-striped" id="coursesTable">
+                            <thead>
+                                <tr>
+                                    <th>Area</th>
+                                    <th>Curso</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Arte</td>
+                                    <td>Programación</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="removeCourse(this, 'Programación')">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Arte</td>
+                                    <td>Unity</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="removeCourse(this, 'Unity')">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Robotica</td>
+                                    <td>Python</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="removeCourse(this, 'Python')">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Programacion</td>
+                                    <td>Java</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="removeCourse(this, 'Java')">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <!-- Puedes añadir más cursos aquí -->
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar curso -->
+    <div class="modal fade" id="agregarCursoModal" tabindex="-1" aria-labelledby="agregarCursoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarCursoModalLabel">Agregar Nuevo Curso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="from-curso">
+                        <label for="areaRuta" class="form-label">Area de ruta</label>
+                            <select class="form-select" id="areaRuta">
+                                <option value="" disabled selected>Seleccionar Area de ruta</option>
+                            </select><br>
+                        <label for="ruta" class="form-label">Ruta</label>
+                        <input type="text" class="form-control" id="ruta" placeholder="Escribe el nombre del tema"><br>
+                        <div id="sugerenciasRuta" class="list-group"></div> <!-- Contenedor de sugerencias -->
+                        <label for="nombreCurso" class="form-label">Nombre del curso</label>
+                        <input type="text" class="form-control" id="nombreCurso" placeholder="Escribe el nombre de la ruta"><br>
+                        <label for="docente" class="form-label">Docente del curso:</label> 
+                        <input type="text" class="form-control" id="docente" placeholder="Escribe el nombre del profesor"><br>
+                        <!-- Campo de subida de imagen -->
+                        <label for="imagenDocente" class="form-label">Foto del docente</label>
+                        <input class="form-control" type="file" id="imagenDocente" accept="image/*"><br>
+                        <label for="nombreTema" class="form-label">Nombre del tema</label>
+                        <input type="text" class="form-control" id="nombreTema" placeholder="Escribe el nombre del tema"><br>
+                        <button type="submit" class="btn btn-success btn-sm" id="AgregarTema">Agregar</button>
+                        <table id="tablaTemas" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tema</th>
+                                    <th>Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Crear Curso</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver los videos -->
+    <div class="modal fade" id="sendVideoModal" tabindex="-1" aria-labelledby="sendVideoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendVideoModalLabel">Video</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Video de YouTube -->
+                    <iframe id="youtubeVideo" width="100%" height="400px" src="https://www.youtube.com/embed/BKEbpv-VHT8" 
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar los videos -->
+    <div class="modal fade" id="addVideoModal" tabindex="-1" aria-labelledby="addVideoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addVideoModalLabel">Agregar Video de YouTube</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombreVideo" class="form-label">Nombre del video</label>
+                        <input type="text" class="form-control" id="nombreVideo" placeholder="Escribe el nombre del video">
+                    </div>
+                    <form id="videoForm">
+                        <div class="mb-3">
+                            <label for="videoLink" class="form-label">Link del Video:</label>
+                            <input type="text" class="form-control" id="videoLink" placeholder="Introduce el link del video">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="saveVideoButton">Guardar Video</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver los Detalles del Pago -->
+    <div class="modal fade" id="sendDetallesPagoModal" tabindex="-1" aria-labelledby="sendUsuarioDetallesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendUsuarioDetallesModalLabel">Detalles del Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <strong>Nombres:</strong> <span id="detalle-pago-nombres"></span><br>
+                        <strong>Apellidos:</strong> <span id="detalle-pago-apellidos"></span><br>
+                        <strong>Género:</strong> <span id="detalle-pago-genero"></span><br>
+                        <strong>Correo:</strong> <span id="detalle-pago-correo"></span><br>
+                        <strong>Teléfono:</strong> <span id="detalle-pago-telefono"></span><br>
+                        <strong>Fecha Nacimiento:</strong> <span id="detalle-pago-fecha-nacimiento"></span><br>
+                        <strong>Plan:</strong> <span id="detalle-pago-plan"></span><br>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Correo de los implicados</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>graypadilla8@email.com</td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm">Activar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>chavezbr123@email.com</td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm">Activar</button>
+                                    </td>
+                                </tr>
+                                <!-- buttom de agregar ruta -->
+                            </tbody>
+                        </table>
+                        <strong>Beca:</strong> <span id="detalle-pago-beca"></span><br>
+                        <strong>Ciudad:</strong> <span id="detalle-pago-ciudad"></span><br>
+                        <strong>País:</strong> <span id="detalle-pago-pais"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver el mensaje-->
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="messageModalLabel">Detalles del Mensaje</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>De:</strong> <span id="modalSender"></span></p>
+                    <p><strong>Asunto:</strong> <span id="modalAsunto"></span></p>
+                    <p><strong>Mensaje:</strong> <span id="modalMessage"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="cargarMensajes();">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para responder mensaje -->
+    <div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="responseModalLabel">Responder Mensaje</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="responseForm">
+                        <div class="mb-3">
+                            <label for="recipientName" class="form-label">Para:</label>
+                            <input type="text" class="form-control" id="recipientName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="responseMessage" class="form-label">Mensaje:</label>
+                            <textarea class="form-control" id="responseMessage" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="sendMessageBtn">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="accionesadministradorsupremo.js"></script>
+    <script src="video.js"></script>
+    <script src="perfil.js"></script>
+    <script src="Gestion-Rutas.js"></script>
+    <script src="estadisticas.js"></script>
+    <script src="bandejaentrada.js"></script>
+    <script src="Gestion-Administrador.js"></script>
+    <script src="Gestion-Usuarios.js"></script>
+    <script src="Gestion-Pagos.js"></script>
+    <script src="Gestion-Becas.js"></script>
+    <script src="Gestion-Certificados.js"></script>
+    <script src="Gestion-Cursos.js"></script>
+    <script src="Gestion-Perfil.js"></script>
+</body>
+</html>

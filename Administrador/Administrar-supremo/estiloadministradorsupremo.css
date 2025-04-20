@@ -1,0 +1,407 @@
+/* General */
+:root {
+    --sidebar-bg: #ffffff;
+    --menu-active: #736ad1;
+    --menu-inactive: #b2abca;
+    --hover-bg: #f1f2f7;
+  }
+  
+  /* Barra lateral */
+  .sidebar {
+    position: fixed; /* Fijo al desplazarse */
+    top: 0;
+    left: 0;
+    width: 300px; /* Ancho de la barra lateral */
+    height: 100vh; /* Altura completa */
+    background-color: var(--sidebar-bg);
+    color: white;
+    padding-top: 20px;
+    overflow-y: auto; /* Desplazamiento si es necesario */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+  }
+  
+  .sidebar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .sidebar img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .sidebar h5 {
+    text-align: center;
+    margin: 10px 0 20px 0;
+    font-size: 1.2rem;
+  }
+  
+  .nav-link {
+    color: var(--menu-active);
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: all 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: var(--menu-active);
+    background-color: var(--hover-bg);
+  }
+  
+  .nav-link.active {
+    color: var(--menu-active);
+    background-color: var(--hover-bg);
+    font-weight: bold; /* Resalta el enlace activo */
+  }
+  
+  /* Iconos en la barra lateral (simulados con ::before) */
+  .nav-item:nth-child(1) .nav-link::before {
+    content: "👤";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(2) .nav-link::before {
+    content: "📂";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(3) .nav-link::before {
+    content: "🛠️";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(4) .nav-link::before {
+    content: "👥";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(5) .nav-link::before {
+    content: "👨‍🏫";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(6) .nav-link::before {
+    content: "🗺️";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(7) .nav-link::before {
+    content: "📘";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(8) .nav-link::before {
+    content: "💰";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(9) .nav-link::before {
+    content: "🧾";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(10) .nav-link::before {
+    content: "🎓";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(11) .nav-link::before {
+    content: "📜";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(12) .nav-link::before {
+    content: "🖋️";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(13) .nav-link::before {
+    content: "📊";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(14) .nav-link::before {
+    content: "✉️";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(15) .nav-link::before {
+    content: "🗂️";
+    margin-right: 10px;
+  }
+  .nav-item:nth-child(16) .nav-link::before {
+    content: "🚪";
+    margin-right: 10px;
+  }
+  /* Secciones */
+  .section {
+    display: none; /* Ocultas por defecto */
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro para contenido */
+    min-height: 100vh; /* Altura completa */
+  }
+  
+  /* La sección activa se muestra */
+  .section.active {
+    display: block;
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 900px) {
+    .sidebar {
+      width: 80px; /* Barra lateral más estrecha */
+    }
+  
+    #sidebar-logo {
+      content: url("../imagenes/robot-svgrepo-com.svg"); /* Cambia la imagen */
+      width: 40px; /* Ajusta el tamaño */
+      margin: 10px auto; /* Centra el logo reducido */
+      display: block; /* Asegura que siga visible */
+    }
+  
+    .sidebar h5 {
+      display: none; /* Oculta el texto */
+    }
+  
+    .nav-link {
+      justify-content: center; /* Centrar el ícono */
+      padding: 12px;
+    }
+  
+    .nav-link::before {
+      margin-right: 0;
+    }
+  
+    .nav-link span {
+      display: none; /* Ocultar el texto */
+    }
+  
+    .section {
+      margin-left: 80px; /* Ajusta el margen para la barra lateral más estrecha */
+    }
+  }
+  /* Estilos para el Certificado */
+  #modelo_certificado {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 2px solid #ccc;
+    padding: 40px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  #modelo_certificado .logo {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+  
+  #modelo_certificado h1 {
+    font-family: "Georgia", serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  #modelo_certificado .lead {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  #modelo_certificado h2 {
+    font-family: "Arial", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 20px;
+  }
+  
+  #cargoempresa h5.title {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 20px;
+  }
+  
+  #cargoempresa h4 {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  #modelo_certificado .row {
+    margin-top: 40px;
+  }
+  
+  #modelo_certificado .firma {
+    margin-top: 15px;
+    width: 100px;
+    height: auto;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+  }
+  
+  #modelo_certificado .title {
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  #modelo_certificado p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-top: 5px;
+  }
+  
+  /* Footer del certificado (enlace y código) */
+  #modelo_certificado p:last-child,
+  #modelo_certificado p:nth-last-child(2) {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    margin-top: 10px;
+  }
+  
+  .imagen-guimarbot {
+    width: 205px;
+    height: 80px;
+  }
+  
+  .texto-guimarbot {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Arial", sans-serif;
+    font-size: 28px;
+    color: #333;
+  }
+  
+  /* Estilos para el resumen de estadísticas */
+  .stats-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .totalestadisticas {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    width: 22%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .totalestadisticas {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .totalestadisticas {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .stats-box {
+    background-color: #f8f9fa; /* Fondo claro */
+    color: #0f0e0e; /* Color de texto azul */
+    border: 2px solid #75c2f5; /* Borde azul */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease,
+      transform 0.1s ease;
+    width: 100%; /* Ocupa todo el ancho de la columna */
+    margin-bottom: 20px; /* Espacio entre cajas */
+  }
+  
+  .stats-box:hover {
+    background-color: #75c2f5; /* Fondo azul al pasar el cursor */
+    color: #ffffff; /* Texto blanco al pasar el cursor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  }
+  
+  .stats-box:active {
+    background-color: #000000; /* Fondo más oscuro al hacer clic */
+    transform: translateY(2px); /* Efecto de botón presionado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra reducida al presionar */
+  }
+  
+  #suggestions li {
+    cursor: pointer; /* Cambia el cursor a "manito" */
+  }
+  
+  .dragging {
+    opacity: 0.5;
+    background-color: #f8f9fa; /* Fondo claro */
+  }
+  
+  /* Solo aplica el cursor de arrastre dentro de la tabla del modal */
+  #sendverrutaModal table tbody tr {
+    cursor: grab;
+  }
+  
+  /* Cambiar el cursor a 'grabbing' cuando se está arrastrando */
+  #sendverrutaModal table tbody tr:active {
+    cursor: grabbing;
+  }
+  
+  .btn-custom-small {
+    padding: 4px 8px; /* Ajusta el tamaño del padding */
+    font-size: 12px; /* Ajusta el tamaño de la fuente */
+  }
+  
+  .ms-sm {
+    /* margin-left: auto !important; */
+    margin-left: 300px;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 900px) {
+    .stats-summary {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .totalestadisticas {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Esto no afecta a pantallas grandes, solo aplica en móviles y tabletas */
+  @media (max-width: 900px) {
+    /* Cambios específicos para pantallas pequeñas */
+    .container {
+      width: 100%;
+      padding: 0 15px;
+    }
+  
+    .row {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    /* Otros ajustes como cambiar el tamaño de las fuentes, márgenes, etc. */
+  }
+  
+  /* Estilos solo para pantallas más pequeñas */
+  @media (max-width: 900px) {
+    .mi-clase {
+      font-size: 14px; /* Cambiar tamaño de fuente en pantallas pequeñas */
+    }
+    .mi-boton {
+      width: 100%; /* Los botones ocuparán todo el ancho en pantallas pequeñas */
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .ms-sm {
+      /* margin-left: auto !important; */
+      margin-left: 0px;
+    }
+  }
+  

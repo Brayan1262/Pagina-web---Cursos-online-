@@ -1,0 +1,1040 @@
+:root{
+    --main-color:#13dc86;
+    --red:#e74c3c;
+    --orange:#13dc86;
+    --light-color:#888;
+    --light-bg:#eee;
+    --black:#13161d; /*FONODO DE MAIN Y HEADER*/
+    --fondomedio: #13161d;
+    --white:#fff;
+    --ventanasflotantes:#3f3f42;
+    --textclaro:#82888f;
+    --textoscuro:#000000;
+    --border:.1rem solid rgba(0,0,0,.2);
+    --despliegue:(#242222);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
+}
+
+/* Body */
+body {
+    background: var(--fondomedio);
+    width: 100%;
+}
+
+body {
+    background-image: url('../img/fondo.svg');
+}
+/* Encabezado */
+header {
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #494747;
+    background: var(--black); /* Color neutro para fondo del encabezado */
+    position: fixed;
+    border-bottom: 2px solid #000;
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+}
+/* Sección izquierda */
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+/* LOGO */
+.left .brand {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.brand h1{
+    color: #fff;
+}
+
+.brand span{
+    color: var(--orange);
+}
+
+/* Sección Derecha */
+.right {
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    justify-content: center;
+    font-weight: bold;
+}
+
+.right a{
+    display: flex;
+    gap: 10px; /* Espaciado más amplio entre imagen y nombre */
+    cursor: pointer;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.right img {
+    width: 30px;
+    margin: 0 10px; /* Espaciado uniforme entre iconos */
+}
+
+
+/* From Uiverse.io by Yaya12085 */ 
+.button {
+    width: fit-content;
+    display: flex;
+    padding: 0.7em 0.9rem;
+    cursor: pointer;
+    gap: 0.4rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+    background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
+    background-size: 300%;
+    color: #fff;
+    border: none;
+    background-position: left center;
+    box-shadow: 0 30px 10px -20px rgba(0,0,0,.2);
+    transition: background .3s ease;
+    margin-right: 20px;
+}
+
+.button:hover {
+    background-size: 320%;
+    background-position: right center;
+}
+
+.button:hover svg {
+    fill: #fff;
+}
+
+.button svg {
+    width: 23px;
+    fill: #f09f33;
+    transition: .3s ease;
+}
+
+/* Perfil */
+.perfil {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none; /* Elimina el contorno */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.perfil:hover{
+    background-color: #5c5b5b;
+}
+
+.perfil img {
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    width: 35px; /* Tamaño del avatar */
+    height: 30px; /* Asegura que la imagen sea cuadrada */
+}
+
+.perfil span{
+    color: var(--white);
+    text-shadow: none;  /* Elimina el sombreado del texto */
+    outline: none;  /* Elimina el contorno cuando se hace clic */
+    -webkit-tap-highlight-color: transparent;  /* Elimina el sombreado en dispositivos táctiles */
+}
+
+.down-user {
+    width: 15px; /* Tamaño del icono de flecha */
+    height: auto;
+}
+
+/* Barra de notificaiones */
+.notificaciones {
+    position: relative;
+    cursor: pointer;
+    outline: none; /* Elimina el contorno */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.notificaciones span {
+    position: absolute; /* Posiciona el círculo en relación a su contenedor */
+    background: #f00; /* Color del círculo */
+    padding: 5px 8px; /* Ajusta el tamaño del círculo */
+    border-radius: 50%; /* Redondea el círculo */
+    color: #fff; /* Color del número dentro del círculo */
+    font-size: 12px; /* Tamaño del texto */
+    top: -4px; /* Ajuste para posicionarlo sobre el icono */
+    right: 0px; /* Ajuste para que esté alineado a la derecha */
+}
+
+/* Estilo para la caja de notificaciones */
+.notifi-box {
+    width: 300px;
+    max-height: 400px; /* Establece una altura máxima para la caja de notificaciones */
+    opacity: 0;
+    display: none; /* Oculta la caja de notificaciones por defecto */
+    position: absolute;
+    top: 63px;
+    right: 35px;
+    background-color: #242222; /* Fondo negro para el cuadro */
+    color: #fff; /* Texto blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-y: auto; /* Agrega scroll si hay demasiadas notificaciones */
+    transition: opacity 0.3s ease-in-out; /* Transición suave para aparecer */
+}
+
+/* Mostrar la caja de notificaciones */
+.notifi-box.show {
+    display: block;
+    opacity: 1; /* Hacerla visible */
+}
+
+/* Estilo para el encabezado del cuadro de notificaciones */
+.notifi-box h2 {
+    font-size: 16px;
+    color: #fff; /* Color blanco para el texto */
+    border-bottom: 1px solid #444; /* Borde gris oscuro */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notifi-box h2 span {
+    font-size: 14px;
+    color: #f00; /* Color del número de notificaciones en rojo */
+}
+
+/* Estilo para los elementos de notificación */
+.notifi-item {
+    display: flex;
+    border-bottom: 1px solid #444; /* Borde gris oscuro */
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.notifi-item:hover {
+    background-color: #333; /* Fondo más oscuro al pasar el ratón */
+    border-radius: 20px;
+}
+
+.notifi-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.notifi-item .text h4 {
+    color: #fff; /* Texto blanco */
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.notifi-item .text p {
+    color: #bbb; /* Texto gris claro */
+    font-size: 12px;
+}
+
+.notifi-item .fecha {
+    font-size: 11px;
+    color: #888; /* Color de la fecha (gris claro) */
+    margin-top: 5px;
+}
+
+/* Estilo de la caja cuando se hace scroll */
+.notifi-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notifi-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.notifi-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Estilos para la pestaña de despliegue */
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Ajusta esto según el tamaño de tu header */
+    right: 20px; /* Ajusta para posicionar correctamente */
+    background: #242222;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.profile-menu p{
+    color: orange;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-cerrar{
+    color: red;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    padding: 10px 10px 10px 10px;;
+}
+
+.profile-menu a:hover {
+    background-color: #ddd1d1a1;
+    border-radius: 15px;
+}
+
+/* Estilos de la sección de Membresía */
+.container-membresia .titulo-membresia {
+    margin-bottom: 50px;
+}
+
+.container-membresia {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tabs {
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    padding: 15px 25px;
+    margin: 0 5px;
+    background-color: #494747;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+.tab-button.active {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+.plans {
+    display: none;
+}
+
+.plans.active {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.plan {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.plan h2 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.plan ul li {
+    margin: 10px 0;
+}
+
+.subscribe {
+    background-color: #ffd700;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.subscribe:hover {
+    background-color: #ffca00;
+}
+
+/* Estilo para la ventana flotante */
+.ventana-flotante {
+    display: none; /* Inicialmente oculta */
+    position: fixed; /* Fija en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden; /* Asegura que nada salga del área visible */
+}
+
+.ventana-flotante.active {
+    display: flex; /* Se muestra como flex cuando está activa */
+}
+
+.contenido-ventana {
+    background-color: #272727;
+    border-radius: 10px;
+    padding: 30px;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 100%; /* Evita que la ventana ocupe más del 90% de la altura */
+    overflow-y: auto; /* Habilita el scroll si el contenido es demasiado grande */
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cerrar-ventana {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.cerrar-ventana:hover {
+    background-color: darkred;
+}
+
+/*MAIN*/
+.contenido-general{
+    margin-top: 90px;
+    padding: 10px;
+    width: 100%;
+}
+
+/*ENCABEZADO*/
+.encabezado{
+    display: flex;
+    gap: 60px;
+    padding-bottom: 40px;
+}
+
+.encabezado a{
+    text-decoration: none;
+    color: var(--orange);
+    font-size: 50px;
+    margin-left: 120px;
+    position: absolute;
+}
+
+.course-title{
+    background: var(--ventanasflotantes);
+    width: 70%;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0px auto;
+    display: flex;
+    gap: 50px;
+}
+
+/*Descripcion de el curso*/
+.descripcion{
+    align-items: center;
+    width: 60%;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    text-align: justify;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.text-align-justify{
+    color: #fff;
+}
+
+.descripcion-curso{
+    margin-left: 90px;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+}
+
+.titulo h1{
+    text-align: center;
+    font-size: 50px;
+    color: var(--white);
+}
+
+.titulo img{
+    width: 90px;
+}
+
+.rating {
+    font-size: 18px;
+    color: var(--yellow); /* Cambia a un color relacionado con estrellas */
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.rating #num{
+    color: var(--textclaro);
+    border-bottom: 2px solid var(--textclaro);
+    font-size: 12px;
+}
+
+.rating:hover {
+    transform: scale(1.03);
+}
+
+.amateur-box {
+    display: inline-block;
+    padding: 7px 10px;
+    background: #343b44;
+    border-radius: 15px;
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--textclaro);
+    font-weight: bold;
+}
+
+.icon-skyblue p{
+    margin-right: 6px;
+    color: #0977ad;
+}
+
+.last-update {
+    font-size: 14px;
+    color: var(--textclaro);
+    margin: 10px 0;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;                
+    margin-top: 20px;
+}
+
+.btn-container button{
+    background: var(--orange);
+    color: var(--textoscuro);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-container button:hover {
+    background: var(--orange); /* Un tono más oscuro del color principal */
+    transform: translateY(-2px);
+}
+
+.btn-container i{
+    padding-right: 10px;
+}
+
+/*Informacion del profesor*/
+.infoprofe{
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.teacher-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.teacher-image img{
+    border-radius: 50%;
+    height: 100%;
+    width: 90%;
+    object-fit: cover;
+}
+
+.professor-info{
+    padding: 10px;
+    color: var(--white);
+    height: 20%;
+}
+/*Linea decoracion*/
+.linea {
+    width: 800px;
+    height: 5px;
+    background-color: var(--ventanasflotantes);
+    margin: 0 auto;
+}
+
+/*CUERPO*/
+.cuerpo{
+    padding: 20px 5px 5px 5px;
+    color: var(--white);
+}
+
+/*CURSOS*/
+/* General Layout */
+.cur-video {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.cuadro {
+    padding: 20px;
+    gap: 20px;
+}
+
+.cuadro.pequeño {
+    width: 30%;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 10px;
+}
+
+.cuadro.grande {
+    width: 70%;
+}
+
+.cuadro h4, .cuadro h2 {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.cuadro.pequeño ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cuadro.pequeño ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    color: white;
+    font-size: 14px;
+}
+
+.cuadro.pequeño ul li i {
+    color: var(--orange);
+    font-size: 14px;
+}
+
+.cuadro.pequeño div{
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--light-color);
+    width: 85%;
+}
+
+.text-align-content{
+    unicode-bidi: isolate;
+
+}
+
+/*VIDEO*/
+.syllabus {
+    padding: 40px 20px;
+}
+
+.syllabus h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #120e4b;
+}
+
+.requirements {
+    width: 40%;
+    color: #000000;
+}
+
+.text-top {
+    margin-top: 40px;
+}
+
+.text-align-center {
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+.text-top-2 {
+    margin-top: -35px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.accordion-section h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.accordion {
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+    width: 95%;
+}
+
+.flex-center {
+    display: flex; 
+    align-items: center; 
+}
+
+.accordion-item {
+    background-color: #60abd0;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.accordion-button {
+    display: flex; 
+    flex-direction: column; 
+    padding: 15px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    text-align: left; 
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.4s ease;
+    border-radius: 10px;
+    background: var(--ventanasflotantes);
+    border: 2px solid var(--orange);
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column; 
+}
+
+.text-align-justify {
+    text-align: justify;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 25px;
+    border-radius: 10px;
+}
+
+.img-miniaturas {
+    width: 186px; 
+    height: 100px; 
+    border-radius: 10px;
+}
+
+.title {
+    margin-top: -90px;
+    margin-left: 200px;
+    font-weight: bold;
+    font-size: 19px; 
+    margin-bottom: 15px; 
+}
+
+.duration {
+    margin-left: 200px;
+    font-size: 15px; 
+    color: #fff;
+}
+
+.duration i {
+    margin-right: 5px; 
+    font-size: 1rem; 
+    color: white; 
+}
+
+footer {
+    background-color: #120e4b;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-solid{
+    color: #120e4b;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.social-media i {
+    color: #ffffff;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-media i:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 820px) {
+    .infoprofe{
+        display: none;
+    }
+    .course-title {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .btn-container {
+        flex-direction: column;
+    }
+
+    .cur-video{
+        flex-direction: column;
+    }
+    
+    .descripcion{
+        width: 100%;
+        padding: 5px;
+    }
+    .descripcion-curso{
+        margin-left: 0px;
+        padding: 5px;
+    }
+    .contenido-general{
+        width: 100%;
+    }
+
+    .encabezado{
+        margin-left: 35px;
+    }
+
+    .cuadro.pequeño{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .cuadro.grande{
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .linea{
+        width: 400px;
+    }
+
+    .text-align-content{
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px){
+    .cuadro.pequeño{
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cuadro.pequeño ul li{
+        justify-content: center;
+    }
+
+    .cuadro.grande{
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .titulo h1{
+        font-size: 20px;
+    }
+
+    .encabezado a{
+        margin-left: 1px;
+        font-size: 10px;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    .brand{
+        font-size:10px;
+    }
+
+    .perfil span{
+        display: none;
+    }
+
+    .button{
+        margin-right: 0px;
+    }
+
+    .linea{
+        display: none;
+    }
+
+    .cuadro.pequeño{
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .title{
+        margin: 0px;
+    }
+    .duration{
+        margin: 0px;
+    }
+
+    .encabezado {
+        margin-left: 0px
+    }
+
+    .encabezado a{
+        padding-right: 10px;
+    }
+
+    .planes{
+        display: none;
+    }
+
+    .accordion-button{
+        justify-items: center;
+        justify-content: center;
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1280px){
+    .encabezado a{
+        margin-left: 0px;
+        font-size: 20px;
+    }
+
+    .infoprofe img{
+        height: 60%;
+        width: 100%;
+    }
+
+    .course-title{
+        width: 80%;
+    }
+}
+
+@media (max-width: 1024px){
+    .encabezado a{
+        margin-left: 10px;
+    }
+
+    .infoprofe{
+        display: none;
+    }
+
+    .descripcion{
+        width: 100%;
+        padding: 5px;
+    }
+    .descripcion-curso{
+        margin-left: 0px;
+        padding: 5px;
+    }
+
+    .cuadro.pequeño{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+
+
+
+
+
+

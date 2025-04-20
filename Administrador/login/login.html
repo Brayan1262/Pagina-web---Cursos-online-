@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="../imagenes/guimarbot-.webp" alt="Guimarbot">
+        </div>
+        <div class="form-section">
+            <h2>Login Administrador</h2>
+            <form method="post" action="" autocomplete="off" onsubmit="loginSubmit(event)">
+                <div class="form-group">
+                    <label for="username">Nombre de Usuario</label>
+                    <input type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary" name="IniciarSesion">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+    "videos": {
+      "html-1": {
+        "titulo": "Introducción a HTML",
+        "url": "https://www.youtube.com/embed/3nYLTiY5skU",
+        "resumen": "Aprende los conceptos básicos de HTML.",
+        "recursos": ["Recurso 1", "Recurso 2"],
+        "relacionados": [
+          { "id": "html-2", "titulo": "Etiquetas Básicas" }
+        ]
+      },
+      "html-2": {
+        "titulo": "Etiquetas Básicas",
+        "url": "https://youtu.be/example2",
+        "resumen": "Conoce las etiquetas básicas en HTML.",
+        "recursos": ["Recurso 3", "Recurso 4"],
+        "relacionados": [
+          { "id": "html-1", "titulo": "Introducción a HTML" }
+        ]
+      }
+    }
+  }
+  

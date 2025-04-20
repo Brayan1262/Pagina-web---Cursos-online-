@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selección de Intereses</title>
+    <link rel="icon" href="assets/images/GUIMARBOT.ico" type="image/x-icon" />
+    <link rel="icon" href="images/Icono-GuimarBot2.ico" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- CSS Personalizado -->
+    <link href="assets/css/selecionInteres.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <div class="brand" onclick="irInicio()">
+            <h1>GUIMAR<span>BOT</span></h1>
+        </div>
+      </div>
+      
+      <div class="right">
+        <div class="planes" onclick="toggleVentana()">
+          <a href="#" class="icons-header">
+            <img src="Img/trophy-svgrepo-com.svg" alt="planes" />
+          </a>
+        </div>
+  
+        <div class="notificaciones" onclick="toggleNotifi()">
+          <a href="#" class="icons-header">
+            <img src="Img/remind-svgrepo-com.svg" alt="notificaciones" /><span
+              >5</span
+            >
+          </a>
+        </div>
+        <div class="perfil" id="perfil">
+          <img src="Img/image.png" alt="Foto de perfil" />
+          <span id="nom_user">Jose</span>
+          <img src="Img/down-2-svgrepo-com.svg" alt="" class="down-user" />
+        </div>
+      </div>
+      <div class="profile-menu" id="profile-menu">
+        <p>¡Hola Jose!</p>
+        <a href="perfil.html" class="profile-option">Ver perfil</a>
+        <a href="contactanos.html" class="profile-option">Contáctanos</a>
+        <a href="index.html" class="profile-cerrar">Cerrar sesión</a>
+      </div>
+
+      <div class="notifi-box" id="box">
+        <h2>Notifications <span>5</span></h2>
+
+        <div class="notifi-item">
+          <img src="img/avatar1.png" alt="img" />
+          <div class="text">
+            <h4>Elias Abdurrahman</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+            <span class="fecha">2024-11-13 10:30 AM</span>
+            <!-- Fecha añadida -->
+          </div>
+        </div>
+
+        <div class="notifi-item">
+          <img src="img/avatar2.png" alt="img" />
+          <div class="text">
+            <h4>John Doe</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+            <span class="fecha">2024-11-13 09:45 AM</span>
+            <!-- Fecha añadida -->
+          </div>
+        </div>
+
+        <div class="notifi-item">
+          <img src="img/avar3.png" alt="img" />
+          <div class="text">
+            <h4>Emad Ali</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+            <span class="fecha">2024-11-12 11:20 AM</span>
+            <!-- Fecha añadida -->
+          </div>
+        </div>
+
+        <div class="notifi-item">
+          <img src="img/avatar4.png" alt="img" />
+          <div class="text">
+            <h4>Ekram Abu</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+            <span class="fecha">2024-11-12 10:05 AM</span>
+            <!-- Fecha añadida -->
+          </div>
+        </div>
+
+        <div class="notifi-item">
+          <img src="img/avatar5.png" alt="img" />
+          <div class="text">
+            <h4>Jane Doe</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+            <span class="fecha">2024-11-11 04:15 PM</span>
+            <!-- Fecha añadida -->
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Sección de tarjetas -->
+  <div class="content">
+    <div class="card">
+      <img src="img/arte.webp" alt="Card 1" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Curso de Arte</h5>
+        <p class="card-text">Un curso de arte permite aprender y desarrollar habilidades en técnicas como pintura, dibujo y escultura, fomentando la creatividad y el conocimiento del arte.</p>
+        <a href="inicio.html" class="btn btn-primary">Seleccionar curso</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="img/programacion.png" alt="Card 2" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Programacion</h5>
+        <p class="card-text">Un curso de programación enseña a desarrollar habilidades para escribir código y resolver problemas tecnológicos utilizando diferentes lenguajes.</p>
+        <a href="#" class="btn btn-primary">Seleccionar curso</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="img/diseñografico.jpg" alt="Card 3" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Diseño Gráfico</h5>
+        <p class="card-text">Un curso de diseño gráfico enseña a crear y editar imágenes digitales usando herramientas como Photoshop e Illustrator, enfocándose en la estética.</p>
+        <a href="#" class="btn btn-primary">Seleccionar curso</a>
+      </div>
+    </div>
+    <div class="card">
+        <img src="img/fotografia.jpg" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Fotografía</h5>
+          <p class="card-text">Un curso de fotografía enseña a dominar técnicas de composición, manejo de cámaras, iluminación y edición para capturar imágenes impactantes. </p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/Desarrollo-Web.jpg" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Desarrollo Web</h5>
+          <p class="card-text">Este curso capacita a los estudiantes para crear sitios web, aprender lenguajes como HTML, CSS y JavaScript, y entender la estructura de las páginas en Internet.</p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/idiomas.webp" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Idiomas</h5>
+          <p class="card-text">Un curso de idiomas permite a los estudiantes aprender o mejorar sus habilidades en una lengua extranjera, enfocándose en la comprensión, conversación y escritura.</p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/Marketing Digital.jpg" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Marketing Digital</h5>
+          <p class="card-text">En este curso, los estudiantes aprenden estrategias de marketing en línea, incluyendo SEO, redes sociales y publicidad digital para promover productos o servicios en Internet.</p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/Cocina y Gastronomía.jpeg" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Cocina y Gastronomía</h5>
+          <p class="card-text">Un curso de cocina enseña técnicas culinarias, recetas y la creación de menús, desarrollando habilidades para preparar platillos de diferentes culturas y estilos gastronómicos.</p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/desarrolloSostenibe.jpg" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Desarrollo Sostenible y Medio Ambiente</h5>
+          <p class="card-text">Explora los principios del desarrollo sostenible y cómo aplicarlos en proyectos que beneficien al medio ambiente y las comunidades locales.</p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/liderazgo.webp" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Emprendimiento Social y Liderazgo Comunitario</h5>
+          <p class="card-text">Explora cómo identificar problemáticas sociales y desarrollar soluciones sostenibles mediante proyectos de impacto social.</p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/negocioos.jpg" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Negocios y Gestión Empresarial</h5>
+          <p class="card-text">Explora estrategias para identificar oportunidades de mercado y desarrollar planes sostenibles que impulsen el crecimiento empresarial.</p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/innovacion.jpg" alt="Card 3" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">Innovación Tecnológica y Transformación Digital</h5>
+          <p class="card-text">Explora cómo implementar tecnologías emergentes y desarrollar soluciones innovadoras para mejorar procesos..</p>
+          <a href="#" class="btn btn-primary">Seleccionar curso</a>
+        </div>
+      </div>
+  </div>
+
+   
+
+    <script src="js/becas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

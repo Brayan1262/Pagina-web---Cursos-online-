@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="icon" href="images/GUIMARBOT.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/completarperfil.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="brand" onclick="irInicio()">
+                <h1>GUIMAR<span>BOT</span></h1>
+            </div>
+        </div>
+        <div class="right">
+            <div class="notificaciones" >
+                <a href="#" id="notification-link">
+                    <img src="images/alarm-bell-svgrepo-com.svg" alt="notificaciones">
+                    <span>5</span>
+                </a>
+            </div>
+            <div class="perfile" id="perfile">
+                <img src="images/image.png" alt="Foto de perfil">
+                <span id="Angelo Del Aguila">Angelo</span>
+                <img src="images/down-2-svgrepo-com.svg" alt="" class="down-user">
+            </div>
+        </div>
+        <div class="profile-menu" id="profile-menu">
+            <p>¡Hola Jose!</p>
+            <a href="Perfil.html" class="profile-option">Ver perfil</a>
+            <a href="contact.html" class="profile-option">Contáctanos</a>
+            <a href="becas.html" class="profile-option">Obtener una beca</a>
+            <a href="../login/login.html" class="profile-cerrar">Cerrar sesión</a>
+        </div>
+    </header>
+    
+    <!-- Ventana de notificaciones (oculta inicialmente) -->
+    <div id="notification-popup" class="notification-popup">
+        <div class="notification-header">
+            <h2>Notificaciones</h2>
+            <button id="mark-read" class="mark-read-btn">Marcar como leído</button>
+        </div>
+        <ul>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconreact.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de React Avanzado</p>
+                        <small>hace 1 día</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconcalendario.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Se acercan nuevos Eventos</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologial.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Tecnologia</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/icontecnologia.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de C#</p>
+                        <small>hace 3 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/iconperfill.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Completa tu perfil</p>
+                        <small>hace 4 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/python.png" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: curso de python</p>
+                        <small>hace 5 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/arte.jfif" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Hemos lanzado: Curso de Teatro</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/cursoAi.webp" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Vincula tu correo electrónico</p>
+                        <small>hace 6 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+            <li>
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <img src="images/Icono-GuimarBot2.ico" alt="Icono de la notificación" />
+                    </div>
+                    <div class="notification-content">
+                        <span class="notification-new">Nuevo</span>
+                        <p>Te damos la bienvenida a Guimarbot</p>
+                        <small>hace 2 días</small>
+                    </div>
+                    <i class="fas fa-trash notification-delete"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-arriba">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="interfaz.html" class="sidebar-home">
+                            <img src="images/home-filled-svgrepo-com.svg" alt="">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="suscripcion.html" class="suscripcion">
+                            <img src="images/rocket-filled-svgrepo-com.svg" alt="">
+                            <span>Suscripción</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="estadisiticas.html">
+                            <img src="images/work-case-filled-svgrepo-com.svg" alt="">
+                            <span>Cursando</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Cursos.html">
+                            <img src="images/shopping-cart-filled-svgrepo-com.svg" alt="">
+                            <span>Carrito</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="misrutas.html" class="misrutas">
+                            <img src="images/folder-open-filled-svgrepo-com.svg" alt="">
+                            <span>Mis rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Foro.html">
+                            <img src="images/monitor-filled-svgrepo-com.svg" alt="">
+                            <span>Conocer rutas</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="medio">
+            <img src="images/robotmostrar.svg" alt="robot">
+        </div>
+        <div class="sidebar-abajo">
+            <a href="contactanos.html">
+                <img src="images/notification-filled-svgrepo-com.svg" alt="">
+                <p>Déjanos tu opinión</p>
+            </a>
+        </div>
+    </div> 
+
+    <main class="main-container">
+                    <div class="primercuadro">
+                        <div class="profile-card p-4 shadow-sm rounded">
+                            <img src="images/image.png" alt="Foto de perfil" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover" />
+                            <div class="mt-3">
+                                <label for="profile-picture" class="btn btn-primary">Cambiar Foto</label>
+                                <input type="file" id="profile-picture" name="profile_picture" style="display: none" accept="image/*" />
+                            </div>
+
+                            <!-- Redes Sociales -->
+                            <div class="social-links-container">
+                                <div class="social-link">
+                                    <label for="facebook-link">
+                                        <i class="fab fa-facebook-f"></i> Facebook
+                                    </label>
+                                    <input type="url" id="facebook-link" placeholder="Ingresa tu enlace de Facebook" />
+                                </div>
+                            
+                                <div class="social-link">
+                                    <label for="twitter-link">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                    </label>
+                                    <input type="url" id="twitter-link" placeholder="Ingresa tu enlace de Twitter" />
+                                </div>
+                                
+                                <div class="social-link">
+                                    <label for="github-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                    </label>
+                                    <input type="url" id="github-link" placeholder="Ingresa tu enlace de GitHub" />
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Columna para los datos del perfil -->
+                    <div class="segundocuadro">
+                        <form action="submit_edit_profile.php" method="POST">
+                            <div class="row">
+                                <!-- Nombre y Apellidos -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first-name">Nombre</label>
+                                        <input type="text" id="first-name" name="first_name" class="form-control" placeholder="Ingresa tu nombre"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="last-name">Apellidos</label>
+                                        <input type="text" id="last-name" name="last_name" class="form-control" placeholder="Ingresa tus apellidos"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Usuario y Email -->
+                            <div class="form-group mt-3">
+                                <label for="username">Usuario</label>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario"/>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
+                            </div>
+
+                            <!-- Teléfono y Sitio web -->
+                            <div class="form-group mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone">Teléfono Móvil</label>
+                                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Número de teléfono" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="website">Sitio web personal</label>
+                                        <input type="url" id="website" name="website" class="form-control" placeholder="Enlace a tu sitio web" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Biografía y Género -->
+                            <div class="form-group mt-3">
+                                <label for="bio">Biografía</label>
+                                <textarea id="bio" name="bio" class="form-control" rows="4" placeholder="Escribe algo sobre ti"></textarea>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="gender">Género</label>
+                                <select id="gender" name="gender" class="form-control">
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="birthday">Cumpleaños</label>
+                                <input type="date" id="birthday" name="birthday" class="form-control" />
+                            </div>
+
+                            <!-- Sección de Otros Datos -->
+                            <div class="mt-4">
+                                <h3>Otros Datos</h3>
+
+                                <!-- Nivel educativo -->
+                                <div class="form-group mt-3">
+                                    <label for="educationLevel">Nivel educativo</label>
+                                    <select class="form-control" id="educationLevel" name="educationLevel">
+                                        <option value="Primaria">Primaria</option>
+                                        <option value="Secundaria">Secundaria</option>
+                                        <option value="Universidad">Universidad</option>
+                                    </select>
+                                </div>
+
+                                <h4 class="mt-4 mb-3">Temas de interés</h4>
+                                <div class="form-group">
+                                    <select class="form-control" name="interest_topics">
+                                        <option>Diseño de páginas web</option>
+                                        <option>Administración de BBDD</option>
+                                        <option>Diseño Gráfico</option>
+                                        <option>Marketing y emprendimiento</option>
+                                    </select>
+                                </div>
+
+                                <!-- Experiencia -->
+                                <div class="form-group mt-3">
+                                    <label>¿Tienes experiencia?</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="experience" id="experienceYes" value="Sí" />
+                                        <label class="form-check-label" for="experienceYes">Sí</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="experience" id="experienceNo" value="No" />
+                                        <label class="form-check-label" for="experienceNo">No</label>
+                                    </div>
+                                </div>
+
+                                <!-- Trabajo -->
+                                <div class="form-group mt-3">
+                                    <label>¿Estás trabajando?</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="working" id="workingYes" value="Sí" />
+                                        <label class="form-check-label" for="workingYes">Sí</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="working" id="workingNo" value="No" />
+                                        <label class="form-check-label" for="workingNo">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="form-group mt-4 text-center">
+                                <button type="submit" class="btn btn-success" id="saveChangesBtn">Guardar Cambios</button>
+                                <a href="perfil.html" class="btn btn-secondary ml-2">Volver al perfil</a>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal" id="successModal">
+                                <div class="modal-content">
+                                    <h2>Cambios Guardados</h2>
+                                    <p>¡Tus cambios se han guardado correctamente!</p>
+                                    <button id="closeModalBtn" class="btn btn-success">Cerrar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+    </main>
+
+    <script src="js/completarperfil.js"></script>
+</body>
+</html>

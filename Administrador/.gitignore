@@ -1,0 +1,16 @@
+# Ignorar dependencias de Node.js
+node_modules/
+
+# Ignorar archivos de depuración
+*.log
+debug_*.txt
+
+# Ignorar dependencias de Composer
+vendor/
+
+# Ignorar subidas temporales
+uploads/
+
+# Ignorar sistemas operativos
+.DS_Store
+Thumbs.db

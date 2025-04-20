@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen de Scratch</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../Examen/styleExamen.css" />
+    <link rel="icon" href="IMG/GUIMARBOT.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../../Examen/Logo-GuimarBot.png" alt="Logo" id="logo" />
+      </a>
+    </div>
+
+    <!-- Icono de Instrucciones en la esquina derecha -->
+    <div class="instructions" onclick="toggleInstructions()">
+      <i class="fas fa-info-circle"></i> Instrucciones
+    </div>
+
+    <!-- Menú de instrucciones -->
+    <div id="instructions-menu" class="instructions-menu">
+      <div class="instructions-content">
+        <h2>Instrucciones para el Examen</h2>
+        <p>1. Este examen consta de 10 preguntas de opción múltiple.</p>
+        <p>2. Debes seleccionar la opción correcta para cada pregunta.</p>
+        <p>3. El puntaje máximo es 10 puntos y el mínimo aprobado es 7.</p>
+        <p>4. Si no apruebas, puedes volver a intentarlo.</p>
+        <p>
+          5. Asegúrate de leer cada pregunta cuidadosamente antes de responder.
+        </p>
+        <button onclick="toggleInstructions()">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Examen de Arte: Técnicas y Expresión</h1>
+      <form id="exam-form">
+        <!-- Preguntas -->
+        <div class="question">
+          <p>1. ¿Cuál es la importancia de estudiar la historia del arte?</p>
+          <label
+            ><input type="radio" name="q1" value="1" /> Comprender los
+            movimientos artísticos y su impacto</label
+          >
+          <label
+            ><input type="radio" name="q1" value="0" /> Solo es relevante para
+            los artistas</label
+          >
+          <label
+            ><input type="radio" name="q1" value="0" /> No tiene impacto en la
+            cultura moderna</label
+          >
+        </div>
+
+        <div class="question">
+          <p>2. ¿Qué es la teoría avanzada del color?</p>
+          <label
+            ><input type="radio" name="q2" value="1" /> El estudio de cómo los
+            colores interactúan entre sí</label
+          >
+          <label
+            ><input type="radio" name="q2" value="0" /> El proceso de mezclar
+            colores básicos</label
+          >
+          <label
+            ><input type="radio" name="q2" value="0" /> Usar colores solo para
+            decorar</label
+          >
+        </div>
+
+        <div class="question">
+          <p>3. ¿Qué es la perspectiva en dibujo?</p>
+          <label
+            ><input type="radio" name="q3" value="1" /> Es una técnica que crea
+            la ilusión de profundidad</label
+          >
+          <label
+            ><input type="radio" name="q3" value="0" /> Es el uso de diferentes
+            tonos de color</label
+          >
+          <label
+            ><input type="radio" name="q3" value="0" /> Es la aplicación de
+            sombra en un dibujo</label
+          >
+        </div>
+
+        <div class="question">
+          <p>4. ¿Qué es la técnica mixta en pintura?</p>
+          <label
+            ><input type="radio" name="q4" value="1" /> Combina diferentes
+            materiales y métodos</label
+          >
+          <label
+            ><input type="radio" name="q4" value="0" /> Usa solo una técnica de
+            pintura, como el óleo</label
+          >
+          <label
+            ><input type="radio" name="q4" value="0" /> Se refiere a pintar
+            sobre lienzo de forma tradicional</label
+          >
+        </div>
+
+        <div class="question">
+          <p>
+            5. ¿Cuál es la herramienta principal para ilustración digital
+            básica?
+          </p>
+          <label
+            ><input type="radio" name="q5" value="1" /> Tableta gráfica</label
+          >
+          <label
+            ><input type="radio" name="q5" value="0" /> Lápiz y papel</label
+          >
+          <label
+            ><input type="radio" name="q5" value="0" /> Pincel
+            tradicional</label
+          >
+        </div>
+
+        <div class="question">
+          <p>6. ¿Qué es la composición dinámica en arte?</p>
+          <label
+            ><input type="radio" name="q6" value="1" /> Organizar los elementos
+            de manera que guíen la vista</label
+          >
+          <label
+            ><input type="radio" name="q6" value="0" /> Colocar todos los
+            elementos de forma simétrica</label
+          >
+          <label
+            ><input type="radio" name="q6" value="0" /> Hacer la imagen lo más
+            simple posible</label
+          >
+        </div>
+
+        <div class="question">
+          <p>7. ¿Por qué es importante estudiar la figura humana en el arte?</p>
+          <label
+            ><input type="radio" name="q7" value="1" /> Para mejorar la
+            representación de proporciones y movimiento</label
+          >
+          <label
+            ><input type="radio" name="q7" value="0" /> Solo es relevante para
+            la escultura</label
+          >
+          <label
+            ><input type="radio" name="q7" value="0" /> No es esencial para el
+            arte moderno</label
+          >
+        </div>
+
+        <div class="question">
+          <p>8. ¿Qué caracteriza al arte conceptual?</p>
+          <label
+            ><input type="radio" name="q8" value="1" /> La idea o concepto
+            detrás de la obra es lo más importante</label
+          >
+          <label
+            ><input type="radio" name="q8" value="0" /> La técnica y los
+            materiales son lo más importante</label
+          >
+          <label
+            ><input type="radio" name="q8" value="0" /> Se enfoca solo en la
+            estética</label
+          >
+        </div>
+
+        <div class="question">
+          <p>9. ¿Qué es la experimentación con materiales en el arte?</p>
+          <label
+            ><input type="radio" name="q9" value="1" /> Probar nuevas
+            combinaciones y materiales para expandir las posibilidades
+            artísticas</label
+          >
+          <label
+            ><input type="radio" name="q9" value="0" /> Usar solo materiales
+            tradicionales en todas las obras</label
+          >
+          <label
+            ><input type="radio" name="q9" value="0" /> Limitarse a los
+            materiales más baratos</label
+          >
+        </div>
+
+        <div class="question">
+          <p>10. ¿Qué es la técnica de grabado?</p>
+          <label
+            ><input type="radio" name="q10" value="1" /> Crear imágenes mediante
+            el corte o grabado en una superficie</label
+          >
+          <label
+            ><input type="radio" name="q10" value="0" /> Pintar sobre una
+            superficie dura como el metal</label
+          >
+          <label
+            ><input type="radio" name="q10" value="0" /> Usar solo tinta en un
+            lienzo</label
+          >
+        </div>
+
+        <button type="button" onclick="calcularResultado()">Enviar</button>
+        <button id="boton-certificado" style="display:none;" onclick="imprimirCertificado()">Imprimir Certificado</button>
+      </form>
+    </div>
+
+    <!-- Función para calcular la puntuación -->
+    <script src="../../Examen/logicaExamen.js"></script>
+  </body>
+</html>

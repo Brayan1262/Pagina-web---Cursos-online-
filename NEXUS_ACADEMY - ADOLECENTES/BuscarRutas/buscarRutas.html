@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscar rutas</title>
+    <link rel="icon" href="../assets/images/GUIMARBOT.ico" type="image/x-icon" />
+    <!-- SweetAlert2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/buscarRutas.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="left">
+        <div class="menu-container">
+          <div class="menu" id="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="brand" onclick="irInicio()">
+          <h1>GUIMAR<span>BOT</span></h1>
+        </div>
+      </div>
+      <div class="right">
+        <div class="notificaciones">
+          <a href="#" id="notification-link">
+            <img src="images/alarm-bell-svgrepo-com.svg" alt="notificaciones" />
+            <span>5</span>
+          </a>
+        </div>
+        <div class="perfile" id="perfile">
+          <img src="images/image.png" alt="Foto de perfil" />
+          <span id="Angelo Del Aguila">Angelo</span>
+          <img src="images/down-2-svgrepo-com.svg" alt="" class="down-user" />
+        </div>
+      </div>
+      <div class="profile-menu" id="profile-menu">
+        <p>¡Hola Jose!</p>
+        <a href="../Perfil/Perfil.html" class="profile-option"
+          >Ver perfil</a
+        >
+        <a href="../contactanos/contactanos.html" class="profile-option"
+          >Contáctanos</a
+        >
+        <a href="../selecionInteres.html" class="profile-option">Obtener una beca</a>
+        <a href="../index.html" class="profile-cerrar">Cerrar sesión</a>
+      </div>
+    </header>
+
+    <!-- Ventana de notificaciones (oculta inicialmente) -->
+    <div id="notification-popup" class="notification-popup">
+      <div class="notification-header">
+        <h2>Notificaciones</h2>
+        <button id="mark-read" class="mark-read-btn">Marcar como leído</button>
+      </div>
+      <ul>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img src="images/iconreact.png" alt="Icono de la notificación" />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: Curso de React Avanzado</p>
+              <small>hace 1 día</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/iconcalendario.png"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Se acercan nuevos Eventos</p>
+              <small>hace 2 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/icontecnologial.png"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: Curso de Tecnologia</p>
+              <small>hace 2 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/icontecnologia.png"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: Curso de C#</p>
+              <small>hace 3 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/iconperfill.png"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Completa tu perfil</p>
+              <small>hace 4 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img src="images/python.png" alt="Icono de la notificación" />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: curso de python</p>
+              <small>hace 5 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img src="images/arte.jfif" alt="Icono de la notificación" />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: Curso de Teatro</p>
+              <small>hace 2 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img src="images/cursoAi.webp" alt="Icono de la notificación" />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Vincula tu correo electrónico</p>
+              <small>hace 6 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/Icono-GuimarBot2.ico"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Te damos la bienvenida a Guimarbot</p>
+              <small>hace 2 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-arriba">
+        <nav>
+          <ul>
+            <li>
+              <a href="../InterfazUsuario/interfaz.html">
+                <img src="images/home-filled-svgrepo-com.svg" alt="Home" />
+                <span>Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a href="../InterfazUsuario/suscripcion.html">
+                <img
+                  src="images/rocket-filled-svgrepo-com.svg"
+                  alt="Suscripcion"
+                />
+                <span>Suscripción</span>
+              </a>
+            </li>
+            <li>
+              <a href="../InterfazUsuario/cursando.html">
+                <img
+                  src="images/work-case-filled-svgrepo-com.svg"
+                  alt="Cursando"
+                />
+                <span>Cursando</span>
+              </a>
+            </li>
+            <li>
+              <a href="../InterfazUsuario/metodopagocursos.html" id="cart-btn" class="">
+                <img
+                  src="images/shopping-cart-filled-svgrepo-com.svg"
+                  alt="Carrito"
+                />
+                <span>Carrito</span>
+              </a>
+            </li>
+            <li>
+              <a href="../Misrutas/misrutas.html">
+                <img
+                  src="images/folder-open-filled-svgrepo-com.svg"
+                  alt="Rutas"
+                />
+                <span>Mis rutas</span>
+              </a>
+            </li>
+            <li>
+              <a href="buscarRutas.html" class="sidebar-home">
+                <img
+                  src="images/monitor-filled-svgrepo-com.svg"
+                  alt="Search Rutas"
+                />
+                <span>Conocer rutas</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="medio">
+        <img src="images/6.svg" alt="" />
+      </div>
+      <div class="feedback-section">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfTPzWhRr0i0xw9Ul6bJEQqcnkjVxeDR-6dnAo4dkI0Bt1EXg/viewform?embedded=true"
+          id="feedback-link"
+          target="_blank"
+        >
+          <i class="fas fa-comment-dots"></i>
+          <span>Déjanos tu opinión</span>
+        </a>
+      </div>
+    </div>
+
+    <main class="main-container">
+      <section class="buscar">
+        <h1>Busca tu ruta de aprendizaje</h1>
+        <div class="buscar-bar">
+          <input type="text" placeholder="Buscar ..." />
+          <button><i class="fa fa-search"></i></button>
+        </div>
+      </section>
+
+      <section class="categorias">
+        <h1>Rutas recomendadas para ti</h1>
+        <div class="carousel">
+          <div class="carrusel-list" id="carrusel-list">
+            <button
+              class="carrusel-arrow carrusel-prev"
+              id="button-prev"
+              data-button="button-prev"
+              onclick="app.processingButton(event)"
+            >
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                <path
+                  fill="currentColor"
+                  d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="carrusel-track"
+              id="track"
+              style="position: relative; left: 0"
+            >
+              <!-- Estructura de tarjeta de curso -->
+              <div class="course-card">
+                <picture>
+                  <img src="images/rutapython.jpg" alt="Curso de Python" />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/Logo-Python.png"
+                    alt=""
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de Python</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a
+                    href="../Interfaz/Cursos y video/Cursos.html"
+                    class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de Python', '../img/rutapython.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="course-card">
+                <picture>
+                  <img src="images/rutaHtml.jpg" alt="Curso de html" />
+                </picture>
+                <div class="title-with-icon">
+                  <img src="images/html-5.png" alt="" class="professor-icon" />
+                  <h4>Ruta de Html</h4>
+                </div>
+              
+                <div class="buttons">
+                  <a href="../ClaseHTML/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de Html', '../img/rutaHtml.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="course-card">
+                <picture>
+                  <img src="images/rutaCss.jpg" alt="Curso de Css" />
+                </picture>
+                <div class="title-with-icon">
+                  <img src="images/css-3.png" alt="" class="professor-icon" />
+                  <h4>Ruta de Css</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de Css', '../img/rutaCss.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="course-card">
+                <picture>
+                  <img src="images/jkJAVASCRIP.png" alt="Curso de JS" />
+                </picture>
+                <div class="title-with-icon">
+                  <img src="images/js.png" alt="" class="professor-icon" />
+                  <h4>Ruta de Js</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de JavaScript', '../img/jkJAVASCRIP.png')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="course-card">
+                <picture>
+                  <img src="images/rutaBoostrap.jpg" alt="Curso de Boostrap" />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/logo-boostrap.png"
+                    alt=""
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de Boostrap</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de Boostrap', '../img/rutaBoostrap.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="course-card">
+                <picture>
+                  <img src="images/rutaJquery.jpg" alt="Curso de JQuery" />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/LOGO-QUERY.png"
+                    alt=""
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de JQuery</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de JQuery', '../img/rutaJquery.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Agrega más tarjetas si es necesario -->
+            </div>
+            <button
+              class="carrusel-arrow carrusel-next"
+              id="button-next"
+              data-button="button-next"
+              onclick="app.processingButton(event)"
+            >
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                <path
+                  fill="currentColor"
+                  d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="categorias">
+        <h1>Nuestros mejores Rutas</h1>
+        <div class="carousel">
+          <div class="carrusel-list" id="carrusel-list">
+            <button
+              class="carrusel-arrow carrusel-prev"
+              id="button-prev"
+              data-button="button-prev"
+              onclick="app.processingButton(event)"
+            >
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                <path
+                  fill="currentColor"
+                  d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="carrusel-track"
+              id="track"
+              style="position: relative; left: 0"
+            >
+              <!-- Tarjeta de curso 1 -->
+              <div class="course-card">
+                <picture>
+                  <img
+                    src="images/jkAdministracion.jpg"
+                    alt="Curso de Administración"
+                  />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/gestion.png"
+                    alt="Icono de Administración"
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de Administración</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de Administración', '../img/jkAdministracion.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Tarjeta de curso 2 -->
+              <div class="course-card">
+                <picture>
+                  <img src="images/jkJava.png" alt="Curso de Java" />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/java.png"
+                    alt="Icono de Java"
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de Java</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de Java', '../img/jkJava.png')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Tarjeta de curso 3 -->
+              <div class="course-card">
+                <picture>
+                  <img
+                    src="images/jkBasedatos.jpeg"
+                    alt="Curso de Bases de Datos"
+                  />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/archivo-de-base-de-datos.png"
+                    alt="Icono de Bases de Datos"
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de BBDD</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de BBDD', '../img/jkBasedatos.jpeg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Tarjeta de curso 4 -->
+              <div class="course-card">
+                <picture>
+                  <img
+                    src="images/jkCibersguridad.jpg"
+                    alt="Curso de Ciberseguridad"
+                  />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/amenazas-de-ciberseguridad.png"
+                    alt="Icono de Ciberseguridad"
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de Ciberseguridad</h4>
+                </div>
+               
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de Ciberseguridad', '../img/jkCibersguridad.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Tarjeta de curso 5 -->
+              <div class="course-card">
+                <picture>
+                  <img src="images/jkChatgpt.jpg" alt="Curso de ChatGPT" />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/chatgpt.png"
+                    alt="Icono de ChatGPT"
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de ChatGPT</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de ChatGpt', '../img/jkChatgpt.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Tarjeta de curso 6 -->
+              <div class="course-card">
+                <picture>
+                  <img src="images/jk Aiweb.jpg" alt="Curso de AI Web" />
+                </picture>
+                <div class="title-with-icon">
+                  <img
+                    src="images/conocimiento-de-la-ia.png"
+                    alt="Icono de AI Web"
+                    class="professor-icon"
+                  />
+                  <h4>Ruta de AI</h4>
+                </div>
+                
+                <div class="buttons">
+                  <a href="../Prueba/index.html" class="btn-view"
+                    >Ver ruta <i class="fas fa-arrow-right"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="btn-add"
+                    onclick="addToRoute('Ruta de AI', '../img/jk Aiweb.jpg')"
+                  >
+                    Añadir ruta <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carrusel-arrow carrusel-next"
+              id="button-next"
+              data-button="button-next"
+              onclick="app.processingButton(event)"
+            >
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 320 512">
+                <path
+                  fill="currentColor"
+                  d="M20.3 245.3l192 192c9.4 9.4 24.6 9.4 34 0l20.6-20.6c9.4-9.4 9.4-24.6 0-34L89.4 256l177.5-177.5c9.4-9.4 9.4-24.6 0-34L246 24.7c-9.4-9.4-24.6-9.4-34 0l-192 192c-9.4 9.4-9.4 24.6 0 34z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/interfaz.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/Gestion-rutas.js"></script>
+  </body>
+</html>

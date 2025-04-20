@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link rel="icon" href="assets/images/GUIMARBOT.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/inicio.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="left">
+        <div class="menu-container">
+          <div class="menu" id="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="brand" onclick="irInicio()">
+          <h1>GUIMAR<span>BOT</span></h1>
+        </div>
+      </div>
+      <div class="right">
+        <div class="notificaciones">
+          <a href="#" id="notification-link">
+            <img
+              src="assets/images/alarm-bell-svgrepo-com.svg"
+              alt="notificaciones"
+            />
+            <span>5</span>
+          </a>
+        </div>
+        <div class="perfile" id="perfile">
+          <img src="assets/images/image.png" alt="Foto de perfil" />
+          <span id="Angelo Del Aguila">Angelo</span>
+          <img
+            src="assets/images/down-2-svgrepo-com.svg"
+            alt=""
+            class="down-user"
+          />
+        </div>
+      </div>
+      <div class="profile-menu" id="profile-menu">
+        <p>¡Hola Jose!</p>
+        <a href="../Perfil y sub/perfil.html" class="profile-option"
+          >Ver perfil</a
+        >
+        <a href="contact.html" class="profile-option">Contáctanos</a>
+        <a href="becas.html" class="profile-option">Obtener una beca</a>
+        <a href="../index.html" class="profile-cerrar">Cerrar sesión</a>
+      </div>
+    </header>
+
+    <!-- Ventana de notificaciones (oculta inicialmente) -->
+    <div id="notification-popup" class="notification-popup">
+      <div class="notification-header">
+        <h2>Notificaciones</h2>
+        <button id="mark-read" class="mark-read-btn">Marcar como leído</button>
+      </div>
+      <ul>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img src="images/iconreact.png" alt="Icono de la notificación" />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: Curso de React Avanzado</p>
+              <small>hace 1 día</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/iconcalendario.png"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Se acercan nuevos Eventos</p>
+              <small>hace 2 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/icontecnologial.png"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: Curso de Tecnologia</p>
+              <small>hace 2 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/icontecnologia.png"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: Curso de C#</p>
+              <small>hace 3 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/iconperfill.png"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Completa tu perfil</p>
+              <small>hace 4 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img src="images/python.png" alt="Icono de la notificación" />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: curso de python</p>
+              <small>hace 5 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img src="images/arte.jfif" alt="Icono de la notificación" />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Hemos lanzado: Curso de Teatro</p>
+              <small>hace 2 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img src="images/cursoAi.webp" alt="Icono de la notificación" />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Vincula tu correo electrónico</p>
+              <small>hace 6 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+        <li>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <img
+                src="images/Icono-GuimarBot2.ico"
+                alt="Icono de la notificación"
+              />
+            </div>
+            <div class="notification-content">
+              <span class="notification-new">Nuevo</span>
+              <p>Te damos la bienvenida a Guimarbot</p>
+              <small>hace 2 días</small>
+            </div>
+            <i class="fas fa-trash notification-delete"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-arriba">
+        <nav>
+          <ul>
+            <li>
+              <a href="interfaz.html" class="sidebar-bien">
+                <img src="assets/images/bienvenido.svg" alt="imagen">
+                <span>Bienvenido</span>
+              </a>
+            </li>
+            <li>
+              <a href="videoBecas/Cursos.html">
+                <img
+                  src="assets/images/work-case-filled-svgrepo-com.svg"
+                  alt="Cursando"
+                />
+                <span>Curso 1</span>
+              </a>
+            </li>
+            <li>
+              <a href="videoBecas2/Cursos.html">
+                <img
+                  src="assets/images/work-case-filled-svgrepo-com.svg"
+                  alt="Cursando"
+                />
+                <span>Curso 2</span>
+              </a>
+            </li>
+            <li>
+              <a href="InterfazUsuario/interfaz.html">
+                <img
+                  src="assets/images/home-filled-svgrepo-com.svg"
+                  alt="Inicio"
+                />
+                <span>Home</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="medio">
+        <img src="assets/images/6.svg" alt="" />
+      </div>
+      <div class="feedback-section">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfTPzWhRr0i0xw9Ul6bJEQqcnkjVxeDR-6dnAo4dkI0Bt1EXg/viewform?embedded=true"
+          id="feedback-link"
+          target="_blank"
+        >
+          <i class="fas fa-comment-dots"></i>
+          <span>Déjanos tu opinión</span>
+        </a>
+      </div>
+    </div>
+
+    <main class="main-container">
+      <section class="welcome-section">
+        <div class="welcome-container">
+          <img src="assets/images/robotmostrar.svg" alt="Curso de Arte" class="welcome-image" />
+          <div class="welcome-text">
+            <h1>¡Bienvenido al Curso de Arte!</h1>
+            <p>
+              Explora las maravillas del arte con este curso diseñado para despertar tu creatividad.
+              Aprende técnicas de dibujo, pintura y expresión artística mientras descubres tu potencial
+              creativo. ¡Únete a nosotros y da rienda suelta a tu imaginación!
+            </p>
+            <a href="videoBecas/Cursos.html" class="btn-start-course">Iniciar Curso</a>
+
+          </div>
+        </div>
+      </section>
+    </main>
+    
+      
+
+    <script src="/videoBecas/js/becas.js"></script>
+  </body>
+</html>

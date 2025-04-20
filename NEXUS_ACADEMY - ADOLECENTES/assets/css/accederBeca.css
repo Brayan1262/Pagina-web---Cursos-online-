@@ -1,0 +1,491 @@
+:root{
+    --maincolor: #636161;
+    --ventanaflotante: #4e4c4c;
+    --texto: #0000;
+    --btn: #333;
+    --titulos: #fff;
+    --btnfin: #c48282;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--titulos);
+}
+
+/* Body */
+/* Body */
+body {
+    background: #fcfcfc no-repeat center center fixed; 
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Video de fondo */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Overlay y texto del banner */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.video-overlay .caption {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.video-overlay h6 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.video-overlay h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.video-overlay .main-button {
+    margin-top: 20px;
+}
+
+.video-overlay .main-button a {
+    display: inline-block;
+    background: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.video-overlay .main-button a:hover {
+    background: #e6b800;
+}
+
+/* Sección principal */
+.contenido-general {
+    position: relative;
+    padding: 20px;
+    z-index: 1;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content button {
+    background: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    color: #000;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-content button:hover {
+    background: #e6b800;
+}
+.video-overlay {
+    position: absolute;
+    background-color: rgba(22,34,57,0.85);
+    top: 0;
+    left: 0;
+    bottom: 7px;
+    width: 100%;
+}
+
+.decoracion img{
+    position: absolute;
+    width: 300px;
+    top: 600px;
+    left: 30px;
+}
+
+/* Contenedor principal */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    margin: 0;
+    background: #f3f3f3; /* Puedes ajustar el color de fondo */
+}
+
+/* Contenido general centrado con borde anaranjado */
+.contenido-general {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(22, 34, 57, 0.95);
+    margin: 0 auto; /* Quita márgenes adicionales */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid #f39c12; /* Borde anaranjado */
+    position: relative; /* Asegura que se ajuste a su contenedor padre */
+}
+
+
+/* Título */
+.titulo {
+    margin-bottom: 20px;
+}
+
+.titulo h1 {
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.titulo p, span {
+    padding: 20px;
+}
+
+.titulo span{
+    font-weight: bold;
+}
+
+/* Estilo para párrafos de título */
+.titulo p {
+    padding: 15px;
+    margin: 2px 0;
+    font-weight: 500;
+    text-align: justify; 
+    color: var(--titulos); 
+    border-radius: 10px; 
+    line-height: 1.6; 
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Cards */
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    background: rgba(34, 50, 84, 0.85); /* Más claro */
+
+    padding: 20px;
+    border-radius: 20px;
+    color: var(--titulos);
+    gap: 20px;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+/* Botón */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Botón con icono */
+.plusButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.plusButton::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 0 10px 10px 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.plusButton:hover {
+    cursor: pointer;
+}
+
+.plusButton:hover::before {
+    border-width: 0 20px 20px 0;
+}
+
+.plusButton:focus-visible::before {
+    border-width: 0 20px 20px 0;
+}
+
+.plusButton > .plusIcon {
+    fill: white;
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.plusButton:hover > .plusIcon {
+    fill: black;
+    transform: rotate(180deg);
+}
+
+.plusButton:focus-visible > .plusIcon {
+    fill: black;
+    transform: rotate(180deg);
+}
+
+/* Final Button */
+.fin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.fin button {
+    background-color: #f39c12; /* Color de fondo */
+    padding: 8px 20px; /* Incrementar el relleno (más grande) */
+    font-size: 1rem; /* Aumentar el tamaño del texto */
+    font-weight: bold; /* Hacer el texto más grueso */
+    color: #333; /* Color del texto */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fin button:hover {
+    background-color: #e67e22; /* Color al pasar el cursor */
+}
+
+/* Estilo para el modal (ventana emergente) */
+.modal {
+    display: none; /* Por defecto, el modal está oculto */
+    position: fixed;
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrarlo completamente */
+    width: 90%; /* Aumentar el ancho */
+    max-width: 600px; /* Definir un ancho máximo mayor */
+    height: auto;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente más oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    background-color: var(--ventanaflotante);
+    padding: 30px; /* Aumentar el padding */
+    border-radius: 15px; /* Bordes más redondeados */
+    border: 5px solid #f39c12; /* Borde blanco */
+    text-align: center;
+    background: rgba(34, 50, 84, 0.85); /* Más claro */
+ /* Sombra más fuerte */
+    animation: fadeIn 0.5s ease-out; /* Animación para que aparezca suavemente */
+}
+
+/* Título dentro del modal */
+.modal-content h2 {
+    font-size: 2rem; /* Aumentar el tamaño del título */
+    margin-bottom: 20px;
+    color: var(--titulos); /* Asegúrate de que el texto sea visible */
+}
+
+/* Párrafo dentro del modal */
+.modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--titulos); /* Asegúrate de que el texto sea visible */
+}
+
+/* Botón dentro del modal */
+.modal-content button {
+    background-color: #f39c12; /* Color de fondo */
+    padding: 15px 30px; /* Aumentar el padding */
+    font-size: 1.2rem; /* Aumentar el tamaño del texto */
+    font-weight: bold;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para el botón */
+}
+
+.modal-content button:hover {
+    background-color: #e67e22; /* Color de fondo al pasar el cursor */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+/* Añadir una animación suave para el modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Efecto de subida */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenido-general {
+        width: 90%;
+        padding: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .titulo h1 {
+        font-size: 1.8rem;
+    }
+
+    .titulo p {
+        font-size: 1rem;
+    }
+
+    .card {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .card h1 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .fin button {
+        padding: 8px 16px;
+    }
+    .decoracion img{
+        display: none;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenido-general {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .titulo h1 {
+        font-size: 1.6rem;
+    }
+
+    .titulo p {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .card img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .card h1 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+    }
+
+    .fin button {
+        padding: 6px 12px;
+    }
+}
